@@ -2,202 +2,98 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://WncFht.github.io/</loc>
-         <lastmod>2024-09-24</lastmod>
+         <lastmod>2024-10-03</lastmod>
+    </url>
+    <url>
+         <loc>https://WncFht.github.io/links/</loc>
+         <lastmod>2024-10-03</lastmod>
     </url>
     <url>
          <loc>https://WncFht.github.io/Dive%20into%20deep%20learning/Dive%20into%20Deep%20Learning/</loc>
-         <lastmod>2024-09-24</lastmod>
+         <lastmod>2024-10-03</lastmod>
     </url>
     <url>
          <loc>https://WncFht.github.io/cs61a/COMPOSING%20PROGRAMS/</loc>
-         <lastmod>2024-09-24</lastmod>
+         <lastmod>2024-10-03</lastmod>
     </url>
     <url>
          <loc>https://WncFht.github.io/cs61a/cs61a/</loc>
-         <lastmod>2024-09-24</lastmod>
-    </url>
-    <url>
-         <loc>https://WncFht.github.io/cs61b/note_en/01.%20Intro%2C%20Hello%20World%20Java/</loc>
-         <lastmod>2024-09-24</lastmod>
-    </url>
-    <url>
-         <loc>https://WncFht.github.io/cs61b/note_en/02.%20Defining%20and%20Using%20Classes/</loc>
-         <lastmod>2024-09-24</lastmod>
-    </url>
-    <url>
-         <loc>https://WncFht.github.io/cs61b/note_en/03.%20Testing/</loc>
-         <lastmod>2024-09-24</lastmod>
-    </url>
-    <url>
-         <loc>https://WncFht.github.io/cs61b/note_en/04.%20References%2C%20Recursion%2C%20and%20Lists/</loc>
-         <lastmod>2024-09-24</lastmod>
-    </url>
-    <url>
-         <loc>https://WncFht.github.io/cs61b/note_en/05.%20SLLists%2C%20Nested%20Classes%2C%20Sentinel%20Nodes/</loc>
-         <lastmod>2024-09-24</lastmod>
-    </url>
-    <url>
-         <loc>https://WncFht.github.io/cs61b/note_en/06.%20DLLists%2C%20Arrays/</loc>
-         <lastmod>2024-09-24</lastmod>
-    </url>
-    <url>
-         <loc>https://WncFht.github.io/cs61b/note_en/07.%20ALists%2C%20Resizing%2C%20vs.%20SLists/</loc>
-         <lastmod>2024-09-24</lastmod>
-    </url>
-    <url>
-         <loc>https://WncFht.github.io/cs61b/note_en/08.%20Inheritance%2C%20Implements/</loc>
-         <lastmod>2024-09-24</lastmod>
-    </url>
-    <url>
-         <loc>https://WncFht.github.io/cs61b/note_en/09.%20Extends%2C%20Casting%2C%20Higher%20Order%20Functions/</loc>
-         <lastmod>2024-09-24</lastmod>
-    </url>
-    <url>
-         <loc>https://WncFht.github.io/cs61b/note_en/10.%20Subtype%20Polymorphism%20vs.%20HoFs/</loc>
-         <lastmod>2024-09-24</lastmod>
-    </url>
-    <url>
-         <loc>https://WncFht.github.io/cs61b/note_en/11.%20Exceptions%2C%20Iterators%2C%20Object%20Methods/</loc>
-         <lastmod>2024-09-24</lastmod>
-    </url>
-    <url>
-         <loc>https://WncFht.github.io/cs61b/note_en/12.%20Command%20Line%20Programming%2C%20Git%2C%20Project%202%20Preview/</loc>
-         <lastmod>2024-09-24</lastmod>
-    </url>
-    <url>
-         <loc>https://WncFht.github.io/cs61b/note_en/13.%20Asymptotics%20I/</loc>
-         <lastmod>2024-09-24</lastmod>
-    </url>
-    <url>
-         <loc>https://WncFht.github.io/cs61b/note_en/14.%20Disjoint%20Sets/</loc>
-         <lastmod>2024-09-24</lastmod>
-    </url>
-    <url>
-         <loc>https://WncFht.github.io/cs61b/note_en/15.%20Asymptotics%20II/</loc>
-         <lastmod>2024-09-24</lastmod>
-    </url>
-    <url>
-         <loc>https://WncFht.github.io/cs61b/note_en/16.%20ADTs%2C%20Sets%2C%20Maps%2C%20BSTs/</loc>
-         <lastmod>2024-09-24</lastmod>
-    </url>
-    <url>
-         <loc>https://WncFht.github.io/cs61b/note_en/17.%20B-Trees%20%282-3%2C%202-3-4%20Trees%29/</loc>
-         <lastmod>2024-09-24</lastmod>
-    </url>
-    <url>
-         <loc>https://WncFht.github.io/cs61b/note_en/18.%20Red%20Black%20Trees/</loc>
-         <lastmod>2024-09-24</lastmod>
-    </url>
-    <url>
-         <loc>https://WncFht.github.io/cs61b/note_en/19.%20Hashing/</loc>
-         <lastmod>2024-09-24</lastmod>
-    </url>
-    <url>
-         <loc>https://WncFht.github.io/cs61b/note_en/20.%20Heaps%20and%20PQs/</loc>
-         <lastmod>2024-09-24</lastmod>
-    </url>
-    <url>
-         <loc>https://WncFht.github.io/cs61b/note_en/21.%20Tree%20and%20Graph%20Traversals/</loc>
-         <lastmod>2024-09-24</lastmod>
-    </url>
-    <url>
-         <loc>https://WncFht.github.io/cs61b/note_en/22.%20Graph%20Traversals%20and%20Implementations/</loc>
-         <lastmod>2024-09-24</lastmod>
-    </url>
-    <url>
-         <loc>https://WncFht.github.io/cs61b/note_en/23.%20Shortest%20Paths/</loc>
-         <lastmod>2024-09-24</lastmod>
-    </url>
-    <url>
-         <loc>https://WncFht.github.io/cs61b/note_en/24.%20Minimum%20Spanning%20Trees/</loc>
-         <lastmod>2024-09-24</lastmod>
-    </url>
-    <url>
-         <loc>https://WncFht.github.io/cs61b/note_en/25.%20Range%20Searching%20and%20Multi-Dimensional%20Data/</loc>
-         <lastmod>2024-09-24</lastmod>
-    </url>
-    <url>
-         <loc>https://WncFht.github.io/cs61b/note_en/26.%20Prefix%20Operations%20and%20Tries/</loc>
-         <lastmod>2024-09-24</lastmod>
-    </url>
-    <url>
-         <loc>https://WncFht.github.io/cs61b/note_en/27.%20Software%20Engineering%20I/</loc>
-         <lastmod>2024-09-24</lastmod>
+         <lastmod>2024-10-03</lastmod>
     </url>
     <url>
          <loc>https://WncFht.github.io/cs61c/cs61c/</loc>
-         <lastmod>2024-09-24</lastmod>
+         <lastmod>2024-10-03</lastmod>
     </url>
     <url>
          <loc>https://WncFht.github.io/cs61c/cs61c_lec06/</loc>
-         <lastmod>2024-09-24</lastmod>
+         <lastmod>2024-10-03</lastmod>
     </url>
     <url>
          <loc>https://WncFht.github.io/cs61c/cs61c_lec07/</loc>
-         <lastmod>2024-09-24</lastmod>
+         <lastmod>2024-10-03</lastmod>
     </url>
     <url>
          <loc>https://WncFht.github.io/cs61c/cs61c_lec08/</loc>
-         <lastmod>2024-09-24</lastmod>
+         <lastmod>2024-10-03</lastmod>
     </url>
     <url>
          <loc>https://WncFht.github.io/cs61c/cs61c_lec09/</loc>
-         <lastmod>2024-09-24</lastmod>
+         <lastmod>2024-10-03</lastmod>
     </url>
     <url>
          <loc>https://WncFht.github.io/cs61c/cs61c_lec10/</loc>
-         <lastmod>2024-09-24</lastmod>
+         <lastmod>2024-10-03</lastmod>
     </url>
     <url>
          <loc>https://WncFht.github.io/cs61c/cs61c_lec11/</loc>
-         <lastmod>2024-09-24</lastmod>
+         <lastmod>2024-10-03</lastmod>
     </url>
     <url>
          <loc>https://WncFht.github.io/cs61c/cs61c_lec12/</loc>
-         <lastmod>2024-09-24</lastmod>
+         <lastmod>2024-10-03</lastmod>
     </url>
     <url>
          <loc>https://WncFht.github.io/cs61c/cs61c_lec13/</loc>
-         <lastmod>2024-09-24</lastmod>
+         <lastmod>2024-10-03</lastmod>
     </url>
     <url>
          <loc>https://WncFht.github.io/cs61c/cs61c_lec14/</loc>
-         <lastmod>2024-09-24</lastmod>
+         <lastmod>2024-10-03</lastmod>
     </url>
     <url>
          <loc>https://WncFht.github.io/cs61c/cs61c_lec15/</loc>
-         <lastmod>2024-09-24</lastmod>
+         <lastmod>2024-10-03</lastmod>
     </url>
     <url>
          <loc>https://WncFht.github.io/cs61c/%E8%B7%B3%E8%BD%AC%E5%92%8C%E8%BF%94%E5%9B%9E%E7%9A%84%E5%87%BD%E6%95%B0/</loc>
-         <lastmod>2024-09-24</lastmod>
+         <lastmod>2024-10-03</lastmod>
     </url>
     <url>
          <loc>https://WncFht.github.io/slam/%E8%A7%86%E8%A7%89SLAM%E5%8D%81%E5%9B%9B%E8%AE%B2/</loc>
-         <lastmod>2024-09-24</lastmod>
+         <lastmod>2024-10-03</lastmod>
     </url>
     <url>
          <loc>https://WncFht.github.io/summary/2024summer_vacation/</loc>
-         <lastmod>2024-09-24</lastmod>
+         <lastmod>2024-10-03</lastmod>
     </url>
     <url>
          <loc>https://WncFht.github.io/tygx_exp/eng_fht/</loc>
-         <lastmod>2024-09-24</lastmod>
+         <lastmod>2024-10-03</lastmod>
     </url>
     <url>
          <loc>https://WncFht.github.io/tygx_exp/math_fht/</loc>
-         <lastmod>2024-09-24</lastmod>
+         <lastmod>2024-10-03</lastmod>
     </url>
     <url>
          <loc>https://WncFht.github.io/tygx_exp/phy_fht/</loc>
-         <lastmod>2024-09-24</lastmod>
+         <lastmod>2024-10-03</lastmod>
     </url>
     <url>
          <loc>https://WncFht.github.io/tygx_exp/tech_fht/</loc>
-         <lastmod>2024-09-24</lastmod>
+         <lastmod>2024-10-03</lastmod>
     </url>
     <url>
          <loc>https://WncFht.github.io/tygx_exp/%E4%B8%80%E4%BA%9B%E8%B5%84%E6%BA%90/</loc>
-         <lastmod>2024-09-24</lastmod>
+         <lastmod>2024-10-03</lastmod>
     </url>
 </urlset>

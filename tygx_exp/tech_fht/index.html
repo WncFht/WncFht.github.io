@@ -13,11 +13,13 @@
 <link href="../../assets/stylesheets/main.06209087.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link href="../../css/heti.css" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css" rel="stylesheet"/>
-<link href="../../css/grid cards.css" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" rel="stylesheet"/>
-<link href="../../css/extra.css" rel="stylesheet"/>
-<link href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css" rel="stylesheet"/>
+<link href="https://cdn.tonycrane.cc/utils/katex.min.css" rel="stylesheet"/>
+<link href="https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css" rel="stylesheet"/>
+<link href="https://cdn.tonycrane.cc/lxgw/lxgwscreen.css" rel="stylesheet"/>
+<link href="../../css/custom.css" rel="stylesheet"/>
+<link href="../../css/tasklist.css" rel="stylesheet"/>
+<link href="../../css/card.css" rel="stylesheet"/>
+<link href="../../css/flink.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
@@ -34,13 +36,13 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#技术经验分享">
+<a class="md-skip" href="#_1">
           跳转至
         </a>
 </div>
 <div data-md-component="announce">
 </div>
-<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<header class="md-header" data-md-component="header">
 <nav aria-label="页眉" class="md-header__inner md-grid">
 <a aria-label="wnc 的咖啡馆" class="md-header__button md-logo" data-md-component="logo" href="../.." title="wnc 的咖啡馆">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M2 21h18v-2H2M20 8h-2V5h2m0-2H4v10a4 4 0 0 0 4 4h6a4 4 0 0 0 4-4v-3h2a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2"></path></svg>
@@ -88,14 +90,10 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
 </label>
 <nav aria-label="查找" class="md-search__options">
-<a aria-label="分享" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="分享">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
-</a>
 <button aria-label="清空当前内容" class="md-search__icon md-icon" tabindex="-1" title="清空当前内容" type="reset">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
 </button>
 </nav>
-<div class="md-search__suggest" data-md-component="search-suggest"></div>
 </form>
 <div class="md-search__output">
 <div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
@@ -120,18 +118,20 @@
 </a>
 </div>
 </nav>
+</header>
+<div class="md-container" data-md-component="container">
 <nav aria-label="标签" class="md-tabs" data-md-component="tabs">
 <div class="md-grid">
 <ul class="md-tabs__list">
 <li class="md-tabs__item">
 <a class="md-tabs__link" href="../..">
-        
+          
   
     
   
   Home
 
-      </a>
+        </a>
 </li>
 <li class="md-tabs__item">
 <a class="md-tabs__link" href="../../cs61a/COMPOSING%20PROGRAMS/">
@@ -140,6 +140,16 @@
     
   
   cs61a
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../cs61c/cs61c/">
+          
+  
+    
+  
+  cs61c
 
         </a>
 </li>
@@ -186,8 +196,6 @@
 </ul>
 </div>
 </nav>
-</header>
-<div class="md-container" data-md-component="container">
 <main class="md-main" data-md-component="main">
 <div class="md-main__inner md-grid">
 <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
@@ -211,12 +219,33 @@
 </a>
 </div>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../..">
 <span class="md-ellipsis">
     Home
   </span>
 </a>
+<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+            Home
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../links/">
+<span class="md-ellipsis">
+    友链
+  </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
@@ -235,7 +264,7 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../cs61a/COMPOSING%20PROGRAMS/">
 <span class="md-ellipsis">
-    1. COMPOSING PROGRAMS
+    COMPOSING PROGRAMS
   </span>
 </a>
 </li>
@@ -253,12 +282,113 @@
 <input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
 <span class="md-ellipsis">
-    SLAM
+    cs61c
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            cs61c
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../cs61c/cs61c/">
+<span class="md-ellipsis">
+    Cs61c
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../cs61c/cs61c_lec06/">
+<span class="md-ellipsis">
+    Cs61c lec06
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../cs61c/cs61c_lec07/">
+<span class="md-ellipsis">
+    Cs61c lec07
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../cs61c/cs61c_lec08/">
+<span class="md-ellipsis">
+    Cs61c lec08
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../cs61c/cs61c_lec09/">
+<span class="md-ellipsis">
+    Cs61c lec09
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../cs61c/cs61c_lec10/">
+<span class="md-ellipsis">
+    Cs61c lec10
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../cs61c/cs61c_lec11/">
+<span class="md-ellipsis">
+    Cs61c lec11
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../cs61c/cs61c_lec12/">
+<span class="md-ellipsis">
+    Cs61c lec12
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../cs61c/cs61c_lec13/">
+<span class="md-ellipsis">
+    Cs61c lec13
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../cs61c/cs61c_lec14/">
+<span class="md-ellipsis">
+    Cs61c lec14
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../cs61c/cs61c_lec15/">
+<span class="md-ellipsis">
+    Cs61c lec15
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../cs61c/%E8%B7%B3%E8%BD%AC%E5%92%8C%E8%BF%94%E5%9B%9E%E7%9A%84%E5%87%BD%E6%95%B0/">
+<span class="md-ellipsis">
+    跳转和返回的函数
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-ellipsis">
+    SLAM
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
 <span class="md-nav__icon md-icon"></span>
             SLAM
           </label>
@@ -274,15 +404,15 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
 <span class="md-ellipsis">
     天元公学生存指南
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="true" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_4">
+<nav aria-expanded="true" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
 <span class="md-nav__icon md-icon"></span>
             天元公学生存指南
           </label>
@@ -328,7 +458,7 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#学科本身">
+<a class="md-nav__link" href="#_2">
 <span class="md-ellipsis">
       学科本身:
     </span>
@@ -336,21 +466,21 @@
 <nav aria-label="学科本身:" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#技术好赋分吗">
+<a class="md-nav__link" href="#_3">
 <span class="md-ellipsis">
       技术好赋分吗？
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#学科难度大吗">
+<a class="md-nav__link" href="#_4">
 <span class="md-ellipsis">
       学科难度大吗？
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#那要不要选技术捏">
+<a class="md-nav__link" href="#_5">
 <span class="md-ellipsis">
       那要不要选技术捏？
     </span>
@@ -360,7 +490,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#学习方法">
+<a class="md-nav__link" href="#_6">
 <span class="md-ellipsis">
       学习方法:
     </span>
@@ -368,42 +498,42 @@
 <nav aria-label="学习方法:" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#先要确保基础的知识点都会">
+<a class="md-nav__link" href="#_7">
 <span class="md-ellipsis">
       先要确保基础的知识点都会:
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#然后就是做题">
+<a class="md-nav__link" href="#_8">
 <span class="md-ellipsis">
       然后就是做题:
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#做题时间方面">
+<a class="md-nav__link" href="#_9">
 <span class="md-ellipsis">
       做题时间方面:
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#心态方面">
+<a class="md-nav__link" href="#_10">
 <span class="md-ellipsis">
       心态方面:
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#资料方面">
+<a class="md-nav__link" href="#_11">
 <span class="md-ellipsis">
       资料方面:
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#其他">
+<a class="md-nav__link" href="#_12">
 <span class="md-ellipsis">
       其他:
     </span>
@@ -426,15 +556,15 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
-<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
 <span class="md-ellipsis">
     动手学深度学习
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_5">
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
 <span class="md-nav__icon md-icon"></span>
             动手学深度学习
           </label>
@@ -450,15 +580,15 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
-<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
 <span class="md-ellipsis">
     总结
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_6">
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
 <span class="md-nav__icon md-icon"></span>
             总结
           </label>
@@ -488,7 +618,7 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#学科本身">
+<a class="md-nav__link" href="#_2">
 <span class="md-ellipsis">
       学科本身:
     </span>
@@ -496,21 +626,21 @@
 <nav aria-label="学科本身:" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#技术好赋分吗">
+<a class="md-nav__link" href="#_3">
 <span class="md-ellipsis">
       技术好赋分吗？
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#学科难度大吗">
+<a class="md-nav__link" href="#_4">
 <span class="md-ellipsis">
       学科难度大吗？
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#那要不要选技术捏">
+<a class="md-nav__link" href="#_5">
 <span class="md-ellipsis">
       那要不要选技术捏？
     </span>
@@ -520,7 +650,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#学习方法">
+<a class="md-nav__link" href="#_6">
 <span class="md-ellipsis">
       学习方法:
     </span>
@@ -528,42 +658,42 @@
 <nav aria-label="学习方法:" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#先要确保基础的知识点都会">
+<a class="md-nav__link" href="#_7">
 <span class="md-ellipsis">
       先要确保基础的知识点都会:
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#然后就是做题">
+<a class="md-nav__link" href="#_8">
 <span class="md-ellipsis">
       然后就是做题:
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#做题时间方面">
+<a class="md-nav__link" href="#_9">
 <span class="md-ellipsis">
       做题时间方面:
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#心态方面">
+<a class="md-nav__link" href="#_10">
 <span class="md-ellipsis">
       心态方面:
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#资料方面">
+<a class="md-nav__link" href="#_11">
 <span class="md-ellipsis">
       资料方面:
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#其他">
+<a class="md-nav__link" href="#_12">
 <span class="md-ellipsis">
       其他:
     </span>
@@ -579,10 +709,10 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/WncFht/WncFht.github.io/raw/master/docs/tygx_exp/tech_fht.md" title="查看本页的源代码">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"></path></svg>
+<a class="md-content__button md-icon" href="https://github.com/WncFht/WncFht.github.io/edit/master/docs/tygx_exp/tech_fht.md" title="edit.link.title">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"></path></svg>
 </a>
-<h1 id="技术经验分享">技术经验分享<a class="headerlink" href="#技术经验分享" title="Permanent link"></a></h1>
+<h1 id="_1">技术经验分享<a class="headerlink" href="#_1" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h1>
 <details class="abstract" open="open">
 <summary>本页统计信息</summary>
 <ul>
@@ -595,31 +725,31 @@
 </ul>
 </details>
 <p>背景<span class="heti-skip"><span class="heti-spacing"> </span>:2024<span class="heti-spacing"> </span></span>届首考<span class="heti-skip"><span class="heti-spacing"> </span>89-&gt;<span class="heti-spacing"> </span></span>高考<span><span class="heti-spacing"> </span>98</span></p>
-<h2 id="学科本身">学科本身<span><span class="heti-spacing"> </span>:</span><a class="headerlink" href="#学科本身" title="Permanent link"></a></h2>
-<h3 id="技术好赋分吗">技术好赋分吗？<a class="headerlink" href="#技术好赋分吗" title="Permanent link"></a></h3>
+<h2 id="_2">学科本身<span><span class="heti-spacing"> </span>:</span><a class="headerlink" href="#_2" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h2>
+<h3 id="_3">技术好赋分吗？<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
 <p>一般，至少比生物好赋分（个人感觉<heti-adjacent class="heti-adjacent-half">）</heti-adjacent><heti-adjacent class="heti-adjacent-half">。</heti-adjacent>（不过也可以选地理，可能会更好赋分） 但就平时的联盟考来说，</p>
 <ul>
 <li>大概高一高二赋分会好一些（毕竟很多人<span class="heti-skip"><span class="heti-spacing"> </span>programming<span class="heti-spacing"> </span></span>都还没怎么搞懂<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>。</li>
 <li>到高三就不一定了，主要看联盟参加的学校和卷子本身的质量。记得高考前的五校联考，卷子好像挺简单的，但是赋分极其难赋。</li>
 <li>至于高考，赋分还行，但是<strong>高分很难</strong>（特别指<span><span class="heti-spacing"> </span>98+</span><heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，估计是镇中温一学军杭二把分卡住了。</li>
 </ul>
-<h3 id="学科难度大吗">学科难度大吗？<a class="headerlink" href="#学科难度大吗" title="Permanent link"></a></h3>
+<h3 id="_4">学科难度大吗？<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
 <ul>
 <li>我是在选技术之前就会<span><span class="heti-spacing"> </span>C++</span>，Python，个人感觉是高中知识点不难，平时题目也不是很难。但是高考就不一定了，由于技术还没考几年（套路还没被穷尽<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，所以稍微一变化就容易死一大片。</li>
 <li>但是编程对刚入门的新手而言，<strong>难度还是不小的</strong>。特别是，离谱的应试教育方式<span class="heti-skip"><span class="heti-spacing"> </span>&amp;<span class="heti-spacing"> </span></span>难评的自学能力，很难说靠写<span class="heti-skip"><span class="heti-spacing"> </span>(write)<span class="heti-spacing"> </span></span>代码可以很好的掌握算法<span class="heti-skip"><span class="heti-spacing"> </span>/<span class="heti-spacing"> </span></span>数据结构。极其容易陷入背代码的死局。</li>
 <li>主要来讲就是，没有物理化学难。</li>
 <li><strong>性价比挺高</strong>（对我来说，高二几乎没有花时间，高三也只是做做联考卷，作业基本没做过。花的时间估计是花在化学上的零头<span><span class="heti-spacing"> </span>: (</span>）</li>
 </ul>
-<h3 id="那要不要选技术捏">那要不要选技术捏？<a class="headerlink" href="#那要不要选技术捏" title="Permanent link"></a></h3>
+<h3 id="_5">那要不要选技术捏？<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
 <ul>
 <li>如果是以后学计算机相关的还是建议选，这样等大学了会有<strong>很大</strong>优势。</li>
 <li>但如果一点<span class="heti-skip"><span class="heti-spacing"> </span>programming<span class="heti-spacing"> </span></span>都搞不懂，那还是算了。</li>
 <li>如果没有选物理<span class="heti-skip"><span class="heti-spacing"> </span>/<span class="heti-spacing"> </span></span>物理不好，也慎重选技术吧<heti-adjacent class="heti-adjacent-half">。</heti-adjacent>（不然花在电控上的时间会很没有性价比）</li>
 </ul>
-<h2 id="学习方法">学习方法<span><span class="heti-spacing"> </span>:</span><a class="headerlink" href="#学习方法" title="Permanent link"></a></h2>
+<h2 id="_6">学习方法<span><span class="heti-spacing"> </span>:</span><a class="headerlink" href="#_6" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h2>
 <div class="highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>仅就高三而言（高二没学）
 </code></pre></div></td></tr></table></div>
-<h3 id="先要确保基础的知识点都会">先要确保<strong>基础</strong>的知识点都会<span><span class="heti-spacing"> </span>:</span><a class="headerlink" href="#先要确保基础的知识点都会" title="Permanent link"></a></h3>
+<h3 id="_7">先要确保<strong>基础</strong>的知识点都会<span><span class="heti-spacing"> </span>:</span><a class="headerlink" href="#_7" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
 <ol>
 <li>先把教辅看一遍（学校肯定会买的一些乱七八糟的，反正市面上也<strong>没什么很好的教辅</strong>）</li>
 <li>再把书看一遍（很小的点都要知道）</li>
@@ -627,7 +757,7 @@
 <li>注意<span class="heti-skip"><span class="heti-spacing"> </span>:<span class="heti-spacing"> </span></span>技术本身的知识体系并不像物理化学那样紧密，所以点都是挺分散的。<strong>一定巩固好基础</strong>。
 （用时大概:1个星期？一天3h。因人而异）</li>
 </ol>
-<h3 id="然后就是做题">然后就是做题<span><span class="heti-spacing"> </span>:</span><a class="headerlink" href="#然后就是做题" title="Permanent link"></a></h3>
+<h3 id="_8">然后就是做题<span><span class="heti-spacing"> </span>:</span><a class="headerlink" href="#_8" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
 <ul>
 <li>先做点卷子，看看自己漏洞在哪（<span>10<span class="heti-spacing"> </span></span>张差不多了，一定要短时间内做完）:<ul>
 <li>建议联考卷都做做，才知道什么是好的卷子<heti-adjacent class="heti-adjacent-half">。</heti-adjacent>（老师肯定会发的）</li>
@@ -648,7 +778,7 @@
 </li>
 <li>基本就差不多了（后面再花时间性价比就不高了<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，如果还想继续，那就自己整个本子，把错题搞上去，每次考试前看看<heti-adjacent class="heti-adjacent-half">。</heti-adjacent>（实际作用就是让你别一做完就把题扔了，也不搞懂，那样等于没做）但错题本其实效率很低<heti-adjacent class="heti-adjacent-half">。</heti-adjacent>（formalism）</li>
 </ul>
-<h3 id="做题时间方面">做题时间方面<span><span class="heti-spacing"> </span>:</span><a class="headerlink" href="#做题时间方面" title="Permanent link"></a></h3>
+<h3 id="_9">做题时间方面<span><span class="heti-spacing"> </span>:</span><a class="headerlink" href="#_9" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
 <ul>
 <li>我是基本先做信息，在做通用的<ul>
 <li>信息<span class="heti-skip"><span class="heti-spacing"> </span>13<span class="heti-spacing"> </span></span>题和大题最后一题不会的先空着（填个不确定的<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，然后去做通用。大概前面<span class="heti-skip"><span class="heti-spacing"> </span>30min<span class="heti-spacing"> </span></span>能搞定</li>
@@ -664,18 +794,18 @@
 </li>
 <li>画图就把联考题都放一起，一次画个<span class="heti-skip"><span class="heti-spacing"> </span>10<span class="heti-spacing"> </span></span>张左右就差不多了，没什么模型的（</li>
 </ul>
-<h3 id="心态方面">心态方面<span><span class="heti-spacing"> </span>:</span><a class="headerlink" href="#心态方面" title="Permanent link"></a></h3>
+<h3 id="_10">心态方面<span><span class="heti-spacing"> </span>:</span><a class="headerlink" href="#_10" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
 <ul>
 <li>反正高考和平时还是很不一样的，建议平时大考当高考考。</li>
 <li>然后就是一次考差没啥关系，时间花在该花的地方就好了，要对自己的学习有掌控力。</li>
 <li><strong>老师教的不好要学会自己学</strong></li>
 </ul>
-<h3 id="资料方面">资料方面<span><span class="heti-spacing"> </span>:</span><a class="headerlink" href="#资料方面" title="Permanent link"></a></h3>
+<h3 id="_11">资料方面<span><span class="heti-spacing"> </span>:</span><a class="headerlink" href="#_11" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
 <ul>
 <li><strong>浙考交流</strong>解决所有（</li>
 <li>辅导书都差不多，看多了浪费时间</li>
 </ul>
-<h3 id="其他">其他<span><span class="heti-spacing"> </span>:</span><a class="headerlink" href="#其他" title="Permanent link"></a></h3>
+<h3 id="_12">其他<span><span class="heti-spacing"> </span>:</span><a class="headerlink" href="#_12" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
 <ul>
 <li>可以和同学一起学（不是一起摆烂哦）</li>
 <li>真学不会了赶紧换科吧</li>
@@ -689,78 +819,34 @@
 <li>学不懂上课就好好听，别玩游戏（不然怎么学）</li>
 </ul>
 <p><strong>最后<span class="heti-skip"><span class="heti-spacing"> </span>:<span class="heti-spacing"> </span></span>希望大家都能考好<span><span class="heti-spacing"> </span>:</span>）</strong></p>
-<div id="__comments"></div>
-<h3>颜色主题调整</h3>
-<div class="tx-switch">
-<button class="button1" data-md-color-primary="red" style="background-color:red">red</button>
-<button class="button1" data-md-color-primary="pink" style="background-color:pink;color:black">pink</button>
-<button class="button1" data-md-color-primary="purple" style="background-color:purple">purple</button>
-<button class="button1" data-md-color-primary="indigo" style="background-color:indigo">indigo</button>
-<button class="button1" data-md-color-primary="blue" style="background-color:blue">blue</button>
-<button class="button1" data-md-color-primary="cyan" style="background-color:cyan;color:black">cyan</button>
-<button class="button1" data-md-color-primary="teal" style="background-color:teal">teal</button>
-<button class="button1" data-md-color-primary="green" style="background-color:green">green</button>
-<button class="button1" data-md-color-primary="lime" style="background-color:lime;color:black">lime</button>
-<button class="button1" data-md-color-primary="orange" style="background-color:orange;color:black">orange</button>
-<button class="button1" data-md-color-primary="brown" style="background-color:brown;border-radius=3px">brown</button>
-<button class="button1" data-md-color-primary="grey" style="background-color:grey">grey</button>
-<button class="button1" data-md-color-primary="black" style="background-color:black">black</button>
-<button class="button1" data-md-color-primary="white" style="background-color:white;color:black">white</button>
-</div>
-<!-- Giscus -->
-<script async="" crossorigin="anonymous" data-category="General" data-category-id="DIC_kwDOMjtQQs4CiwBw" data-emit-metadata="0" data-input-position="bottom" data-lang="zh-CN" data-mapping="pathname" data-reactions-enabled="1" data-repo="WncFht/WncFht.github.io" data-repo-id="R_kgDOMjtQQg" data-strict="0" data-theme="preferred_color_scheme" src="https://giscus.app/client.js">
-</script>
-<script>
-    var buttons = document.querySelectorAll("button[data-md-color-primary]")
-    buttons.forEach(function(button) {
-            button.addEventListener("click", function() {
-            var attr = this.getAttribute("data-md-color-primary")
-            document.body.setAttribute("data-md-color-primary", attr)
-            localStorage.setItem("data-md-color-primary",attr);
-            })
-    })
-    </script>
-<!-- Synchronize Giscus theme with palette -->
-<script>
-    var giscus = document.querySelector("script[src*=giscus]")
-</script>
-<script>
-    var giscus = document.querySelector("script[src*=giscus]")
-    
-    /* Set palette on initial load */
-    // var palette = __md_get("__palette")
-    // if (palette && typeof palette.color === "object") {
-    //     var theme = palette.color.scheme === "slate" ? "dark" : "light"
-    //     giscus.setAttribute("data-theme", theme) 
-    // }
-    
-    /* Register event handlers after documented loaded */
-    // document.addEventListener("DOMContentLoaded", function() {
-    //     var ref = document.querySelector("[data-md-component=palette]")
-    //     ref.addEventListener("change", function() {
-    //     var palette = __md_get("__palette")
-    //     if (palette && typeof palette.color === "object") {
-    //         var theme = palette.color.scheme === "slate" ? "dark" : "light"
-    
-    //         /* Instruct Giscus to change theme */
-    //         var frame = document.querySelector(".giscus-frame")
-    //         frame.contentWindow.postMessage(
-    //         { giscus: { setConfig: { theme } } },
-    //         "https://giscus.app"
-    //         )
-    //     }
-    //     })
-    // })
-    </script>
-<div class="card" id="statistics" style="width: 27em; border-color: transparent; opacity: 0; font-size: 75%">
-<div style="padding-left: 1em;">
-        页面总数：<span id="total-pages"></span><br/>
-        总字数：<span id="total-words"></span><br/>
-        代码块行数：<span id="code-lines"></span><br/>
+<aside class="md-source-file">
+<span class="md-source-file__fact">
+<span class="md-icon" title="最后更新">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年10月3日 18:35:08</span>
+</span>
+<span class="md-source-file__fact">
+<span class="md-icon" title="创建日期">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月25日 00:26:32</span>
+</span>
+</aside>
+<!-- <div id="statistics" class="card" style="width: 27em; border-color: transparent; opacity: 0; font-size: 75%">
+    <div style="padding-left: 1em;">
+        页面总数：<span id="total-pages"></span><br>
+        总字数：<span id="total-words"></span><br>
+        代码块行数：<span id="code-lines"></span><br>
         网站运行时间：<span id="web-time"></span>
+    </div>
 </div>
-</div>
-<button onclick="toggle_statistics()">统计信息</button>
+
+<div class="mac-content-container"></div>
+    <div class="mac-content-block">
+      <span class="mac-content-label">本文总阅读量:</span>
+      <span id="busuanzi_value_page_pv"></span>次
+</div> -->
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
@@ -787,16 +873,10 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<div class="md-progress" data-md-component="progress" role="progressbar"></div>
-<script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "content.action.view", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "navigation.instant", "navigation.instant.progress", "content.code.copy", "navigation.sections", "toc.follow", "search.highlight", "search.share", "search.suggest", "navigation.tabs.sticky"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+<script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "content.action.view", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "content.code.copy"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
 <script src="../../assets/javascripts/bundle.56dfad97.min.js"></script>
-<script src="../../js/custom.js"></script>
-<script src="../../js/heti.js"></script>
 <script src="../../js/katex.js"></script>
-<script src="../../js/scheme.js"></script>
-<script src="../../js/toc.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+<script src="https://cdn.tonycrane.cc/utils/katex.min.js"></script>
 <script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
 document$.subscribe(() => { lightbox.reload() });

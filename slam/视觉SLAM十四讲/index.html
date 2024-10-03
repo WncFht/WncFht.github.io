@@ -5,7 +5,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="wnc" name="author"/>
 <link href="https://WncFht.github.io/slam/%E8%A7%86%E8%A7%89SLAM%E5%8D%81%E5%9B%9B%E8%AE%B2/" rel="canonical"/>
-<link href="../../cs61a/cs61a/" rel="prev"/>
+<link href="../../cs61c/%E8%B7%B3%E8%BD%AC%E5%92%8C%E8%BF%94%E5%9B%9E%E7%9A%84%E5%87%BD%E6%95%B0/" rel="prev"/>
 <link href="../../tygx_exp/eng_fht/" rel="next"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.5.36" name="generator"/>
@@ -13,11 +13,13 @@
 <link href="../../assets/stylesheets/main.06209087.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link href="../../css/heti.css" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css" rel="stylesheet"/>
-<link href="../../css/grid cards.css" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" rel="stylesheet"/>
-<link href="../../css/extra.css" rel="stylesheet"/>
-<link href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css" rel="stylesheet"/>
+<link href="https://cdn.tonycrane.cc/utils/katex.min.css" rel="stylesheet"/>
+<link href="https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css" rel="stylesheet"/>
+<link href="https://cdn.tonycrane.cc/lxgw/lxgwscreen.css" rel="stylesheet"/>
+<link href="../../css/custom.css" rel="stylesheet"/>
+<link href="../../css/tasklist.css" rel="stylesheet"/>
+<link href="../../css/card.css" rel="stylesheet"/>
+<link href="../../css/flink.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
@@ -34,13 +36,13 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#视觉slam十四讲">
+<a class="md-skip" href="#slam">
           跳转至
         </a>
 </div>
 <div data-md-component="announce">
 </div>
-<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<header class="md-header" data-md-component="header">
 <nav aria-label="页眉" class="md-header__inner md-grid">
 <a aria-label="wnc 的咖啡馆" class="md-header__button md-logo" data-md-component="logo" href="../.." title="wnc 的咖啡馆">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M2 21h18v-2H2M20 8h-2V5h2m0-2H4v10a4 4 0 0 0 4 4h6a4 4 0 0 0 4-4v-3h2a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2"></path></svg>
@@ -88,14 +90,10 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
 </label>
 <nav aria-label="查找" class="md-search__options">
-<a aria-label="分享" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="分享">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
-</a>
 <button aria-label="清空当前内容" class="md-search__icon md-icon" tabindex="-1" title="清空当前内容" type="reset">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
 </button>
 </nav>
-<div class="md-search__suggest" data-md-component="search-suggest"></div>
 </form>
 <div class="md-search__output">
 <div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
@@ -120,18 +118,20 @@
 </a>
 </div>
 </nav>
+</header>
+<div class="md-container" data-md-component="container">
 <nav aria-label="标签" class="md-tabs" data-md-component="tabs">
 <div class="md-grid">
 <ul class="md-tabs__list">
 <li class="md-tabs__item">
 <a class="md-tabs__link" href="../..">
-        
+          
   
     
   
   Home
 
-      </a>
+        </a>
 </li>
 <li class="md-tabs__item">
 <a class="md-tabs__link" href="../../cs61a/COMPOSING%20PROGRAMS/">
@@ -140,6 +140,16 @@
     
   
   cs61a
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../cs61c/cs61c/">
+          
+  
+    
+  
+  cs61c
 
         </a>
 </li>
@@ -186,8 +196,6 @@
 </ul>
 </div>
 </nav>
-</header>
-<div class="md-container" data-md-component="container">
 <main class="md-main" data-md-component="main">
 <div class="md-main__inner md-grid">
 <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
@@ -211,12 +219,33 @@
 </a>
 </div>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../..">
 <span class="md-ellipsis">
     Home
   </span>
 </a>
+<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+            Home
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../links/">
+<span class="md-ellipsis">
+    友链
+  </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
@@ -235,7 +264,7 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../cs61a/COMPOSING%20PROGRAMS/">
 <span class="md-ellipsis">
-    1. COMPOSING PROGRAMS
+    COMPOSING PROGRAMS
   </span>
 </a>
 </li>
@@ -249,16 +278,117 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-ellipsis">
+    cs61c
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            cs61c
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../cs61c/cs61c/">
+<span class="md-ellipsis">
+    Cs61c
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../cs61c/cs61c_lec06/">
+<span class="md-ellipsis">
+    Cs61c lec06
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../cs61c/cs61c_lec07/">
+<span class="md-ellipsis">
+    Cs61c lec07
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../cs61c/cs61c_lec08/">
+<span class="md-ellipsis">
+    Cs61c lec08
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../cs61c/cs61c_lec09/">
+<span class="md-ellipsis">
+    Cs61c lec09
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../cs61c/cs61c_lec10/">
+<span class="md-ellipsis">
+    Cs61c lec10
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../cs61c/cs61c_lec11/">
+<span class="md-ellipsis">
+    Cs61c lec11
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../cs61c/cs61c_lec12/">
+<span class="md-ellipsis">
+    Cs61c lec12
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../cs61c/cs61c_lec13/">
+<span class="md-ellipsis">
+    Cs61c lec13
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../cs61c/cs61c_lec14/">
+<span class="md-ellipsis">
+    Cs61c lec14
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../cs61c/cs61c_lec15/">
+<span class="md-ellipsis">
+    Cs61c lec15
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../cs61c/%E8%B7%B3%E8%BD%AC%E5%92%8C%E8%BF%94%E5%9B%9E%E7%9A%84%E5%87%BD%E6%95%B0/">
+<span class="md-ellipsis">
+    跳转和返回的函数
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
 <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
 <span class="md-ellipsis">
     SLAM
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_3">
+<nav aria-expanded="true" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
 <span class="md-nav__icon md-icon"></span>
             SLAM
           </label>
@@ -283,7 +413,7 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#1-预备知识">
+<a class="md-nav__link" href="#1">
 <span class="md-ellipsis">
       1 预备知识
     </span>
@@ -291,60 +421,35 @@
 <nav aria-label="1 预备知识" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#11-本书讲什么">
+<a class="md-nav__link" href="#11">
 <span class="md-ellipsis">
       1.1 本书讲什么
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#12-如何使用本书">
+<a class="md-nav__link" href="#12">
 <span class="md-ellipsis">
       1.2 如何使用本书
     </span>
 </a>
-<nav aria-label="1.2 如何使用本书" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#121-组织方式">
-<span class="md-ellipsis">
-      1.2.1 组织方式
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#122-代码">
-<span class="md-ellipsis">
-      1.2.2 代码
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#123-面向的读者">
-<span class="md-ellipsis">
-      1.2.3 面向的读者
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#13-风格约定">
+<a class="md-nav__link" href="#13">
 <span class="md-ellipsis">
       1.3 风格约定
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#14-致谢和声明">
+<a class="md-nav__link" href="#14">
 <span class="md-ellipsis">
       1.4 致谢和声明
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#15-习题">
+<a class="md-nav__link" href="#15">
 <span class="md-ellipsis">
       1.5 习题
     </span>
@@ -354,7 +459,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#2-初识-slam">
+<a class="md-nav__link" href="#2-slam">
 <span class="md-ellipsis">
       2 初识 SLAM
     </span>
@@ -362,109 +467,38 @@
 <nav aria-label="2 初识 SLAM" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#21-引子-小萝卜的例子">
+<a class="md-nav__link" href="#21">
 <span class="md-ellipsis">
       2.1 引子: 小萝卜的例子
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#22-经典视觉-slam-框架">
+<a class="md-nav__link" href="#22-slam">
 <span class="md-ellipsis">
       2.2 经典视觉 SLAM 框架
     </span>
 </a>
-<nav aria-label="2.2 经典视觉 SLAM 框架" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#221-视觉里程计">
-<span class="md-ellipsis">
-      2.2.1 视觉里程计
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#222-后端优化">
-<span class="md-ellipsis">
-      2.2.2 后端优化
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#223-回环检测">
-<span class="md-ellipsis">
-      2.2.3 回环检测
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#224-建图">
-<span class="md-ellipsis">
-      2.2.4 建图
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#23-slam-问题的数学表述">
+<a class="md-nav__link" href="#23-slam">
 <span class="md-ellipsis">
       2.3 SLAM 问题的数学表述
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#24-实践-编程基础">
+<a class="md-nav__link" href="#24">
 <span class="md-ellipsis">
       2.4 实践: 编程基础
     </span>
 </a>
-<nav aria-label="2.4 实践: 编程基础" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#241-安装-linux-操作系统">
-<span class="md-ellipsis">
-      2.4.1 安装 Linux 操作系统
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#242-hello-slam">
-<span class="md-ellipsis">
-      2.4.2 Hello SLAM
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#243-使用-cmake">
-<span class="md-ellipsis">
-      2.4.3 使用 cmake
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#244-使用库">
-<span class="md-ellipsis">
-      2.4.4 使用库
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#245-使用-ide">
-<span class="md-ellipsis">
-      2.4.5 使用 IDE
-    </span>
-</a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#3-三维空间刚体运动">
+<a class="md-nav__link" href="#3">
 <span class="md-ellipsis">
       3 三维空间刚体运动
     </span>
@@ -472,167 +506,56 @@
 <nav aria-label="3 三维空间刚体运动" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#31-旋转矩阵">
+<a class="md-nav__link" href="#31">
 <span class="md-ellipsis">
       3.1 旋转矩阵
     </span>
 </a>
-<nav aria-label="3.1 旋转矩阵" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#311-点向量和坐标系">
-<span class="md-ellipsis">
-      3.1.1 点、向量和坐标系
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#312-坐标系间的欧式变换">
-<span class="md-ellipsis">
-      3.1.2 坐标系间的欧式变换
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#313-变换矩阵与齐次坐标">
-<span class="md-ellipsis">
-      3.1.3 变换矩阵与齐次坐标
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#32-实践eigen">
+<a class="md-nav__link" href="#32-eigen">
 <span class="md-ellipsis">
       3.2 实践:Eigen
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#33-旋转向量和欧拉角">
+<a class="md-nav__link" href="#33">
 <span class="md-ellipsis">
       3.3 旋转向量和欧拉角
     </span>
 </a>
-<nav aria-label="3.3 旋转向量和欧拉角" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#331-旋转向量">
-<span class="md-ellipsis">
-      3.3.1 旋转向量
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#332-欧拉角">
-<span class="md-ellipsis">
-      3.3.2 欧拉角
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#34-四元数">
+<a class="md-nav__link" href="#34">
 <span class="md-ellipsis">
       3.4 四元数
     </span>
 </a>
-<nav aria-label="3.4 四元数" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#341-四元数的定义">
-<span class="md-ellipsis">
-      3.4.1 四元数的定义
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#342-四元数的运算">
-<span class="md-ellipsis">
-      3.4.2 四元数的运算
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#343-用四元数表示旋转">
-<span class="md-ellipsis">
-      3.4.3 用四元数表示旋转
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#344-四元数到其他旋转表示的转换">
-<span class="md-ellipsis">
-      3.4.4 四元数到其他旋转表示的转换
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#35-相似仿射射影变换">
+<a class="md-nav__link" href="#35">
 <span class="md-ellipsis">
       3.5 相似、仿射、射影变换
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#36-实践-eigen-几何模块">
+<a class="md-nav__link" href="#36-eigen">
 <span class="md-ellipsis">
       3.6 实践: Eigen 几何模块
     </span>
 </a>
-<nav aria-label="3.6 实践: Eigen 几何模块" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#361-eigen-几何模块的数据演示">
-<span class="md-ellipsis">
-      3.6.1 Eigen 几何模块的数据演示
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#362-实际的坐标变换例子">
-<span class="md-ellipsis">
-      3.6.2 实际的坐标变换例子
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#37-可视化演示">
+<a class="md-nav__link" href="#37">
 <span class="md-ellipsis">
       3.7 可视化演示
     </span>
 </a>
-<nav aria-label="3.7 可视化演示" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#371-显示运动轨迹">
-<span class="md-ellipsis">
-      3.7.1 显示运动轨迹
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#372-显示相机的位姿">
-<span class="md-ellipsis">
-      3.7.2 显示相机的位姿
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#38-习题">
+<a class="md-nav__link" href="#38">
 <span class="md-ellipsis">
       3.8 习题
     </span>
@@ -642,7 +565,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#4-李群和李代数">
+<a class="md-nav__link" href="#4">
 <span class="md-ellipsis">
       4 李群和李代数
     </span>
@@ -650,160 +573,49 @@
 <nav aria-label="4 李群和李代数" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#41-李群和李代数基础">
+<a class="md-nav__link" href="#41">
 <span class="md-ellipsis">
       4.1 李群和李代数基础
     </span>
 </a>
-<nav aria-label="4.1 李群和李代数基础" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#411-群">
-<span class="md-ellipsis">
-      4.1.1 群
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#412-李代数的引出">
-<span class="md-ellipsis">
-      4.1.2 李代数的引出
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#413-李代数的定义">
-<span class="md-ellipsis">
-      4.1.3 李代数的定义
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#414-李代数-displaystyle-mathfrakso3">
-<span class="md-ellipsis">
-      4.1.4 李代数 \(\displaystyle \mathfrak{so}(3)\)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#415-李代数-displaystyle-mathfrakse3">
-<span class="md-ellipsis">
-      4.1.5 李代数 \(\displaystyle \mathfrak{se}(3)\)
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#42-指数与对数映射">
+<a class="md-nav__link" href="#42">
 <span class="md-ellipsis">
       4.2 指数与对数映射
     </span>
 </a>
-<nav aria-label="4.2 指数与对数映射" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#421-so3上的指数映射">
-<span class="md-ellipsis">
-      4.2.1 SO(3)上的指数映射
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#422-se-3-上的指数映射">
-<span class="md-ellipsis">
-      4.2.2 SE (3) 上的指数映射
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#43-李代数求导与扰动模型">
+<a class="md-nav__link" href="#43">
 <span class="md-ellipsis">
       4.3 李代数求导与扰动模型
     </span>
 </a>
-<nav aria-label="4.3 李代数求导与扰动模型" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#431-bch-公式与近似形式">
-<span class="md-ellipsis">
-      4.3.1 BCH 公式与近似形式
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#432-so-3-上的李代数求导">
-<span class="md-ellipsis">
-      4.3.2 SO (3) 上的李代数求导
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#44-李代数求导">
+<a class="md-nav__link" href="#44">
 <span class="md-ellipsis">
       4.4 李代数求导
     </span>
 </a>
-<nav aria-label="4.4 李代数求导" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#441-扰动模型左乘">
-<span class="md-ellipsis">
-      4.4.1 扰动模型（左乘）
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#442-se-3-上的李代数求导">
-<span class="md-ellipsis">
-      4.4.2 SE (3) 上的李代数求导
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#45-实践sophus">
+<a class="md-nav__link" href="#45-sophus">
 <span class="md-ellipsis">
       4.5 实践:Sophus
     </span>
 </a>
-<nav aria-label="4.5 实践:Sophus" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#451-sophus-的基本使用方法">
-<span class="md-ellipsis">
-      4.5.1 Sophus 的基本使用方法
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#452-例子-评估轨迹的误差">
-<span class="md-ellipsis">
-      4.5.2 例子: 评估轨迹的误差
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#46-相似变换与李代数">
+<a class="md-nav__link" href="#46">
 <span class="md-ellipsis">
       4.6 相似变换与李代数
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#47-习题">
+<a class="md-nav__link" href="#47">
 <span class="md-ellipsis">
       4.7 习题
     </span>
@@ -813,7 +625,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#5-相机与图像">
+<a class="md-nav__link" href="#5">
 <span class="md-ellipsis">
       5 相机与图像
     </span>
@@ -821,103 +633,35 @@
 <nav aria-label="5 相机与图像" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#51-相机模型">
+<a class="md-nav__link" href="#51">
 <span class="md-ellipsis">
       5.1 相机模型
     </span>
 </a>
-<nav aria-label="5.1 相机模型" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#511-针孔相机模型">
-<span class="md-ellipsis">
-      5.1.1 针孔相机模型
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#512-畸变模型">
-<span class="md-ellipsis">
-      5.1.2 畸变模型
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#513-双目相机模型">
-<span class="md-ellipsis">
-      5.1.3 双目相机模型
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#514-rgb-d-相机模型">
-<span class="md-ellipsis">
-      5.1.4 RGB-D 相机模型
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#52-图像">
+<a class="md-nav__link" href="#52">
 <span class="md-ellipsis">
       5.2 图像
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#53-实践-计算机中的图像">
+<a class="md-nav__link" href="#53">
 <span class="md-ellipsis">
       5.3 实践: 计算机中的图像
     </span>
 </a>
-<nav aria-label="5.3 实践: 计算机中的图像" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#531-opencv-的基本使用方法">
-<span class="md-ellipsis">
-      5.3.1 OpenCV 的基本使用方法
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#532-图像去畸变">
-<span class="md-ellipsis">
-      5.3.2 图像去畸变
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#54-实践-3-d-视觉">
+<a class="md-nav__link" href="#54-3-d">
 <span class="md-ellipsis">
       5.4 实践: 3 D 视觉
     </span>
 </a>
-<nav aria-label="5.4 实践: 3 D 视觉" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#541-双目视觉">
-<span class="md-ellipsis">
-      5.4.1 双目视觉
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#542-rgb-d-视觉">
-<span class="md-ellipsis">
-      5.4.2 RGB-D 视觉
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#55-习题">
+<a class="md-nav__link" href="#55">
 <span class="md-ellipsis">
       5.5 习题
     </span>
@@ -927,7 +671,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#6-非线性优化">
+<a class="md-nav__link" href="#6">
 <span class="md-ellipsis">
       6 非线性优化
     </span>
@@ -935,106 +679,31 @@
 <nav aria-label="6 非线性优化" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#61-状态估计问题">
+<a class="md-nav__link" href="#61">
 <span class="md-ellipsis">
       6.1 状态估计问题
     </span>
 </a>
-<nav aria-label="6.1 状态估计问题" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#611-批量状态估计与最大后验估计">
-<span class="md-ellipsis">
-      6.1.1 批量状态估计与最大后验估计
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#612-最小二乘的引出">
-<span class="md-ellipsis">
-      6.1.2 最小二乘的引出
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#613-例子-批量状态估计">
-<span class="md-ellipsis">
-      6.1.3 例子: 批量状态估计
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#62-非线性最小二乘">
+<a class="md-nav__link" href="#62">
 <span class="md-ellipsis">
       6.2 非线性最小二乘
     </span>
 </a>
-<nav aria-label="6.2 非线性最小二乘" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#621-一阶和二阶梯度法">
-<span class="md-ellipsis">
-      6.2.1 一阶和二阶梯度法
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#622-高斯牛顿法">
-<span class="md-ellipsis">
-      6.2.2 高斯牛顿法
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#623-列文伯格马夸尔特方法">
-<span class="md-ellipsis">
-      6.2.3 列文伯格——马夸尔特方法
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#63-实践-曲线拟合问题">
+<a class="md-nav__link" href="#63">
 <span class="md-ellipsis">
       6.3 实践: 曲线拟合问题
     </span>
 </a>
-<nav aria-label="6.3 实践: 曲线拟合问题" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#631-手写高斯牛顿法">
-<span class="md-ellipsis">
-      6.3.1 手写高斯牛顿法
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#632-使用-ceres-进行曲线拟合">
-<span class="md-ellipsis">
-      6.3.2 使用 Ceres 进行曲线拟合
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#633-使用-g2o进行曲线拟合">
-<span class="md-ellipsis">
-      6.3.3 使用 g2o进行曲线拟合
-    </span>
-</a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#7-视觉里程计-1">
+<a class="md-nav__link" href="#7-1">
 <span class="md-ellipsis">
       7 视觉里程计 1
     </span>
@@ -1042,106 +711,31 @@
 <nav aria-label="7 视觉里程计 1" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#71-特征点法">
+<a class="md-nav__link" href="#71">
 <span class="md-ellipsis">
       7.1 特征点法
     </span>
 </a>
-<nav aria-label="7.1 特征点法" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#711-特征点">
-<span class="md-ellipsis">
-      7.1.1 特征点
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#712-orb-特征">
-<span class="md-ellipsis">
-      7.1.2 ORB 特征
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#713-特征匹配">
-<span class="md-ellipsis">
-      7.1.3 特征匹配
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#72-实践-特征提取和匹配">
+<a class="md-nav__link" href="#72">
 <span class="md-ellipsis">
       7.2 实践: 特征提取和匹配
     </span>
 </a>
-<nav aria-label="7.2 实践: 特征提取和匹配" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#721-opencv-的-orb-特征">
-<span class="md-ellipsis">
-      7.2.1 OpenCV 的 ORB 特征
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#722-手写-orb-特征">
-<span class="md-ellipsis">
-      7.2.2 手写 ORB 特征
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#723-计算相机运动">
-<span class="md-ellipsis">
-      7.2.3 计算相机运动
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#73-d-2-d-对极几何">
+<a class="md-nav__link" href="#73-d-2-d">
 <span class="md-ellipsis">
       7.3 D-2 D: 对极几何
     </span>
 </a>
-<nav aria-label="7.3 D-2 D: 对极几何" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#731-对极约束">
-<span class="md-ellipsis">
-      7.3.1 对极约束
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#732-本质矩阵">
-<span class="md-ellipsis">
-      7.3.2 本质矩阵
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#733-单应矩阵">
-<span class="md-ellipsis">
-      7.3.3 单应矩阵
-    </span>
-</a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#8-视觉里程计-2">
+<a class="md-nav__link" href="#8-2">
 <span class="md-ellipsis">
       8 视觉里程计 2
     </span>
@@ -1149,120 +743,45 @@
 <nav aria-label="8 视觉里程计 2" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#81-直接法的引出">
+<a class="md-nav__link" href="#81">
 <span class="md-ellipsis">
       8.1 直接法的引出
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#82-d-光流">
+<a class="md-nav__link" href="#82-d">
 <span class="md-ellipsis">
       8.2 D 光流
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#83-实践-lk-光流">
+<a class="md-nav__link" href="#83-lk">
 <span class="md-ellipsis">
       8.3 实践: LK 光流
     </span>
 </a>
-<nav aria-label="8.3 实践: LK 光流" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#831-使用-lk-光流">
-<span class="md-ellipsis">
-      8.3.1 使用 LK 光流
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#832-用高斯牛顿法实现光流">
-<span class="md-ellipsis">
-      8.3.2 用高斯牛顿法实现光流
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#833-光流实践小结">
-<span class="md-ellipsis">
-      8.3.3 光流实践小结
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#84-直接法">
+<a class="md-nav__link" href="#84">
 <span class="md-ellipsis">
       8.4 直接法
     </span>
 </a>
-<nav aria-label="8.4 直接法" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#841-直接法的推导">
-<span class="md-ellipsis">
-      8.4.1 直接法的推导
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#842-直接法的讨论">
-<span class="md-ellipsis">
-      8.4.2 直接法的讨论
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#85-实践-直接法">
+<a class="md-nav__link" href="#85">
 <span class="md-ellipsis">
       8.5 实践: 直接法
     </span>
 </a>
-<nav aria-label="8.5 实践: 直接法" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#851-单层直接法">
-<span class="md-ellipsis">
-      8.5.1 单层直接法
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#852-多层直接法">
-<span class="md-ellipsis">
-      8.5.2 多层直接法
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#853-结果讨论">
-<span class="md-ellipsis">
-      8.5.3 结果讨论
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#854-直接法优缺点总结">
-<span class="md-ellipsis">
-      8.5.4 直接法优缺点总结
-    </span>
-</a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#9-后端-1">
+<a class="md-nav__link" href="#9-1">
 <span class="md-ellipsis">
       9 后端 1
     </span>
@@ -1270,117 +789,35 @@
 <nav aria-label="9 后端 1" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#91-概述">
+<a class="md-nav__link" href="#91">
 <span class="md-ellipsis">
       9.1 概述
     </span>
 </a>
-<nav aria-label="9.1 概述" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#911-状态估计的概率解释">
-<span class="md-ellipsis">
-      9.1.1 状态估计的概率解释
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#912-线性系统和-kf">
-<span class="md-ellipsis">
-      9.1.2 线性系统和 KF
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#913-非线性系统和-ekf">
-<span class="md-ellipsis">
-      9.1.3 非线性系统和 EKF
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#914-ekf-的讨论">
-<span class="md-ellipsis">
-      9.1.4 EKF 的讨论
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#92-ba-与图优化">
+<a class="md-nav__link" href="#92-ba">
 <span class="md-ellipsis">
       9.2 BA 与图优化
     </span>
 </a>
-<nav aria-label="9.2 BA 与图优化" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#921-投影模型和-ba-代价函数">
-<span class="md-ellipsis">
-      9.2.1 投影模型和 BA 代价函数
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#922-ba-的求解">
-<span class="md-ellipsis">
-      9.2.2 BA 的求解
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#923-稀疏性和边缘化">
-<span class="md-ellipsis">
-      9.2.3 稀疏性和边缘化
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#924-鲁棒核函数">
-<span class="md-ellipsis">
-      9.2.4 鲁棒核函数
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#93-实践-ceres-ba">
+<a class="md-nav__link" href="#93-ceres-ba">
 <span class="md-ellipsis">
       9.3 实践: Ceres BA
     </span>
 </a>
-<nav aria-label="9.3 实践: Ceres BA" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#931-bal-数据集">
-<span class="md-ellipsis">
-      9.3.1 BAL 数据集
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#932-ceres-ba-的书写">
-<span class="md-ellipsis">
-      9.3.2 Ceres BA 的书写
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#94-实践-g-2-o-求解-ba">
+<a class="md-nav__link" href="#94-g-2-o-ba">
 <span class="md-ellipsis">
       9.4 实践: g 2 o 求解 BA
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#95-小结">
+<a class="md-nav__link" href="#95">
 <span class="md-ellipsis">
       9.5 小结
     </span>
@@ -1390,35 +827,35 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#10-后端-2">
+<a class="md-nav__link" href="#10-2">
 <span class="md-ellipsis">
       10 后端 2
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#11-回环检测">
+<a class="md-nav__link" href="#11_1">
 <span class="md-ellipsis">
       11 回环检测
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#12-建图">
+<a class="md-nav__link" href="#12_1">
 <span class="md-ellipsis">
       12 建图
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#13-实践-设计-slam-系统">
+<a class="md-nav__link" href="#13-slam">
 <span class="md-ellipsis">
       13 实践: 设计 SLAM 系统
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#14-slam-现在与未来">
+<a class="md-nav__link" href="#14-slam">
 <span class="md-ellipsis">
       14 SLAM: 现在与未来
     </span>
@@ -1431,15 +868,15 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
 <span class="md-ellipsis">
     天元公学生存指南
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_4">
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
 <span class="md-nav__icon md-icon"></span>
             天元公学生存指南
           </label>
@@ -1483,15 +920,15 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
-<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
 <span class="md-ellipsis">
     动手学深度学习
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_5">
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
 <span class="md-nav__icon md-icon"></span>
             动手学深度学习
           </label>
@@ -1507,15 +944,15 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
-<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
 <span class="md-ellipsis">
     总结
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_6">
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
 <span class="md-nav__icon md-icon"></span>
             总结
           </label>
@@ -1545,7 +982,7 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#1-预备知识">
+<a class="md-nav__link" href="#1">
 <span class="md-ellipsis">
       1 预备知识
     </span>
@@ -1553,60 +990,35 @@
 <nav aria-label="1 预备知识" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#11-本书讲什么">
+<a class="md-nav__link" href="#11">
 <span class="md-ellipsis">
       1.1 本书讲什么
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#12-如何使用本书">
+<a class="md-nav__link" href="#12">
 <span class="md-ellipsis">
       1.2 如何使用本书
     </span>
 </a>
-<nav aria-label="1.2 如何使用本书" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#121-组织方式">
-<span class="md-ellipsis">
-      1.2.1 组织方式
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#122-代码">
-<span class="md-ellipsis">
-      1.2.2 代码
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#123-面向的读者">
-<span class="md-ellipsis">
-      1.2.3 面向的读者
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#13-风格约定">
+<a class="md-nav__link" href="#13">
 <span class="md-ellipsis">
       1.3 风格约定
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#14-致谢和声明">
+<a class="md-nav__link" href="#14">
 <span class="md-ellipsis">
       1.4 致谢和声明
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#15-习题">
+<a class="md-nav__link" href="#15">
 <span class="md-ellipsis">
       1.5 习题
     </span>
@@ -1616,7 +1028,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#2-初识-slam">
+<a class="md-nav__link" href="#2-slam">
 <span class="md-ellipsis">
       2 初识 SLAM
     </span>
@@ -1624,109 +1036,38 @@
 <nav aria-label="2 初识 SLAM" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#21-引子-小萝卜的例子">
+<a class="md-nav__link" href="#21">
 <span class="md-ellipsis">
       2.1 引子: 小萝卜的例子
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#22-经典视觉-slam-框架">
+<a class="md-nav__link" href="#22-slam">
 <span class="md-ellipsis">
       2.2 经典视觉 SLAM 框架
     </span>
 </a>
-<nav aria-label="2.2 经典视觉 SLAM 框架" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#221-视觉里程计">
-<span class="md-ellipsis">
-      2.2.1 视觉里程计
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#222-后端优化">
-<span class="md-ellipsis">
-      2.2.2 后端优化
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#223-回环检测">
-<span class="md-ellipsis">
-      2.2.3 回环检测
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#224-建图">
-<span class="md-ellipsis">
-      2.2.4 建图
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#23-slam-问题的数学表述">
+<a class="md-nav__link" href="#23-slam">
 <span class="md-ellipsis">
       2.3 SLAM 问题的数学表述
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#24-实践-编程基础">
+<a class="md-nav__link" href="#24">
 <span class="md-ellipsis">
       2.4 实践: 编程基础
     </span>
 </a>
-<nav aria-label="2.4 实践: 编程基础" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#241-安装-linux-操作系统">
-<span class="md-ellipsis">
-      2.4.1 安装 Linux 操作系统
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#242-hello-slam">
-<span class="md-ellipsis">
-      2.4.2 Hello SLAM
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#243-使用-cmake">
-<span class="md-ellipsis">
-      2.4.3 使用 cmake
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#244-使用库">
-<span class="md-ellipsis">
-      2.4.4 使用库
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#245-使用-ide">
-<span class="md-ellipsis">
-      2.4.5 使用 IDE
-    </span>
-</a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#3-三维空间刚体运动">
+<a class="md-nav__link" href="#3">
 <span class="md-ellipsis">
       3 三维空间刚体运动
     </span>
@@ -1734,167 +1075,56 @@
 <nav aria-label="3 三维空间刚体运动" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#31-旋转矩阵">
+<a class="md-nav__link" href="#31">
 <span class="md-ellipsis">
       3.1 旋转矩阵
     </span>
 </a>
-<nav aria-label="3.1 旋转矩阵" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#311-点向量和坐标系">
-<span class="md-ellipsis">
-      3.1.1 点、向量和坐标系
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#312-坐标系间的欧式变换">
-<span class="md-ellipsis">
-      3.1.2 坐标系间的欧式变换
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#313-变换矩阵与齐次坐标">
-<span class="md-ellipsis">
-      3.1.3 变换矩阵与齐次坐标
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#32-实践eigen">
+<a class="md-nav__link" href="#32-eigen">
 <span class="md-ellipsis">
       3.2 实践:Eigen
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#33-旋转向量和欧拉角">
+<a class="md-nav__link" href="#33">
 <span class="md-ellipsis">
       3.3 旋转向量和欧拉角
     </span>
 </a>
-<nav aria-label="3.3 旋转向量和欧拉角" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#331-旋转向量">
-<span class="md-ellipsis">
-      3.3.1 旋转向量
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#332-欧拉角">
-<span class="md-ellipsis">
-      3.3.2 欧拉角
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#34-四元数">
+<a class="md-nav__link" href="#34">
 <span class="md-ellipsis">
       3.4 四元数
     </span>
 </a>
-<nav aria-label="3.4 四元数" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#341-四元数的定义">
-<span class="md-ellipsis">
-      3.4.1 四元数的定义
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#342-四元数的运算">
-<span class="md-ellipsis">
-      3.4.2 四元数的运算
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#343-用四元数表示旋转">
-<span class="md-ellipsis">
-      3.4.3 用四元数表示旋转
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#344-四元数到其他旋转表示的转换">
-<span class="md-ellipsis">
-      3.4.4 四元数到其他旋转表示的转换
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#35-相似仿射射影变换">
+<a class="md-nav__link" href="#35">
 <span class="md-ellipsis">
       3.5 相似、仿射、射影变换
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#36-实践-eigen-几何模块">
+<a class="md-nav__link" href="#36-eigen">
 <span class="md-ellipsis">
       3.6 实践: Eigen 几何模块
     </span>
 </a>
-<nav aria-label="3.6 实践: Eigen 几何模块" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#361-eigen-几何模块的数据演示">
-<span class="md-ellipsis">
-      3.6.1 Eigen 几何模块的数据演示
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#362-实际的坐标变换例子">
-<span class="md-ellipsis">
-      3.6.2 实际的坐标变换例子
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#37-可视化演示">
+<a class="md-nav__link" href="#37">
 <span class="md-ellipsis">
       3.7 可视化演示
     </span>
 </a>
-<nav aria-label="3.7 可视化演示" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#371-显示运动轨迹">
-<span class="md-ellipsis">
-      3.7.1 显示运动轨迹
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#372-显示相机的位姿">
-<span class="md-ellipsis">
-      3.7.2 显示相机的位姿
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#38-习题">
+<a class="md-nav__link" href="#38">
 <span class="md-ellipsis">
       3.8 习题
     </span>
@@ -1904,7 +1134,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#4-李群和李代数">
+<a class="md-nav__link" href="#4">
 <span class="md-ellipsis">
       4 李群和李代数
     </span>
@@ -1912,160 +1142,49 @@
 <nav aria-label="4 李群和李代数" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#41-李群和李代数基础">
+<a class="md-nav__link" href="#41">
 <span class="md-ellipsis">
       4.1 李群和李代数基础
     </span>
 </a>
-<nav aria-label="4.1 李群和李代数基础" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#411-群">
-<span class="md-ellipsis">
-      4.1.1 群
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#412-李代数的引出">
-<span class="md-ellipsis">
-      4.1.2 李代数的引出
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#413-李代数的定义">
-<span class="md-ellipsis">
-      4.1.3 李代数的定义
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#414-李代数-displaystyle-mathfrakso3">
-<span class="md-ellipsis">
-      4.1.4 李代数 \(\displaystyle \mathfrak{so}(3)\)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#415-李代数-displaystyle-mathfrakse3">
-<span class="md-ellipsis">
-      4.1.5 李代数 \(\displaystyle \mathfrak{se}(3)\)
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#42-指数与对数映射">
+<a class="md-nav__link" href="#42">
 <span class="md-ellipsis">
       4.2 指数与对数映射
     </span>
 </a>
-<nav aria-label="4.2 指数与对数映射" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#421-so3上的指数映射">
-<span class="md-ellipsis">
-      4.2.1 SO(3)上的指数映射
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#422-se-3-上的指数映射">
-<span class="md-ellipsis">
-      4.2.2 SE (3) 上的指数映射
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#43-李代数求导与扰动模型">
+<a class="md-nav__link" href="#43">
 <span class="md-ellipsis">
       4.3 李代数求导与扰动模型
     </span>
 </a>
-<nav aria-label="4.3 李代数求导与扰动模型" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#431-bch-公式与近似形式">
-<span class="md-ellipsis">
-      4.3.1 BCH 公式与近似形式
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#432-so-3-上的李代数求导">
-<span class="md-ellipsis">
-      4.3.2 SO (3) 上的李代数求导
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#44-李代数求导">
+<a class="md-nav__link" href="#44">
 <span class="md-ellipsis">
       4.4 李代数求导
     </span>
 </a>
-<nav aria-label="4.4 李代数求导" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#441-扰动模型左乘">
-<span class="md-ellipsis">
-      4.4.1 扰动模型（左乘）
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#442-se-3-上的李代数求导">
-<span class="md-ellipsis">
-      4.4.2 SE (3) 上的李代数求导
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#45-实践sophus">
+<a class="md-nav__link" href="#45-sophus">
 <span class="md-ellipsis">
       4.5 实践:Sophus
     </span>
 </a>
-<nav aria-label="4.5 实践:Sophus" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#451-sophus-的基本使用方法">
-<span class="md-ellipsis">
-      4.5.1 Sophus 的基本使用方法
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#452-例子-评估轨迹的误差">
-<span class="md-ellipsis">
-      4.5.2 例子: 评估轨迹的误差
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#46-相似变换与李代数">
+<a class="md-nav__link" href="#46">
 <span class="md-ellipsis">
       4.6 相似变换与李代数
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#47-习题">
+<a class="md-nav__link" href="#47">
 <span class="md-ellipsis">
       4.7 习题
     </span>
@@ -2075,7 +1194,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#5-相机与图像">
+<a class="md-nav__link" href="#5">
 <span class="md-ellipsis">
       5 相机与图像
     </span>
@@ -2083,103 +1202,35 @@
 <nav aria-label="5 相机与图像" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#51-相机模型">
+<a class="md-nav__link" href="#51">
 <span class="md-ellipsis">
       5.1 相机模型
     </span>
 </a>
-<nav aria-label="5.1 相机模型" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#511-针孔相机模型">
-<span class="md-ellipsis">
-      5.1.1 针孔相机模型
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#512-畸变模型">
-<span class="md-ellipsis">
-      5.1.2 畸变模型
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#513-双目相机模型">
-<span class="md-ellipsis">
-      5.1.3 双目相机模型
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#514-rgb-d-相机模型">
-<span class="md-ellipsis">
-      5.1.4 RGB-D 相机模型
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#52-图像">
+<a class="md-nav__link" href="#52">
 <span class="md-ellipsis">
       5.2 图像
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#53-实践-计算机中的图像">
+<a class="md-nav__link" href="#53">
 <span class="md-ellipsis">
       5.3 实践: 计算机中的图像
     </span>
 </a>
-<nav aria-label="5.3 实践: 计算机中的图像" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#531-opencv-的基本使用方法">
-<span class="md-ellipsis">
-      5.3.1 OpenCV 的基本使用方法
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#532-图像去畸变">
-<span class="md-ellipsis">
-      5.3.2 图像去畸变
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#54-实践-3-d-视觉">
+<a class="md-nav__link" href="#54-3-d">
 <span class="md-ellipsis">
       5.4 实践: 3 D 视觉
     </span>
 </a>
-<nav aria-label="5.4 实践: 3 D 视觉" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#541-双目视觉">
-<span class="md-ellipsis">
-      5.4.1 双目视觉
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#542-rgb-d-视觉">
-<span class="md-ellipsis">
-      5.4.2 RGB-D 视觉
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#55-习题">
+<a class="md-nav__link" href="#55">
 <span class="md-ellipsis">
       5.5 习题
     </span>
@@ -2189,7 +1240,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#6-非线性优化">
+<a class="md-nav__link" href="#6">
 <span class="md-ellipsis">
       6 非线性优化
     </span>
@@ -2197,106 +1248,31 @@
 <nav aria-label="6 非线性优化" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#61-状态估计问题">
+<a class="md-nav__link" href="#61">
 <span class="md-ellipsis">
       6.1 状态估计问题
     </span>
 </a>
-<nav aria-label="6.1 状态估计问题" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#611-批量状态估计与最大后验估计">
-<span class="md-ellipsis">
-      6.1.1 批量状态估计与最大后验估计
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#612-最小二乘的引出">
-<span class="md-ellipsis">
-      6.1.2 最小二乘的引出
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#613-例子-批量状态估计">
-<span class="md-ellipsis">
-      6.1.3 例子: 批量状态估计
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#62-非线性最小二乘">
+<a class="md-nav__link" href="#62">
 <span class="md-ellipsis">
       6.2 非线性最小二乘
     </span>
 </a>
-<nav aria-label="6.2 非线性最小二乘" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#621-一阶和二阶梯度法">
-<span class="md-ellipsis">
-      6.2.1 一阶和二阶梯度法
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#622-高斯牛顿法">
-<span class="md-ellipsis">
-      6.2.2 高斯牛顿法
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#623-列文伯格马夸尔特方法">
-<span class="md-ellipsis">
-      6.2.3 列文伯格——马夸尔特方法
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#63-实践-曲线拟合问题">
+<a class="md-nav__link" href="#63">
 <span class="md-ellipsis">
       6.3 实践: 曲线拟合问题
     </span>
 </a>
-<nav aria-label="6.3 实践: 曲线拟合问题" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#631-手写高斯牛顿法">
-<span class="md-ellipsis">
-      6.3.1 手写高斯牛顿法
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#632-使用-ceres-进行曲线拟合">
-<span class="md-ellipsis">
-      6.3.2 使用 Ceres 进行曲线拟合
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#633-使用-g2o进行曲线拟合">
-<span class="md-ellipsis">
-      6.3.3 使用 g2o进行曲线拟合
-    </span>
-</a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#7-视觉里程计-1">
+<a class="md-nav__link" href="#7-1">
 <span class="md-ellipsis">
       7 视觉里程计 1
     </span>
@@ -2304,106 +1280,31 @@
 <nav aria-label="7 视觉里程计 1" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#71-特征点法">
+<a class="md-nav__link" href="#71">
 <span class="md-ellipsis">
       7.1 特征点法
     </span>
 </a>
-<nav aria-label="7.1 特征点法" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#711-特征点">
-<span class="md-ellipsis">
-      7.1.1 特征点
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#712-orb-特征">
-<span class="md-ellipsis">
-      7.1.2 ORB 特征
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#713-特征匹配">
-<span class="md-ellipsis">
-      7.1.3 特征匹配
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#72-实践-特征提取和匹配">
+<a class="md-nav__link" href="#72">
 <span class="md-ellipsis">
       7.2 实践: 特征提取和匹配
     </span>
 </a>
-<nav aria-label="7.2 实践: 特征提取和匹配" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#721-opencv-的-orb-特征">
-<span class="md-ellipsis">
-      7.2.1 OpenCV 的 ORB 特征
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#722-手写-orb-特征">
-<span class="md-ellipsis">
-      7.2.2 手写 ORB 特征
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#723-计算相机运动">
-<span class="md-ellipsis">
-      7.2.3 计算相机运动
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#73-d-2-d-对极几何">
+<a class="md-nav__link" href="#73-d-2-d">
 <span class="md-ellipsis">
       7.3 D-2 D: 对极几何
     </span>
 </a>
-<nav aria-label="7.3 D-2 D: 对极几何" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#731-对极约束">
-<span class="md-ellipsis">
-      7.3.1 对极约束
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#732-本质矩阵">
-<span class="md-ellipsis">
-      7.3.2 本质矩阵
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#733-单应矩阵">
-<span class="md-ellipsis">
-      7.3.3 单应矩阵
-    </span>
-</a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#8-视觉里程计-2">
+<a class="md-nav__link" href="#8-2">
 <span class="md-ellipsis">
       8 视觉里程计 2
     </span>
@@ -2411,120 +1312,45 @@
 <nav aria-label="8 视觉里程计 2" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#81-直接法的引出">
+<a class="md-nav__link" href="#81">
 <span class="md-ellipsis">
       8.1 直接法的引出
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#82-d-光流">
+<a class="md-nav__link" href="#82-d">
 <span class="md-ellipsis">
       8.2 D 光流
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#83-实践-lk-光流">
+<a class="md-nav__link" href="#83-lk">
 <span class="md-ellipsis">
       8.3 实践: LK 光流
     </span>
 </a>
-<nav aria-label="8.3 实践: LK 光流" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#831-使用-lk-光流">
-<span class="md-ellipsis">
-      8.3.1 使用 LK 光流
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#832-用高斯牛顿法实现光流">
-<span class="md-ellipsis">
-      8.3.2 用高斯牛顿法实现光流
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#833-光流实践小结">
-<span class="md-ellipsis">
-      8.3.3 光流实践小结
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#84-直接法">
+<a class="md-nav__link" href="#84">
 <span class="md-ellipsis">
       8.4 直接法
     </span>
 </a>
-<nav aria-label="8.4 直接法" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#841-直接法的推导">
-<span class="md-ellipsis">
-      8.4.1 直接法的推导
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#842-直接法的讨论">
-<span class="md-ellipsis">
-      8.4.2 直接法的讨论
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#85-实践-直接法">
+<a class="md-nav__link" href="#85">
 <span class="md-ellipsis">
       8.5 实践: 直接法
     </span>
 </a>
-<nav aria-label="8.5 实践: 直接法" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#851-单层直接法">
-<span class="md-ellipsis">
-      8.5.1 单层直接法
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#852-多层直接法">
-<span class="md-ellipsis">
-      8.5.2 多层直接法
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#853-结果讨论">
-<span class="md-ellipsis">
-      8.5.3 结果讨论
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#854-直接法优缺点总结">
-<span class="md-ellipsis">
-      8.5.4 直接法优缺点总结
-    </span>
-</a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#9-后端-1">
+<a class="md-nav__link" href="#9-1">
 <span class="md-ellipsis">
       9 后端 1
     </span>
@@ -2532,117 +1358,35 @@
 <nav aria-label="9 后端 1" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#91-概述">
+<a class="md-nav__link" href="#91">
 <span class="md-ellipsis">
       9.1 概述
     </span>
 </a>
-<nav aria-label="9.1 概述" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#911-状态估计的概率解释">
-<span class="md-ellipsis">
-      9.1.1 状态估计的概率解释
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#912-线性系统和-kf">
-<span class="md-ellipsis">
-      9.1.2 线性系统和 KF
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#913-非线性系统和-ekf">
-<span class="md-ellipsis">
-      9.1.3 非线性系统和 EKF
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#914-ekf-的讨论">
-<span class="md-ellipsis">
-      9.1.4 EKF 的讨论
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#92-ba-与图优化">
+<a class="md-nav__link" href="#92-ba">
 <span class="md-ellipsis">
       9.2 BA 与图优化
     </span>
 </a>
-<nav aria-label="9.2 BA 与图优化" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#921-投影模型和-ba-代价函数">
-<span class="md-ellipsis">
-      9.2.1 投影模型和 BA 代价函数
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#922-ba-的求解">
-<span class="md-ellipsis">
-      9.2.2 BA 的求解
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#923-稀疏性和边缘化">
-<span class="md-ellipsis">
-      9.2.3 稀疏性和边缘化
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#924-鲁棒核函数">
-<span class="md-ellipsis">
-      9.2.4 鲁棒核函数
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#93-实践-ceres-ba">
+<a class="md-nav__link" href="#93-ceres-ba">
 <span class="md-ellipsis">
       9.3 实践: Ceres BA
     </span>
 </a>
-<nav aria-label="9.3 实践: Ceres BA" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#931-bal-数据集">
-<span class="md-ellipsis">
-      9.3.1 BAL 数据集
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#932-ceres-ba-的书写">
-<span class="md-ellipsis">
-      9.3.2 Ceres BA 的书写
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#94-实践-g-2-o-求解-ba">
+<a class="md-nav__link" href="#94-g-2-o-ba">
 <span class="md-ellipsis">
       9.4 实践: g 2 o 求解 BA
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#95-小结">
+<a class="md-nav__link" href="#95">
 <span class="md-ellipsis">
       9.5 小结
     </span>
@@ -2652,35 +1396,35 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#10-后端-2">
+<a class="md-nav__link" href="#10-2">
 <span class="md-ellipsis">
       10 后端 2
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#11-回环检测">
+<a class="md-nav__link" href="#11_1">
 <span class="md-ellipsis">
       11 回环检测
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#12-建图">
+<a class="md-nav__link" href="#12_1">
 <span class="md-ellipsis">
       12 建图
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#13-实践-设计-slam-系统">
+<a class="md-nav__link" href="#13-slam">
 <span class="md-ellipsis">
       13 实践: 设计 SLAM 系统
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#14-slam-现在与未来">
+<a class="md-nav__link" href="#14-slam">
 <span class="md-ellipsis">
       14 SLAM: 现在与未来
     </span>
@@ -2693,10 +1437,10 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/WncFht/WncFht.github.io/raw/master/docs/slam/视觉SLAM十四讲.md" title="查看本页的源代码">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"></path></svg>
+<a class="md-content__button md-icon" href="https://github.com/WncFht/WncFht.github.io/edit/master/docs/slam/视觉SLAM十四讲.md" title="edit.link.title">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"></path></svg>
 </a>
-<h1 id="视觉slam十四讲">视觉<span class="heti-skip"><span class="heti-spacing"> </span>SLAM<span class="heti-spacing"> </span></span>十四讲<a class="headerlink" href="#视觉slam十四讲" title="Permanent link"></a></h1>
+<h1 id="slam">视觉<span class="heti-skip"><span class="heti-spacing"> </span>SLAM<span class="heti-spacing"> </span></span>十四讲<a class="headerlink" href="#slam" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h1>
 <details class="abstract" open="open">
 <summary>本页统计信息</summary>
 <ul>
@@ -2708,8 +1452,8 @@
 </li>
 </ul>
 </details>
-<h2 id="1-预备知识"><span>1<span class="heti-spacing"> </span></span>预备知识<a class="headerlink" href="#1-预备知识" title="Permanent link"></a></h2>
-<h3 id="11-本书讲什么"><span>1.1<span class="heti-spacing"> </span></span>本书讲什么<a class="headerlink" href="#11-本书讲什么" title="Permanent link"></a></h3>
+<h2 id="1"><span>1<span class="heti-spacing"> </span></span>预备知识<a class="headerlink" href="#1" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h2>
+<h3 id="11"><span>1.1<span class="heti-spacing"> </span></span>本书讲什么<a class="headerlink" href="#11" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
 <p>simultaneous localization and mapping</p>
 <ul>
 <li>定位</li>
@@ -2722,8 +1466,8 @@
 </ul>
 </li>
 </ul>
-<h3 id="12-如何使用本书"><span>1.2<span class="heti-spacing"> </span></span>如何使用本书<a class="headerlink" href="#12-如何使用本书" title="Permanent link"></a></h3>
-<h4 id="121-组织方式"><span>1.2.1<span class="heti-spacing"> </span></span>组织方式<a class="headerlink" href="#121-组织方式" title="Permanent link"></a></h4>
+<h3 id="12"><span>1.2<span class="heti-spacing"> </span></span>如何使用本书<a class="headerlink" href="#12" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h4 id="121"><span>1.2.1<span class="heti-spacing"> </span></span>组织方式<a class="headerlink" href="#121" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <ul>
 <li>数学基础篇<ul>
 <li><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="80%" href="https://cdn.jsdelivr.net/gh/WncFht/picture/202408312335787.png"><img alt="QQ_1725118522621.png" src="https://cdn.jsdelivr.net/gh/WncFht/picture/202408312335787.png"/></a></li>
@@ -2734,9 +1478,9 @@
 </ul>
 </li>
 </ul>
-<h4 id="122-代码"><span>1.2.2<span class="heti-spacing"> </span></span>代码<a class="headerlink" href="#122-代码" title="Permanent link"></a></h4>
+<h4 id="122"><span>1.2.2<span class="heti-spacing"> </span></span>代码<a class="headerlink" href="#122" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <p><a href="https://github.com/gaoxiang12/slambook2">GitHub - gaoxiang12/slambook2: edition 2 of the slambook</a></p>
-<h4 id="123-面向的读者"><span>1.2.3<span class="heti-spacing"> </span></span>面向的读者<a class="headerlink" href="#123-面向的读者" title="Permanent link"></a></h4>
+<h4 id="123"><span>1.2.3<span class="heti-spacing"> </span></span>面向的读者<a class="headerlink" href="#123" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <ul>
 <li>基础知识<span><span class="heti-spacing"> </span>:</span><ul>
 <li>高数线代概率论</li>
@@ -2745,9 +1489,9 @@
 </ul>
 </li>
 </ul>
-<h3 id="13-风格约定"><span>1.3<span class="heti-spacing"> </span></span>风格约定<a class="headerlink" href="#13-风格约定" title="Permanent link"></a></h3>
-<h3 id="14-致谢和声明"><span>1.4<span class="heti-spacing"> </span></span>致谢和声明<a class="headerlink" href="#14-致谢和声明" title="Permanent link"></a></h3>
-<h3 id="15-习题"><span>1.5<span class="heti-spacing"> </span></span>习题<a class="headerlink" href="#15-习题" title="Permanent link"></a></h3>
+<h3 id="13"><span>1.3<span class="heti-spacing"> </span></span>风格约定<a class="headerlink" href="#13" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h3 id="14"><span>1.4<span class="heti-spacing"> </span></span>致谢和声明<a class="headerlink" href="#14" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h3 id="15"><span>1.5<span class="heti-spacing"> </span></span>习题<a class="headerlink" href="#15" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
 <ul>
 <li><strong>题目</strong>：有线性方程<span><span class="heti-spacing"> </span><span class="arithmatex">\(A x=b\)</span></span>，若已知<span><span class="heti-spacing"> </span><span class="arithmatex">\(A, b\)</span></span>，需要求解<span><span class="heti-spacing"> </span>x</span>，该如何求解？这对<span class="heti-skip"><span class="heti-spacing"> </span>A<span class="heti-spacing"> </span></span>和<span class="heti-skip"><span class="heti-spacing"> </span>b<span class="heti-spacing"> </span></span>有哪些要求？提示：从<span class="heti-skip"><span class="heti-spacing"> </span>A<span class="heti-spacing"> </span></span>的维度和秩角度来分析。</li>
 <li><strong>答案</strong>：线性方程组<span class="heti-skip"><span class="heti-spacing"> </span><span class="arithmatex">\(Ax = b\)</span><span class="heti-spacing"> </span></span>可以通过多种方法求解，如高斯消元法、矩阵逆法等。要求<span class="heti-skip"><span class="heti-spacing"> </span><span class="arithmatex">\(A\)</span><span class="heti-spacing"> </span></span>是一个方阵且可逆（即<span class="heti-skip"><span class="heti-spacing"> </span><span class="arithmatex">\(A\)</span><span class="heti-spacing"> </span></span>的行列式不为零<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，这样方程才有唯一解。如果<span class="heti-skip"><span class="heti-spacing"> </span><span class="arithmatex">\(A\)</span><span class="heti-spacing"> </span></span>不是方阵，需要<span class="heti-skip"><span class="heti-spacing"> </span><span class="arithmatex">\(A\)</span><span class="heti-spacing"> </span></span>的秩等于列数且等于增广矩阵<span class="heti-skip"><span class="heti-spacing"> </span><span class="arithmatex">\(\displaystyle [A|b]\)</span><span class="heti-spacing"> </span></span>的秩，这样方程组才有解。</li>
@@ -2766,8 +1510,8 @@
 </ul>
 </li>
 </ul>
-<h2 id="2-初识-slam"><span>2<span class="heti-spacing"> </span></span>初识<span><span class="heti-spacing"> </span>SLAM</span><a class="headerlink" href="#2-初识-slam" title="Permanent link"></a></h2>
-<h3 id="21-引子-小萝卜的例子"><span>2.1<span class="heti-spacing"> </span></span>引子<span class="heti-skip"><span class="heti-spacing"> </span>:<span class="heti-spacing"> </span></span>小萝卜的例子<a class="headerlink" href="#21-引子-小萝卜的例子" title="Permanent link"></a></h3>
+<h2 id="2-slam"><span>2<span class="heti-spacing"> </span></span>初识<span><span class="heti-spacing"> </span>SLAM</span><a class="headerlink" href="#2-slam" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h2>
+<h3 id="21"><span>2.1<span class="heti-spacing"> </span></span>引子<span class="heti-skip"><span class="heti-spacing"> </span>:<span class="heti-spacing"> </span></span>小萝卜的例子<a class="headerlink" href="#21" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
 <ul>
 <li>自主运动能力</li>
 <li>感知周边环境<ul>
@@ -2810,17 +1554,17 @@
 </ul>
 </li>
 </ul>
-<h3 id="22-经典视觉-slam-框架"><span>2.2<span class="heti-spacing"> </span></span>经典视觉<span class="heti-skip"><span class="heti-spacing"> </span>SLAM<span class="heti-spacing"> </span></span>框架<a class="headerlink" href="#22-经典视觉-slam-框架" title="Permanent link"></a></h3>
+<h3 id="22-slam"><span>2.2<span class="heti-spacing"> </span></span>经典视觉<span class="heti-skip"><span class="heti-spacing"> </span>SLAM<span class="heti-spacing"> </span></span>框架<a class="headerlink" href="#22-slam" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
 <ul>
 <li><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="80%" href="https://cdn.jsdelivr.net/gh/WncFht/picture/202409010016267.png"><img alt="QQ_1725120955824.png" src="https://cdn.jsdelivr.net/gh/WncFht/picture/202409010016267.png"/></a><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="80%" href="https://cdn.jsdelivr.net/gh/WncFht/picture/202409010018113.png"><img alt="QQ_1725121088279.png" src="https://cdn.jsdelivr.net/gh/WncFht/picture/202409010018113.png"/></a></li>
 <li>在外界换几个比较稳定的情况下，<span>SLAM<span class="heti-spacing"> </span></span>技术已经比较成熟</li>
 </ul>
-<h4 id="221-视觉里程计"><span>2.2.1<span class="heti-spacing"> </span></span>视觉里程计<a class="headerlink" href="#221-视觉里程计" title="Permanent link"></a></h4>
+<h4 id="221"><span>2.2.1<span class="heti-spacing"> </span></span>视觉里程计<a class="headerlink" href="#221" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <ul>
 <li>只通过视觉里程计来估计轨迹会出现累积漂移（Accumulating Drift<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>。</li>
 <li>所以需要回环检测与后端优化</li>
 </ul>
-<h4 id="222-后端优化"><span>2.2.2<span class="heti-spacing"> </span></span>后端优化<a class="headerlink" href="#222-后端优化" title="Permanent link"></a></h4>
+<h4 id="222"><span>2.2.2<span class="heti-spacing"> </span></span>后端优化<a class="headerlink" href="#222" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <ul>
 <li>最大后验概率估计（Maximum-a-Posteriori MAP）</li>
 <li>前端<ul>
@@ -2833,13 +1577,13 @@
 </li>
 <li>对运动主体自身和周围环境空间不确定性的估计</li>
 </ul>
-<h4 id="223-回环检测"><span>2.2.3<span class="heti-spacing"> </span></span>回环检测<a class="headerlink" href="#223-回环检测" title="Permanent link"></a></h4>
+<h4 id="223"><span>2.2.3<span class="heti-spacing"> </span></span>回环检测<a class="headerlink" href="#223" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <ul>
 <li>闭环检测</li>
 <li>识别到过的场景</li>
 <li>利用图像的相似性</li>
 </ul>
-<h4 id="224-建图"><span>2.2.4<span class="heti-spacing"> </span></span>建图<a class="headerlink" href="#224-建图" title="Permanent link"></a></h4>
+<h4 id="224"><span>2.2.4<span class="heti-spacing"> </span></span>建图<a class="headerlink" href="#224" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <ul>
 <li>度量地图<ul>
 <li>Sparse<ul>
@@ -2857,7 +1601,7 @@
 <li>拓扑地图<br/>
     Graph</li>
 </ul>
-<h3 id="23-slam-问题的数学表述"><span>2.3 SLAM<span class="heti-spacing"> </span></span>问题的数学表述<a class="headerlink" href="#23-slam-问题的数学表述" title="Permanent link"></a></h3>
+<h3 id="23-slam"><span>2.3 SLAM<span class="heti-spacing"> </span></span>问题的数学表述<a class="headerlink" href="#23-slam" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
 <ul>
 <li>运动方程<ul>
 <li><span class="arithmatex">\(\displaystyle \quad\boldsymbol{x}_k=f\left(\boldsymbol{x}_{k-1},\boldsymbol{u}_k,\boldsymbol{w}_k\right).\)</span><ul>
@@ -2889,10 +1633,10 @@
 <li><span>Non-Linear Non-Gaussian -&gt; Extended Kalman Filter<span class="heti-spacing"> </span></span>和非线性优化</li>
 <li>EKF -&gt; Particle Filter -&gt; Graph Optimization</li>
 </ul>
-<h3 id="24-实践-编程基础"><span>2.4<span class="heti-spacing"> </span></span>实践<span class="heti-skip"><span class="heti-spacing"> </span>:<span class="heti-spacing"> </span></span>编程基础<a class="headerlink" href="#24-实践-编程基础" title="Permanent link"></a></h3>
-<h4 id="241-安装-linux-操作系统"><span>2.4.1<span class="heti-spacing"> </span></span>安装<span class="heti-skip"><span class="heti-spacing"> </span>Linux<span class="heti-spacing"> </span></span>操作系统<a class="headerlink" href="#241-安装-linux-操作系统" title="Permanent link"></a></h4>
-<h4 id="242-hello-slam">2.4.2 Hello SLAM<a class="headerlink" href="#242-hello-slam" title="Permanent link"></a></h4>
-<h4 id="243-使用-cmake"><span>2.4.3<span class="heti-spacing"> </span></span>使用<span><span class="heti-spacing"> </span>cmake</span><a class="headerlink" href="#243-使用-cmake" title="Permanent link"></a></h4>
+<h3 id="24"><span>2.4<span class="heti-spacing"> </span></span>实践<span class="heti-skip"><span class="heti-spacing"> </span>:<span class="heti-spacing"> </span></span>编程基础<a class="headerlink" href="#24" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h4 id="241-linux"><span>2.4.1<span class="heti-spacing"> </span></span>安装<span class="heti-skip"><span class="heti-spacing"> </span>Linux<span class="heti-spacing"> </span></span>操作系统<a class="headerlink" href="#241-linux" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
+<h4 id="242-hello-slam">2.4.2 Hello SLAM<a class="headerlink" href="#242-hello-slam" title="Permanent link">¶</a></h4>
+<h4 id="243-cmake"><span>2.4.3<span class="heti-spacing"> </span></span>使用<span><span class="heti-spacing"> </span>cmake</span><a class="headerlink" href="#243-cmake" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <div class="highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
@@ -2912,7 +1656,7 @@
 <a id="__codelineno-1-3" name="__codelineno-1-3"></a>cmake ..
 <a id="__codelineno-1-4" name="__codelineno-1-4"></a>make
 </code></pre></div></td></tr></table></div>
-<h4 id="244-使用库"><span>2.4.4<span class="heti-spacing"> </span></span>使用库<a class="headerlink" href="#244-使用库" title="Permanent link"></a></h4>
+<h4 id="244"><span>2.4.4<span class="heti-spacing"> </span></span>使用库<a class="headerlink" href="#244" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <div class="highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>add_library(hello libHelloSLAM.cpp)
 </code></pre></div></td></tr></table></div>
 <ul>
@@ -2964,15 +1708,15 @@
 <span class="normal"><a href="#__codelineno-6-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>add_executable(useHello useHello.cpp)
 <a id="__codelineno-6-2" name="__codelineno-6-2"></a>target_link_libraries(useHello hello_shared)
 </code></pre></div></td></tr></table></div>
-<h4 id="245-使用-ide"><span>2.4.5<span class="heti-spacing"> </span></span>使用<span><span class="heti-spacing"> </span>IDE</span><a class="headerlink" href="#245-使用-ide" title="Permanent link"></a></h4>
+<h4 id="245-ide"><span>2.4.5<span class="heti-spacing"> </span></span>使用<span><span class="heti-spacing"> </span>IDE</span><a class="headerlink" href="#245-ide" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <ul>
 <li>KDevelop</li>
 <li>Clion</li>
 <li>还没写</li>
 </ul>
-<h2 id="3-三维空间刚体运动"><span>3<span class="heti-spacing"> </span></span>三维空间刚体运动<a class="headerlink" href="#3-三维空间刚体运动" title="Permanent link"></a></h2>
-<h3 id="31-旋转矩阵"><span>3.1<span class="heti-spacing"> </span></span>旋转矩阵<a class="headerlink" href="#31-旋转矩阵" title="Permanent link"></a></h3>
-<h4 id="311-点向量和坐标系"><span>3.1.1<span class="heti-spacing"> </span></span>点、向量和坐标系<a class="headerlink" href="#311-点向量和坐标系" title="Permanent link"></a></h4>
+<h2 id="3"><span>3<span class="heti-spacing"> </span></span>三维空间刚体运动<a class="headerlink" href="#3" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h2>
+<h3 id="31"><span>3.1<span class="heti-spacing"> </span></span>旋转矩阵<a class="headerlink" href="#31" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h4 id="311"><span>3.1.1<span class="heti-spacing"> </span></span>点、向量和坐标系<a class="headerlink" href="#311" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <ul>
 <li>Skew-symmetric Matrix</li>
 </ul>
@@ -3007,7 +1751,7 @@ a_{3} &amp; 0 &amp; -a_{1} \\
 -a_{2} &amp; a_{1} &amp; 0
 \end{bmatrix}
 \]</div>
-<h4 id="312-坐标系间的欧式变换"><span>3.1.2<span class="heti-spacing"> </span></span>坐标系间的欧式变换<a class="headerlink" href="#312-坐标系间的欧式变换" title="Permanent link"></a></h4>
+<h4 id="312"><span>3.1.2<span class="heti-spacing"> </span></span>坐标系间的欧式变换<a class="headerlink" href="#312" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <ul>
 <li>Euclidean Transform</li>
 </ul>
@@ -3021,7 +1765,7 @@ a_2\\\\a_3\end{bmatrix}=\begin{bmatrix}e_1^\mathrm{T}e_1^{\prime}&amp;e_1^\mathr
 <li><span class="arithmatex">\(\displaystyle a^{\prime}=R^{-1}a=R^{\intercal}a.\)</span></li>
 <li>旋转<span class="heti-skip"><span class="heti-spacing"> </span>+<span class="heti-spacing"> </span></span>平移<span><span class="heti-spacing"> </span>: <span class="arithmatex">\(\displaystyle a^{\prime}=Ra+t.\)</span></span></li>
 </ul>
-<h4 id="313-变换矩阵与齐次坐标"><span>3.1.3<span class="heti-spacing"> </span></span>变换矩阵与齐次坐标<a class="headerlink" href="#313-变换矩阵与齐次坐标" title="Permanent link"></a></h4>
+<h4 id="313"><span>3.1.3<span class="heti-spacing"> </span></span>变换矩阵与齐次坐标<a class="headerlink" href="#313" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <ul>
 <li>但是这里的变换关系不是一个线性关系</li>
 <li><span class="arithmatex">\(\displaystyle c=R_2\left(R_1a+t_1\right)+t_2\)</span></li>
@@ -3038,7 +1782,7 @@ a_2\\\\a_3\end{bmatrix}=\begin{bmatrix}e_1^\mathrm{T}e_1^{\prime}&amp;e_1^\mathr
 <li><span class="arithmatex">\(\displaystyle T^{-1}=\begin{bmatrix}R^\mathrm{T}&amp;-R^\mathrm{T}t\\0^\mathrm{T}&amp;1\end{bmatrix}\)</span></li>
 <li>在<span class="heti-skip"><span class="heti-spacing"> </span>C++<span class="heti-spacing"> </span></span>程序中可以使用运算符重载来处理齐次和非齐次的情况</li>
 </ul>
-<h3 id="32-实践eigen"><span>3.2<span class="heti-spacing"> </span></span>实践<span><span class="heti-spacing"> </span>:Eigen</span><a class="headerlink" href="#32-实践eigen" title="Permanent link"></a></h3>
+<h3 id="32-eigen"><span>3.2<span class="heti-spacing"> </span></span>实践<span><span class="heti-spacing"> </span>:Eigen</span><a class="headerlink" href="#32-eigen" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
 <div class="highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
@@ -3164,8 +1908,8 @@ a_2\\\\a_3\end{bmatrix}=\begin{bmatrix}e_1^\mathrm{T}e_1^{\prime}&amp;e_1^\mathr
 <ul>
 <li><span>Eigen<span class="heti-spacing"> </span></span>不支持自动类型提升，即不会隐式转换</li>
 </ul>
-<h3 id="33-旋转向量和欧拉角"><span>3.3<span class="heti-spacing"> </span></span>旋转向量和欧拉角<a class="headerlink" href="#33-旋转向量和欧拉角" title="Permanent link"></a></h3>
-<h4 id="331-旋转向量"><span>3.3.1<span class="heti-spacing"> </span></span>旋转向量<a class="headerlink" href="#331-旋转向量" title="Permanent link"></a></h4>
+<h3 id="33"><span>3.3<span class="heti-spacing"> </span></span>旋转向量和欧拉角<a class="headerlink" href="#33" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h4 id="331"><span>3.3.1<span class="heti-spacing"> </span></span>旋转向量<a class="headerlink" href="#331" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <ul>
 <li>Axis-Angle</li>
 <li>Rodrigues's Formula<ul>
@@ -3190,7 +1934,7 @@ Rn=n.
 <ul>
 <li>即<span class="heti-skip"><span class="heti-spacing"> </span><span class="arithmatex">\(\displaystyle \boldsymbol{n}\)</span><span class="heti-spacing"> </span></span>是矩阵<span class="heti-skip"><span class="heti-spacing"> </span><span class="arithmatex">\(\displaystyle \boldsymbol{R}\)</span><span class="heti-spacing"> </span></span>特征值<span class="heti-skip"><span class="heti-spacing"> </span>1<span class="heti-spacing"> </span></span>对应的特诊向量</li>
 </ul>
-<h4 id="332-欧拉角"><span>3.3.2<span class="heti-spacing"> </span></span>欧拉角<a class="headerlink" href="#332-欧拉角" title="Permanent link"></a></h4>
+<h4 id="332"><span>3.3.2<span class="heti-spacing"> </span></span>欧拉角<a class="headerlink" href="#332" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <ul>
 <li>比较常用的一种<span><span class="heti-spacing"> </span>yaw-pitch-roll</span><ul>
 <li>ZYX</li>
@@ -3201,8 +1945,8 @@ Rn=n.
 </ul>
 </li>
 </ul>
-<h3 id="34-四元数"><span>3.4<span class="heti-spacing"> </span></span>四元数<a class="headerlink" href="#34-四元数" title="Permanent link"></a></h3>
-<h4 id="341-四元数的定义"><span>3.4.1<span class="heti-spacing"> </span></span>四元数的定义<a class="headerlink" href="#341-四元数的定义" title="Permanent link"></a></h4>
+<h3 id="34"><span>3.4<span class="heti-spacing"> </span></span>四元数<a class="headerlink" href="#34" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h4 id="341"><span>3.4.1<span class="heti-spacing"> </span></span>四元数的定义<a class="headerlink" href="#341" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <ul>
 <li>我们找不到不带奇异性的三位向量描述方式<ul>
 <li>找不到一个流形？</li>
@@ -3223,7 +1967,7 @@ Rn=n.
 <li><span class="arithmatex">\(\displaystyle \boldsymbol{q}=\left[s,\boldsymbol{v}\right]^\mathrm{T},\quad s=q_0\in\mathbb{R},\quad\boldsymbol{v}=\left[q_1,q_2,q_3\right]^\mathrm{T}\in\mathbb{R}^3.\)</span></li>
 <li>书上没写直观的几何对应</li>
 </ul>
-<h4 id="342-四元数的运算"><span>3.4.2<span class="heti-spacing"> </span></span>四元数的运算<a class="headerlink" href="#342-四元数的运算" title="Permanent link"></a></h4>
+<h4 id="342"><span>3.4.2<span class="heti-spacing"> </span></span>四元数的运算<a class="headerlink" href="#342" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <ul>
 <li>乘法<span><span class="heti-spacing"> </span>: <span class="arithmatex">\(\displaystyle \boldsymbol{q}_a\boldsymbol{q}_b=\begin{bmatrix}s_as_b-\boldsymbol{v}_a^\mathrm{T}\boldsymbol{v}_b,s_a\boldsymbol{v}_b+s_b\boldsymbol{v}_a+\boldsymbol{v}_a\times\boldsymbol{v}_b\end{bmatrix}^\mathrm{T}.\)</span></span><ul>
 <li>由于最后一项的存在，乘法不具有交换律</li>
@@ -3238,7 +1982,7 @@ Rn=n.
 </ul>
 </li>
 </ul>
-<h4 id="343-用四元数表示旋转"><span>3.4.3<span class="heti-spacing"> </span></span>用四元数表示旋转<a class="headerlink" href="#343-用四元数表示旋转" title="Permanent link"></a></h4>
+<h4 id="343"><span>3.4.3<span class="heti-spacing"> </span></span>用四元数表示旋转<a class="headerlink" href="#343" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <ul>
 <li>先表示三维空间点<span><span class="heti-spacing"> </span>:</span><ul>
 <li><span class="arithmatex">\(\displaystyle p=[0,x,y,z]^{\mathrm{T}}=[0,\boldsymbol{v}]^{\mathrm{T}}.\)</span></li>
@@ -3249,7 +1993,7 @@ Rn=n.
 </ul>
 </li>
 </ul>
-<h4 id="344-四元数到其他旋转表示的转换"><span>3.4.4<span class="heti-spacing"> </span></span>四元数到其他旋转表示的转换<a class="headerlink" href="#344-四元数到其他旋转表示的转换" title="Permanent link"></a></h4>
+<h4 id="344"><span>3.4.4<span class="heti-spacing"> </span></span>四元数到其他旋转表示的转换<a class="headerlink" href="#344" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <ul>
 <li>设<span><span class="heti-spacing"> </span><span class="arithmatex">\(\displaystyle \boldsymbol{q} = [s,\boldsymbol{v}]^\mathrm{T}\)</span></span><ul>
 <li><span class="arithmatex">\(\displaystyle \boldsymbol{q}^+=\begin{bmatrix}s&amp;-\boldsymbol{v}^\mathrm{T}\\\\\boldsymbol{v}&amp;s\boldsymbol{I}+\boldsymbol{v}^\wedge\end{bmatrix},\quad\boldsymbol{q}^\oplus=\begin{bmatrix}s&amp;-\boldsymbol{v}^\mathrm{T}\\\\\boldsymbol{v}&amp;s\boldsymbol{I}-\boldsymbol{v}^\wedge\end{bmatrix}.\)</span></li>
@@ -3286,7 +2030,7 @@ Rn=n.
 \begin{cases}\theta=2\arccos q_0\\
 [n_x,n_y,n_z]^\mathrm{T}=[q_1,q_2,q_3]^\mathrm{T}/\sin\frac{\theta}{2}\end{cases}.
 \]</div>
-<h3 id="35-相似仿射射影变换"><span>3.5<span class="heti-spacing"> </span></span>相似、仿射、射影变换<a class="headerlink" href="#35-相似仿射射影变换" title="Permanent link"></a></h3>
+<h3 id="35"><span>3.5<span class="heti-spacing"> </span></span>相似、仿射、射影变换<a class="headerlink" href="#35" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
 <ol>
 <li>相似变换<span><span class="heti-spacing"> </span>:</span></li>
 </ol>
@@ -3307,26 +2051,26 @@ T_P=\begin{bmatrix}A&amp;t\\\\a^\mathrm{T}&amp;v\end{bmatrix}.
 <div class="arithmatex">\[
 \begin{array}{c|c|c|c}\hline\text{变换名称}&amp;\text{矩阵形式}&amp;\text{自由度}&amp;\text{不变性质}\\\hline\text{欧氏变换}&amp;\begin{bmatrix}R&amp;t\\0^\mathrm{T}&amp;1\end{bmatrix}&amp;6&amp;\text{长度、夹角、体积}\\\text{相似变换}&amp;\begin{bmatrix}sR&amp;t\\0^\mathrm{T}&amp;1\end{bmatrix}&amp;7&amp;\text{体积比}\\\text{仿射变换}&amp;\begin{bmatrix}A&amp;t\\0^\mathrm{T}&amp;1\end{bmatrix}&amp;12&amp;\text{平行性、体积比}\\\text{射影变换}&amp;\begin{bmatrix}A&amp;t\\a^\mathrm{T}&amp;v\end{bmatrix}&amp;15&amp;\text{接触平面的相交和相切}\\\hline\end{array}
 \]</div>
-<h3 id="36-实践-eigen-几何模块"><span>3.6<span class="heti-spacing"> </span></span>实践<span class="heti-skip"><span class="heti-spacing"> </span>: Eigen<span class="heti-spacing"> </span></span>几何模块<a class="headerlink" href="#36-实践-eigen-几何模块" title="Permanent link"></a></h3>
-<h4 id="361-eigen-几何模块的数据演示"><span>3.6.1 Eigen<span class="heti-spacing"> </span></span>几何模块的数据演示<a class="headerlink" href="#361-eigen-几何模块的数据演示" title="Permanent link"></a></h4>
+<h3 id="36-eigen"><span>3.6<span class="heti-spacing"> </span></span>实践<span class="heti-skip"><span class="heti-spacing"> </span>: Eigen<span class="heti-spacing"> </span></span>几何模块<a class="headerlink" href="#36-eigen" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h4 id="361-eigen"><span>3.6.1 Eigen<span class="heti-spacing"> </span></span>几何模块的数据演示<a class="headerlink" href="#361-eigen" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <p>再说吧。</p>
-<h4 id="362-实际的坐标变换例子"><span>3.6.2<span class="heti-spacing"> </span></span>实际的坐标变换例子<a class="headerlink" href="#362-实际的坐标变换例子" title="Permanent link"></a></h4>
+<h4 id="362"><span>3.6.2<span class="heti-spacing"> </span></span>实际的坐标变换例子<a class="headerlink" href="#362" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <p>TODO</p>
-<h3 id="37-可视化演示"><span>3.7<span class="heti-spacing"> </span></span>可视化演示<a class="headerlink" href="#37-可视化演示" title="Permanent link"></a></h3>
-<h4 id="371-显示运动轨迹"><span>3.7.1<span class="heti-spacing"> </span></span>显示运动轨迹<a class="headerlink" href="#371-显示运动轨迹" title="Permanent link"></a></h4>
+<h3 id="37"><span>3.7<span class="heti-spacing"> </span></span>可视化演示<a class="headerlink" href="#37" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h4 id="371"><span>3.7.1<span class="heti-spacing"> </span></span>显示运动轨迹<a class="headerlink" href="#371" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <ul>
 <li>用<span class="heti-skip"><span class="heti-spacing"> </span>Pangolin<span class="heti-spacing"> </span></span>库</li>
 <li>TODO</li>
 </ul>
-<h4 id="372-显示相机的位姿"><span>3.7.2<span class="heti-spacing"> </span></span>显示相机的位姿<a class="headerlink" href="#372-显示相机的位姿" title="Permanent link"></a></h4>
-<h3 id="38-习题"><span>3.8<span class="heti-spacing"> </span></span>习题<a class="headerlink" href="#38-习题" title="Permanent link"></a></h3>
+<h4 id="372"><span>3.7.2<span class="heti-spacing"> </span></span>显示相机的位姿<a class="headerlink" href="#372" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
+<h3 id="38"><span>3.8<span class="heti-spacing"> </span></span>习题<a class="headerlink" href="#38" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
 <p>TODO</p>
-<h2 id="4-李群和李代数"><span>4<span class="heti-spacing"> </span></span>李群和李代数<a class="headerlink" href="#4-李群和李代数" title="Permanent link"></a></h2>
+<h2 id="4"><span>4<span class="heti-spacing"> </span></span>李群和李代数<a class="headerlink" href="#4" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h2>
 <ul>
 <li>由于旋转矩阵本身带有约束（正交且行列式为<span><span class="heti-spacing"> </span>1</span><heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，让优化变得困难。</li>
 <li>所以我们引入李群<span class="heti-skip"><span class="heti-spacing"> </span>-<span class="heti-spacing"> </span></span>李代数间的转换关系，把位姿估计变成无约束的优化问题</li>
 </ul>
-<h3 id="41-李群和李代数基础"><span>4.1<span class="heti-spacing"> </span></span>李群和李代数基础<a class="headerlink" href="#41-李群和李代数基础" title="Permanent link"></a></h3>
+<h3 id="41"><span>4.1<span class="heti-spacing"> </span></span>李群和李代数基础<a class="headerlink" href="#41" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
 <ul>
 <li>三维旋转矩阵构成了特殊正交群<span><span class="heti-spacing"> </span><span class="arithmatex">\(\displaystyle \boldsymbol{SO}(3)\)</span></span></li>
 <li>变换矩阵构成了特殊欧氏群<span><span class="heti-spacing"> </span><span class="arithmatex">\(\displaystyle \boldsymbol{SE}(3)\)</span></span><ul>
@@ -3335,7 +2079,7 @@ T_P=\begin{bmatrix}A&amp;t\\\\a^\mathrm{T}&amp;v\end{bmatrix}.
 </ul>
 </li>
 </ul>
-<h4 id="411-群"><span>4.1.1<span class="heti-spacing"> </span></span>群<a class="headerlink" href="#411-群" title="Permanent link"></a></h4>
+<h4 id="411"><span>4.1.1<span class="heti-spacing"> </span></span>群<a class="headerlink" href="#411" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <ul>
 <li><span><span class="arithmatex">\(\displaystyle G = (A,\cdot)\)</span><span class="heti-spacing"> </span></span>满足<span><span class="heti-spacing"> </span>:</span><ul>
 <li>封闭性</li>
@@ -3346,7 +2090,7 @@ T_P=\begin{bmatrix}A&amp;t\\\\a^\mathrm{T}&amp;v\end{bmatrix}.
 </li>
 <li>李群是具有连续（光滑）性质的群</li>
 </ul>
-<h4 id="412-李代数的引出"><span>4.1.2<span class="heti-spacing"> </span></span>李代数的引出<a class="headerlink" href="#412-李代数的引出" title="Permanent link"></a></h4>
+<h4 id="412"><span>4.1.2<span class="heti-spacing"> </span></span>李代数的引出<a class="headerlink" href="#412" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <ul>
 <li><span class="arithmatex">\(\displaystyle \boldsymbol{R}\boldsymbol{R}^\mathrm{T} = \boldsymbol{I}\)</span></li>
 <li>我们易得<span><span class="heti-spacing"> </span>: <span class="arithmatex">\(\displaystyle \dot{\boldsymbol{R}}(t)\boldsymbol{R}(t)^\mathrm{T}=-\left(\dot{\boldsymbol{R}}(t)\boldsymbol{R}(t)^\mathrm{T}\right)^\mathrm{T}.\)</span></span><ul>
@@ -3379,7 +2123,7 @@ R(t)&amp; \approx\boldsymbol{R}\left(t_{0}\right)+\dot{\boldsymbol{R}}\left(t_{0
 <li><span><span class="arithmatex">\(\displaystyle \phi\)</span><span class="heti-spacing"> </span></span>正是对应到<span class="heti-skip"><span class="heti-spacing"> </span><span class="arithmatex">\(\displaystyle SO(3)\)</span><span class="heti-spacing"> </span></span>上的李代数<span><span class="heti-spacing"> </span><span class="arithmatex">\(\displaystyle \mathfrak{so}(3)\)</span></span></li>
 <li><span class="arithmatex">\(\displaystyle \begin{aligned}&amp;\text{其次,给定某个向量 }\phi\text{ 时,矩阵指数}\exp(\phi^{\wedge})\text{ 如何计算? 反之,给定 }R\text{ 时,能否有相反}\\&amp;\text{的运算来计算 }\phi?\text{ 事实上,这正是李群与李代数间的指数}/\text{对数映射。}\end{aligned}\)</span></li>
 </ul>
-<h4 id="413-李代数的定义"><span>4.1.3<span class="heti-spacing"> </span></span>李代数的定义<a class="headerlink" href="#413-李代数的定义" title="Permanent link"></a></h4>
+<h4 id="413"><span>4.1.3<span class="heti-spacing"> </span></span>李代数的定义<a class="headerlink" href="#413" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <p>李代数由一个集合<span><span class="heti-spacing"> </span><span class="arithmatex">\(\displaystyle \mathbb{V}\)</span></span>、一个数域<span class="heti-skip"><span class="heti-spacing"> </span><span class="arithmatex">\(\displaystyle \mathbb{F}\)</span><span class="heti-spacing"> </span></span>和一个二元运算<span class="heti-skip"><span class="heti-spacing"> </span><span class="arithmatex">\(\displaystyle [,]\)</span><span class="heti-spacing"> </span></span>组成。如果满足以下几条性质，则称<span class="heti-skip"><span class="heti-spacing"> </span>( <span class="arithmatex">\(\displaystyle \mathbb{V},\mathbb{F},[,]\)</span>)<span class="heti-spacing"> </span></span>为一个李代数，记作<span><span class="heti-spacing"> </span><span class="arithmatex">\(\displaystyle \mathfrak{g}\)</span></span>。</p>
 <ol>
 <li>封闭性</li>
@@ -3389,7 +2133,7 @@ R(t)&amp; \approx\boldsymbol{R}\left(t_{0}\right)+\dot{\boldsymbol{R}}\left(t_{0
 其中二元运算被称为李括号。<br/>
 eg: 叉积是一种李括号</li>
 </ol>
-<h4 id="414-李代数-displaystyle-mathfrakso3"><span>4.1.4<span class="heti-spacing"> </span></span>李代数<span><span class="heti-spacing"> </span><span class="arithmatex">\(\displaystyle \mathfrak{so}(3)\)</span></span><a class="headerlink" href="#414-李代数-displaystyle-mathfrakso3" title="Permanent link"></a></h4>
+<h4 id="414-displaystyle-mathfrakso3"><span>4.1.4<span class="heti-spacing"> </span></span>李代数<span><span class="heti-spacing"> </span><span class="arithmatex">\(\displaystyle \mathfrak{so}(3)\)</span></span><a class="headerlink" href="#414-displaystyle-mathfrakso3" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <p><span class="arithmatex">\(\displaystyle \boldsymbol{\Phi}=\boldsymbol{\phi}^{\wedge}=\begin{bmatrix}0&amp;-\phi_3&amp;\phi_2\\\\\phi_3&amp;0&amp;-\phi_1\\\\-\phi_2&amp;\phi_1&amp;0\end{bmatrix}\in\mathbb{R}^{3\times3}.\)</span><br/>
 所以两个向量 <span class="arithmatex">\(\displaystyle \phi_{1},\phi_{2}\)</span> 的李括号为:</p>
 <div class="arithmatex">\[
@@ -3401,7 +2145,7 @@ eg: 叉积是一种李括号</li>
 <div class="arithmatex">\[
 R=\exp(\phi^{\wedge}).
 \]</div>
-<h4 id="415-李代数-displaystyle-mathfrakse3"><span>4.1.5<span class="heti-spacing"> </span></span>李代数<span><span class="heti-spacing"> </span><span class="arithmatex">\(\displaystyle \mathfrak{se}(3)\)</span></span><a class="headerlink" href="#415-李代数-displaystyle-mathfrakse3" title="Permanent link"></a></h4>
+<h4 id="415-displaystyle-mathfrakse3"><span>4.1.5<span class="heti-spacing"> </span></span>李代数<span><span class="heti-spacing"> </span><span class="arithmatex">\(\displaystyle \mathfrak{se}(3)\)</span></span><a class="headerlink" href="#415-displaystyle-mathfrakse3" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <div class="arithmatex">\[
 \mathfrak{se}(3)=\left\{\boldsymbol{\xi}=\begin{bmatrix}\boldsymbol{\rho}\\\boldsymbol{\phi}\end{bmatrix}\in\mathbb{R}^6,\boldsymbol{\rho}\in\mathbb{R}^3,\boldsymbol{\phi}\in\mathfrak{so}(3),\boldsymbol{\xi}^\wedge=\begin{bmatrix}\boldsymbol{\phi}^\wedge&amp;\boldsymbol{\rho}\\\boldsymbol{0}^\mathrm{T}&amp;0\end{bmatrix}\in\mathbb{R}^{4\times4}\right\}.
 \]</div>
@@ -3413,8 +2157,8 @@ R=\exp(\phi^{\wedge}).
 <div class="arithmatex">\[
 [\xi_1,\xi_2]=\left(\xi_1^\wedge\xi_2^\wedge-\xi_2^\wedge\xi_1^\wedge\right)^\vee.
 \]</div>
-<h3 id="42-指数与对数映射"><span>4.2<span class="heti-spacing"> </span></span>指数与对数映射<a class="headerlink" href="#42-指数与对数映射" title="Permanent link"></a></h3>
-<h4 id="421-so3上的指数映射"><span>4.2.1 SO(3)<span class="heti-spacing"> </span></span>上的指数映射<a class="headerlink" href="#421-so3上的指数映射" title="Permanent link"></a></h4>
+<h3 id="42"><span>4.2<span class="heti-spacing"> </span></span>指数与对数映射<a class="headerlink" href="#42" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h4 id="421-so3"><span>4.2.1 SO(3)<span class="heti-spacing"> </span></span>上的指数映射<a class="headerlink" href="#421-so3" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <ul>
 <li>Exponential Map</li>
 <li>首先任意矩阵的指数映射可以写成一个泰勒展开（收敛的时候）</li>
@@ -3462,7 +2206,7 @@ a^{\wedge}a^{\wedge}a^{\wedge}=a^{\wedge}(aa^{\mathrm{T}}-I)=-a^{\wedge}.
 <div class="arithmatex">\[
 \phi=\ln\left(\boldsymbol{R}\right)^\vee=\left(\sum_{n=0}^\infty\frac{\left(-1\right)^n}{n+1}\left(\boldsymbol{R}-\boldsymbol{I}\right)^{n+1}\right)^\vee.
 \]</div>
-<h4 id="422-se-3-上的指数映射"><span>4.2.2 SE (3)<span class="heti-spacing"> </span></span>上的指数映射<a class="headerlink" href="#422-se-3-上的指数映射" title="Permanent link"></a></h4>
+<h4 id="422-se-3"><span>4.2.2 SE (3)<span class="heti-spacing"> </span></span>上的指数映射<a class="headerlink" href="#422-se-3" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <p>同样的推导方式<span><span class="heti-spacing"> </span>:</span></p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -3483,8 +2227,8 @@ a^{\wedge}a^{\wedge}a^{\wedge}=a^{\wedge}(aa^{\mathrm{T}}-I)=-a^{\wedge}.
 \]</div>
 <p><span>4.28<span class="heti-spacing"> </span></span>没看懂<br/>
 <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="80%" href="https://cdn.jsdelivr.net/gh/WncFht/picture/202409012205650.png"><img alt="image.png" src="https://cdn.jsdelivr.net/gh/WncFht/picture/202409012205650.png"/></a></p>
-<h3 id="43-李代数求导与扰动模型"><span>4.3<span class="heti-spacing"> </span></span>李代数求导与扰动模型<a class="headerlink" href="#43-李代数求导与扰动模型" title="Permanent link"></a></h3>
-<h4 id="431-bch-公式与近似形式"><span>4.3.1 BCH<span class="heti-spacing"> </span></span>公式与近似形式<a class="headerlink" href="#431-bch-公式与近似形式" title="Permanent link"></a></h4>
+<h3 id="43"><span>4.3<span class="heti-spacing"> </span></span>李代数求导与扰动模型<a class="headerlink" href="#43" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h4 id="431-bch"><span>4.3.1 BCH<span class="heti-spacing"> </span></span>公式与近似形式<a class="headerlink" href="#431-bch" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <p>探究如下式子是否成立<span><span class="heti-spacing"> </span>:</span></p>
 <div class="arithmatex">\[
 \ln\left(\exp\left(A\right)\exp\left(B\right)\right)=A+B ?
@@ -3522,7 +2266,7 @@ J_{r}(\phi)=J_{l}(-\phi).
 exp\left(\xi^{\wedge}\right)\exp\left(\Delta\xi^{\wedge}\right)\approx\exp\left(\left(\mathcal{J}_{r}^{-1}\Delta\xi+\xi\right)^{\wedge}\right).
 \]</div>
 <p>唯一不同的是这里的<span class="heti-skip"><span class="heti-spacing"> </span><span class="arithmatex">\(\displaystyle J_{l}\)</span><span class="heti-spacing"> </span></span>比较复杂。</p>
-<h4 id="432-so-3-上的李代数求导"><span>4.3.2 SO (3)<span class="heti-spacing"> </span></span>上的李代数求导<a class="headerlink" href="#432-so-3-上的李代数求导" title="Permanent link"></a></h4>
+<h4 id="432-so-3"><span>4.3.2 SO (3)<span class="heti-spacing"> </span></span>上的李代数求导<a class="headerlink" href="#432-so-3" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <div class="arithmatex">\[
 z=T\boldsymbol{p}+\boldsymbol{w}.
 \]</div>
@@ -3540,7 +2284,7 @@ e=z-Tp.
 <li>用李代数表示姿态，然后根据李代数加法对李代数求导。</li>
 <li>对李群左乘或右乘微小扰动，然后对该扰动求导，称为左扰动和右扰动模型。</li>
 </ol>
-<h3 id="44-李代数求导"><span>4.4<span class="heti-spacing"> </span></span>李代数求导<a class="headerlink" href="#44-李代数求导" title="Permanent link"></a></h3>
+<h3 id="44"><span>4.4<span class="heti-spacing"> </span></span>李代数求导<a class="headerlink" href="#44" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
 <p>要计算<span class="heti-skip"><span class="heti-spacing"> </span><span class="arithmatex">\(\displaystyle \frac{\partial\left(Rp\right)}{\partial R}\)</span>,<span class="heti-spacing"> </span></span>由于<span><span class="heti-spacing"> </span>SO</span>（3）没有加法，我们转而计算<span><span class="heti-spacing"> </span>: <span class="arithmatex">\(\displaystyle \frac{\partial\left(\exp\left(\phi^{\wedge}\right)\boldsymbol{p}\right)}{\partial\boldsymbol{\phi}}.\)</span></span></p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -3556,7 +2300,7 @@ e=z-Tp.
 \frac{\partial\left(\boldsymbol{Rp}\right)}{\partial\boldsymbol{\phi}}=\left(-\boldsymbol{Rp}\right)^{\wedge}\boldsymbol{J}_{l}.
 \]</div>
 <p>但是这里仍然有<span><span class="heti-spacing"> </span><span class="arithmatex">\(\displaystyle \boldsymbol{J}_{l}\)</span></span></p>
-<h4 id="441-扰动模型左乘"><span>4.4.1<span class="heti-spacing"> </span></span>扰动模型（左乘）<a class="headerlink" href="#441-扰动模型左乘" title="Permanent link"></a></h4>
+<h4 id="441"><span>4.4.1<span class="heti-spacing"> </span></span>扰动模型（左乘）<a class="headerlink" href="#441" title="Permanent link">¶</a></h4>
 <p><span><span class="arithmatex">\(\displaystyle \varphi\)</span><span class="heti-spacing"> </span></span>对应左扰动<span><span class="heti-spacing"> </span><span class="arithmatex">\(\displaystyle \Delta \boldsymbol{R}\)</span></span></p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -3565,7 +2309,7 @@ e=z-Tp.
 &amp;=\lim_{\varphi\to0}\frac{\varphi^\wedge Rp}\varphi=\lim_{\varphi\to0}\frac{-\left(Rp\right)^\wedge\varphi}\varphi=-\left(Rp\right)^\wedge.
 \end{aligned}
 \]</div>
-<h4 id="442-se-3-上的李代数求导"><span>4.4.2 SE (3)<span class="heti-spacing"> </span></span>上的李代数求导<a class="headerlink" href="#442-se-3-上的李代数求导" title="Permanent link"></a></h4>
+<h4 id="442-se-3"><span>4.4.2 SE (3)<span class="heti-spacing"> </span></span>上的李代数求导<a class="headerlink" href="#442-se-3" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <div class="arithmatex">\[
 \begin{aligned}
 \frac{\partial\left(\boldsymbol{T}\boldsymbol{p}\right)}{\partial\delta\boldsymbol{\xi}}&amp;=\lim_{\delta\boldsymbol{\xi}\to\boldsymbol{0}}\frac{\exp\left(\delta\boldsymbol{\xi}^{\wedge}\right)\exp\left(\boldsymbol{\xi}^{\wedge}\right)\boldsymbol{p}-\exp\left(\boldsymbol{\xi}^{\wedge}\right)\boldsymbol{p}}{\delta\xi} \\
@@ -3578,9 +2322,9 @@ e=z-Tp.
 <div class="arithmatex">\[
 \frac{\mathrm{d}\begin{bmatrix}a\\b\end{bmatrix}}{\mathrm{d}\begin{bmatrix}x\\y\end{bmatrix}}=\left(\frac{\mathrm{d}[a,b]^\mathrm{T}}{\mathrm{d}\begin{bmatrix}x\\y\end{bmatrix}}\right)^\mathrm{T}=\begin{bmatrix}\frac{\mathrm{d}a}{\mathrm{d}x}&amp;\frac{\mathrm{d}b}{\mathrm{d}x}\\\frac{\mathrm{d}a}{\mathrm{d}y}&amp;\frac{\mathrm{d}b}{\mathrm{d}y}\end{bmatrix}^\mathrm{T}=\begin{bmatrix}\frac{\mathrm{d}a}{\mathrm{d}x}&amp;\frac{\mathrm{d}a}{\mathrm{d}y}\\\frac{\mathrm{d}b}{\mathrm{d}x}&amp;\frac{\mathrm{d}b}{\mathrm{d}y}\end{bmatrix}
 \]</div>
-<h3 id="45-实践sophus"><span>4.5<span class="heti-spacing"> </span></span>实践<span><span class="heti-spacing"> </span>:Sophus</span><a class="headerlink" href="#45-实践sophus" title="Permanent link"></a></h3>
-<h4 id="451-sophus-的基本使用方法"><span>4.5.1 Sophus<span class="heti-spacing"> </span></span>的基本使用方法<a class="headerlink" href="#451-sophus-的基本使用方法" title="Permanent link"></a></h4>
-<h4 id="452-例子-评估轨迹的误差"><span>4.5.2<span class="heti-spacing"> </span></span>例子<span class="heti-skip"><span class="heti-spacing"> </span>:<span class="heti-spacing"> </span></span>评估轨迹的误差<a class="headerlink" href="#452-例子-评估轨迹的误差" title="Permanent link"></a></h4>
+<h3 id="45-sophus"><span>4.5<span class="heti-spacing"> </span></span>实践<span><span class="heti-spacing"> </span>:Sophus</span><a class="headerlink" href="#45-sophus" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h4 id="451-sophus"><span>4.5.1 Sophus<span class="heti-spacing"> </span></span>的基本使用方法<a class="headerlink" href="#451-sophus" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
+<h4 id="452"><span>4.5.2<span class="heti-spacing"> </span></span>例子<span class="heti-skip"><span class="heti-spacing"> </span>:<span class="heti-spacing"> </span></span>评估轨迹的误差<a class="headerlink" href="#452" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <ul>
 <li>绝对轨迹误差（Absolute Trajectory Error, ATE）</li>
 </ul>
@@ -3606,7 +2350,7 @@ e=z-Tp.
 <p>代码计算<span><span class="heti-spacing"> </span>:</span></p>
 <div class="highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a>TODO
 </code></pre></div></td></tr></table></div>
-<h3 id="46-相似变换与李代数"><span>4.6<span class="heti-spacing"> </span></span>相似变换与李代数<a class="headerlink" href="#46-相似变换与李代数" title="Permanent link"></a></h3>
+<h3 id="46"><span>4.6<span class="heti-spacing"> </span></span>相似变换与李代数<a class="headerlink" href="#46" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
 <p>在这里我们讨论<span class="heti-skip"><span class="heti-spacing"> </span>Sim (3)<span class="heti-spacing"> </span></span>和对应的李代数<span><span class="heti-spacing"> </span><span class="arithmatex">\(\displaystyle \mathfrak{sim}(3)\)</span></span>。<br/>
 对于位于空间的点 <span class="arithmatex">\(\displaystyle \boldsymbol{p}\)</span>，在相机坐标系下要经过一个相似变换，而非欧氏变换:</p>
 <div class="arithmatex">\[
@@ -3635,19 +2379,19 @@ s=\mathrm{e}^\sigma, R=\exp(\phi^\wedge), t=J_s\rho.
 <div class="arithmatex">\[
 \frac{\partial\boldsymbol{Sp}}{\partial\boldsymbol{\zeta}}=\begin{bmatrix}\boldsymbol{I}&amp;-\boldsymbol{q}^\wedge&amp;\boldsymbol{q}\\\boldsymbol{0}^\mathrm{T}&amp;\boldsymbol{0}^\mathrm{T}&amp;0\end{bmatrix}.
 \]</div>
-<h3 id="47-习题"><span>4.7<span class="heti-spacing"> </span></span>习题<a class="headerlink" href="#47-习题" title="Permanent link"></a></h3>
+<h3 id="47"><span>4.7<span class="heti-spacing"> </span></span>习题<a class="headerlink" href="#47" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
 <p>TODO</p>
-<h2 id="5-相机与图像"><span>5<span class="heti-spacing"> </span></span>相机与图像<a class="headerlink" href="#5-相机与图像" title="Permanent link"></a></h2>
+<h2 id="5"><span>5<span class="heti-spacing"> </span></span>相机与图像<a class="headerlink" href="#5" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h2>
 <ul>
 <li>观测主要是指相机成像的过程。</li>
 </ul>
-<h3 id="51-相机模型"><span>5.1<span class="heti-spacing"> </span></span>相机模型<a class="headerlink" href="#51-相机模型" title="Permanent link"></a></h3>
+<h3 id="51"><span>5.1<span class="heti-spacing"> </span></span>相机模型<a class="headerlink" href="#51" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
 <ul>
 <li>针孔模型</li>
 <li>透镜会产生畸变</li>
 <li>内参数（Intrinsics）</li>
 </ul>
-<h4 id="511-针孔相机模型"><span>5.1.1<span class="heti-spacing"> </span></span>针孔相机模型<a class="headerlink" href="#511-针孔相机模型" title="Permanent link"></a></h4>
+<h4 id="511"><span>5.1.1<span class="heti-spacing"> </span></span>针孔相机模型<a class="headerlink" href="#511" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="80%" href="https://cdn.jsdelivr.net/gh/WncFht/picture/202409021302607.png"><img alt="QQ_1725253336267.png" src="https://cdn.jsdelivr.net/gh/WncFht/picture/202409021302607.png"/></a></p>
 <div class="arithmatex">\[
 \frac{Z}{f}=-\frac{X}{X'}=-\frac{Y}{Y'}.
@@ -3682,7 +2426,7 @@ Z\boldsymbol{P}_{uv}=Z\begin{bmatrix}u\\\\v\\\\1\end{bmatrix}=\boldsymbol{K}\lef
 <li>归一化平面</li>
 <li>点的深度在投影过程中被丢失了</li>
 </ul>
-<h4 id="512-畸变模型"><span>5.1.2<span class="heti-spacing"> </span></span>畸变模型<a class="headerlink" href="#512-畸变模型" title="Permanent link"></a></h4>
+<h4 id="512"><span>5.1.2<span class="heti-spacing"> </span></span>畸变模型<a class="headerlink" href="#512" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <ul>
 <li>畸变<span class="heti-skip"><span class="heti-spacing"> </span>(Distortion<span class="heti-spacing"> </span></span>失真<span class="heti-skip"><span class="heti-spacing"> </span>)<span class="heti-spacing"> </span></span>径向畸变<ul>
 <li>筒形畸变</li>
@@ -3730,7 +2474,7 @@ y_{\mathrm{distorted}}&amp;=y+p_1(r^2+2y^2)+2p_2xy
 <li>有畸变时，根据畸变参数计算<span class="heti-skip"><span class="heti-spacing"> </span><span class="arithmatex">\(\displaystyle \boldsymbol{P}_{c}\)</span><span class="heti-spacing"> </span></span>发生畸变后的坐标。</li>
 <li><span><span class="arithmatex">\(\displaystyle P\)</span><span class="heti-spacing"> </span></span>的归一化坐标经过内参后，对应到它的像素坐标<span><span class="heti-spacing"> </span>: <span class="arithmatex">\(\displaystyle \boldsymbol{P}_{uv} = \boldsymbol{K} \boldsymbol{P}_{c}\)</span></span>。</li>
 </ol>
-<h4 id="513-双目相机模型"><span>5.1.3<span class="heti-spacing"> </span></span>双目相机模型<a class="headerlink" href="#513-双目相机模型" title="Permanent link"></a></h4>
+<h4 id="513"><span>5.1.3<span class="heti-spacing"> </span></span>双目相机模型<a class="headerlink" href="#513" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="80%" href="https://cdn.jsdelivr.net/gh/WncFht/picture/202409022337946.png"><img alt="QQ_1725291418446.png" src="https://cdn.jsdelivr.net/gh/WncFht/picture/202409022337946.png"/></a><br/>
 两者之间的距离称为双目相机的基线</p>
 <div class="arithmatex">\[
@@ -3742,7 +2486,7 @@ z=\frac{fb}{d},\quad d\stackrel{\mathrm{def}}{=}u_{\mathrm{L}}-u_{\mathrm{R}}.
 </ul>
 </li>
 </ul>
-<h4 id="514-rgb-d-相机模型"><span>5.1.4 RGB-D<span class="heti-spacing"> </span></span>相机模型<a class="headerlink" href="#514-rgb-d-相机模型" title="Permanent link"></a></h4>
+<h4 id="514-rgb-d"><span>5.1.4 RGB-D<span class="heti-spacing"> </span></span>相机模型<a class="headerlink" href="#514-rgb-d" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <ul>
 <li>红外结构光（Structured lightning）</li>
 <li>飞行时间（Time-of-Flight, ToF）<br/>
@@ -3750,27 +2494,27 @@ z=\frac{fb}{d},\quad d\stackrel{\mathrm{def}}{=}u_{\mathrm{L}}-u_{\mathrm{R}}.
 <li><span>ToF<span class="heti-spacing"> </span></span>相机可以获得整个图像的像素深度</li>
 <li>输出彩色图和深度图，生成点云（Point Cloud）</li>
 </ul>
-<h3 id="52-图像"><span>5.2<span class="heti-spacing"> </span></span>图像<a class="headerlink" href="#52-图像" title="Permanent link"></a></h3>
+<h3 id="52"><span>5.2<span class="heti-spacing"> </span></span>图像<a class="headerlink" href="#52" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
 <div class="arithmatex">\[
 I(x,y):\mathbb{R}^2\mapsto\mathbb{R}.
 \]</div>
 <ul>
 <li>channel</li>
 </ul>
-<h3 id="53-实践-计算机中的图像"><span>5.3<span class="heti-spacing"> </span></span>实践<span class="heti-skip"><span class="heti-spacing"> </span>:<span class="heti-spacing"> </span></span>计算机中的图像<a class="headerlink" href="#53-实践-计算机中的图像" title="Permanent link"></a></h3>
-<h4 id="531-opencv-的基本使用方法"><span>5.3.1 OpenCV<span class="heti-spacing"> </span></span>的基本使用方法<a class="headerlink" href="#531-opencv-的基本使用方法" title="Permanent link"></a></h4>
+<h3 id="53"><span>5.3<span class="heti-spacing"> </span></span>实践<span class="heti-skip"><span class="heti-spacing"> </span>:<span class="heti-spacing"> </span></span>计算机中的图像<a class="headerlink" href="#53" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h4 id="531-opencv"><span>5.3.1 OpenCV<span class="heti-spacing"> </span></span>的基本使用方法<a class="headerlink" href="#531-opencv" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <p>TODO</p>
-<h4 id="532-图像去畸变"><span>5.3.2<span class="heti-spacing"> </span></span>图像去畸变<a class="headerlink" href="#532-图像去畸变" title="Permanent link"></a></h4>
+<h4 id="532"><span>5.3.2<span class="heti-spacing"> </span></span>图像去畸变<a class="headerlink" href="#532" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <p>TODO</p>
-<h3 id="54-实践-3-d-视觉"><span>5.4<span class="heti-spacing"> </span></span>实践<span class="heti-skip"><span class="heti-spacing"> </span>: 3 D<span class="heti-spacing"> </span></span>视觉<a class="headerlink" href="#54-实践-3-d-视觉" title="Permanent link"></a></h3>
-<h4 id="541-双目视觉"><span>5.4.1<span class="heti-spacing"> </span></span>双目视觉<a class="headerlink" href="#541-双目视觉" title="Permanent link"></a></h4>
+<h3 id="54-3-d"><span>5.4<span class="heti-spacing"> </span></span>实践<span class="heti-skip"><span class="heti-spacing"> </span>: 3 D<span class="heti-spacing"> </span></span>视觉<a class="headerlink" href="#54-3-d" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h4 id="541"><span>5.4.1<span class="heti-spacing"> </span></span>双目视觉<a class="headerlink" href="#541" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <p>TODO</p>
-<h4 id="542-rgb-d-视觉"><span>5.4.2 RGB-D<span class="heti-spacing"> </span></span>视觉<a class="headerlink" href="#542-rgb-d-视觉" title="Permanent link"></a></h4>
-<h3 id="55-习题"><span>5.5<span class="heti-spacing"> </span></span>习题<a class="headerlink" href="#55-习题" title="Permanent link"></a></h3>
-<h2 id="6-非线性优化"><span>6<span class="heti-spacing"> </span></span>非线性优化<a class="headerlink" href="#6-非线性优化" title="Permanent link"></a></h2>
+<h4 id="542-rgb-d"><span>5.4.2 RGB-D<span class="heti-spacing"> </span></span>视觉<a class="headerlink" href="#542-rgb-d" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
+<h3 id="55"><span>5.5<span class="heti-spacing"> </span></span>习题<a class="headerlink" href="#55" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h2 id="6"><span>6<span class="heti-spacing"> </span></span>非线性优化<a class="headerlink" href="#6" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h2>
 <p>前面我们已经搞清楚了运动方程和观测方程的来源，现在我们开始讨论噪声。</p>
-<h3 id="61-状态估计问题"><span>6.1<span class="heti-spacing"> </span></span>状态估计问题<a class="headerlink" href="#61-状态估计问题" title="Permanent link"></a></h3>
-<h4 id="611-批量状态估计与最大后验估计"><span>6.1.1<span class="heti-spacing"> </span></span>批量状态估计与最大后验估计<a class="headerlink" href="#611-批量状态估计与最大后验估计" title="Permanent link"></a></h4>
+<h3 id="61"><span>6.1<span class="heti-spacing"> </span></span>状态估计问题<a class="headerlink" href="#61" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h4 id="611"><span>6.1.1<span class="heti-spacing"> </span></span>批量状态估计与最大后验估计<a class="headerlink" href="#611" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <div class="arithmatex">\[
 \begin{cases}\boldsymbol{x}_k=f\left(\boldsymbol{x}_{k-1},\boldsymbol{u}_k\right)+\boldsymbol{w}_k\\\boldsymbol{z}_{k,j}=h\left(\boldsymbol{y}_j,\boldsymbol{x}_k\right)+\boldsymbol{v}_{k,j}\end{cases}.
 \]</div>
@@ -3808,7 +2552,7 @@ P\left(\boldsymbol{x},\boldsymbol{y}|\boldsymbol{z},\boldsymbol{u}\right)=\frac{
 (\boldsymbol{x},\boldsymbol{y})^*{}_{\mathrm{MLE}}=\arg\max P(\boldsymbol{z},\boldsymbol{u}|\boldsymbol{x},\boldsymbol{y}).
 \]</div>
 <p>最大似然估计<span class="heti-skip"><span class="heti-spacing"> </span>:<span class="heti-spacing"> </span></span>在什么样的状态下，最可能产生现在观测到的数据。</p>
-<h4 id="612-最小二乘的引出"><span>6.1.2<span class="heti-spacing"> </span></span>最小二乘的引出<a class="headerlink" href="#612-最小二乘的引出" title="Permanent link"></a></h4>
+<h4 id="612"><span>6.1.2<span class="heti-spacing"> </span></span>最小二乘的引出<a class="headerlink" href="#612" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <p>对于某一次观测<span><span class="heti-spacing"> </span>:</span></p>
 <div class="arithmatex">\[
 z_{k,j}=h\left(y_{j},x_{k}\right)+v_{k,j},
@@ -3850,7 +2594,7 @@ e_{z,j,k} &amp;=\boldsymbol{z}_{k,j}-h\left(\boldsymbol{x}_k,\boldsymbol{y}_j\ri
 <li>用二次型度量误差，那么误差的分布会影响此项在整个问题中的权重。<br/>
 接下俩讲一些非线性优化的基本知识，来帮助我们求解这个最小二乘问题。</li>
 </ul>
-<h4 id="613-例子-批量状态估计"><span>6.1.3<span class="heti-spacing"> </span></span>例子<span class="heti-skip"><span class="heti-spacing"> </span>:<span class="heti-spacing"> </span></span>批量状态估计<a class="headerlink" href="#613-例子-批量状态估计" title="Permanent link"></a></h4>
+<h4 id="613"><span>6.1.3<span class="heti-spacing"> </span></span>例子<span class="heti-skip"><span class="heti-spacing"> </span>:<span class="heti-spacing"> </span></span>批量状态估计<a class="headerlink" href="#613" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <p>考虑一个非常简单的离散时间系统<span><span class="heti-spacing"> </span>:</span></p>
 <div class="arithmatex">\[
 \begin{aligned}&amp;x_{k}=x_{k-1}+u_{k}+w_{k},&amp;&amp;\boldsymbol{w}_{k}\sim\mathcal{N}\left(0,\boldsymbol{Q}_{k}\right)\\&amp;\boldsymbol{z}_{k}=\boldsymbol{x}_{k}+\boldsymbol{n}_{k},&amp;&amp;\boldsymbol{n}_{k}\sim\mathcal{N}\left(0,\boldsymbol{R}_{k}\right)\end{aligned}
@@ -3892,7 +2636,7 @@ x_{\mathrm{map}}^*=\arg\min e^{\mathrm{T}}\Sigma^{-1}e,
 <div class="arithmatex">\[
 x_{\mathrm{map}}^{*}=(H^{\mathrm{T}}\Sigma^{-1}H)^{-1}H^{\mathrm{T}}\Sigma^{-1}y.
 \]</div>
-<h3 id="62-非线性最小二乘"><span>6.2<span class="heti-spacing"> </span></span>非线性最小二乘<a class="headerlink" href="#62-非线性最小二乘" title="Permanent link"></a></h3>
+<h3 id="62"><span>6.2<span class="heti-spacing"> </span></span>非线性最小二乘<a class="headerlink" href="#62" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
 <p>先考虑一个简单的最小二乘问题<span><span class="heti-spacing"> </span>:</span></p>
 <div class="arithmatex">\[
 \min_{x}F(x)=\frac12\|f\left(x\right)\|_{2}^{2}.`
@@ -3906,7 +2650,7 @@ x_{\mathrm{map}}^{*}=(H^{\mathrm{T}}\Sigma^{-1}H)^{-1}H^{\mathrm{T}}\Sigma^{-1}y
 于是求解导函数为零 -&gt; 寻找下降增量 <span class="arithmatex">\(\displaystyle \Delta x_{k}\)</span> </li>
 </ol>
 <p>下面是一些广泛使用的结果。</p>
-<h4 id="621-一阶和二阶梯度法"><span>6.2.1<span class="heti-spacing"> </span></span>一阶和二阶梯度法<a class="headerlink" href="#621-一阶和二阶梯度法" title="Permanent link"></a></h4>
+<h4 id="621"><span>6.2.1<span class="heti-spacing"> </span></span>一阶和二阶梯度法<a class="headerlink" href="#621" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <p>使用泰勒展开<span><span class="heti-spacing"> </span>:</span></p>
 <div class="arithmatex">\[
 F(\boldsymbol{x}_k+\Delta\boldsymbol{x}_k)\approx F(\boldsymbol{x}_k)+\boldsymbol{J}\left(\boldsymbol{x}_k\right)^\mathrm{T}\Delta\boldsymbol{x}_k+\frac{1}{2}\Delta\boldsymbol{x}_k^\mathrm{T}\boldsymbol{H}(\boldsymbol{x}_k)\Delta\boldsymbol{x}_k.
@@ -3923,7 +2667,7 @@ F(\boldsymbol{x}_k+\Delta\boldsymbol{x}_k)\approx F(\boldsymbol{x}_k)+\boldsymbo
 J+H\Delta x=\mathbf{0}\Rightarrow H\Delta x=-J.
 \]</div>
 <p>这个方法又叫牛顿法。</p>
-<h4 id="622-高斯牛顿法"><span>6.2.2<span class="heti-spacing"> </span></span>高斯牛顿法<a class="headerlink" href="#622-高斯牛顿法" title="Permanent link"></a></h4>
+<h4 id="622"><span>6.2.2<span class="heti-spacing"> </span></span>高斯牛顿法<a class="headerlink" href="#622" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <p>换一个函数展开<span><span class="heti-spacing"> </span>:</span></p>
 <div class="arithmatex">\[
 f\left(x+\Delta x\right)\approx f\left(x\right)+\boldsymbol{J}\left(\boldsymbol{x}\right)^{\mathrm{T}}\Delta\boldsymbol{x}.
@@ -3955,7 +2699,7 @@ H\Delta x=g.
 <li>求解增量方程<span><span class="heti-spacing"> </span>: <span class="arithmatex">\(\displaystyle \boldsymbol{H} \Delta x_{k} = \boldsymbol{g}\)</span></span>。</li>
 <li>若<span class="heti-skip"><span class="heti-spacing"> </span><span class="arithmatex">\(\displaystyle \Delta x_{k}\)</span><span class="heti-spacing"> </span></span>足够小，则停止。否则，令<span><span class="heti-spacing"> </span><span class="arithmatex">\(\displaystyle x_{k+1} = x_{k}+ \Delta x_{k}\)</span></span>，返回第<span class="heti-skip"><span class="heti-spacing"> </span>2<span class="heti-spacing"> </span></span>步。</li>
 </ol>
-<h4 id="623-列文伯格马夸尔特方法"><span>6.2.3<span class="heti-spacing"> </span></span>列文伯格——马夸尔特方法<a class="headerlink" href="#623-列文伯格马夸尔特方法" title="Permanent link"></a></h4>
+<h4 id="623"><span>6.2.3<span class="heti-spacing"> </span></span>列文伯格——马夸尔特方法<a class="headerlink" href="#623" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <p>Damped Newton Method<br/>
 Trust Region<br/>
 Trust Region Method</p>
@@ -3977,15 +2721,15 @@ Trust Region Method</p>
 <div class="arithmatex">\[
 (H+\lambda D^\mathrm{T}D) \Delta x_k=g.
 \]</div>
-<h3 id="63-实践-曲线拟合问题"><span>6.3<span class="heti-spacing"> </span></span>实践<span class="heti-skip"><span class="heti-spacing"> </span>:<span class="heti-spacing"> </span></span>曲线拟合问题<a class="headerlink" href="#63-实践-曲线拟合问题" title="Permanent link"></a></h3>
-<h4 id="631-手写高斯牛顿法"><span>6.3.1<span class="heti-spacing"> </span></span>手写高斯牛顿法<a class="headerlink" href="#631-手写高斯牛顿法" title="Permanent link"></a></h4>
+<h3 id="63"><span>6.3<span class="heti-spacing"> </span></span>实践<span class="heti-skip"><span class="heti-spacing"> </span>:<span class="heti-spacing"> </span></span>曲线拟合问题<a class="headerlink" href="#63" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h4 id="631"><span>6.3.1<span class="heti-spacing"> </span></span>手写高斯牛顿法<a class="headerlink" href="#631" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <p>TODO</p>
-<h4 id="632-使用-ceres-进行曲线拟合"><span>6.3.2<span class="heti-spacing"> </span></span>使用<span class="heti-skip"><span class="heti-spacing"> </span>Ceres<span class="heti-spacing"> </span></span>进行曲线拟合<a class="headerlink" href="#632-使用-ceres-进行曲线拟合" title="Permanent link"></a></h4>
+<h4 id="632-ceres"><span>6.3.2<span class="heti-spacing"> </span></span>使用<span class="heti-skip"><span class="heti-spacing"> </span>Ceres<span class="heti-spacing"> </span></span>进行曲线拟合<a class="headerlink" href="#632-ceres" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <p>TODO</p>
-<h4 id="633-使用-g2o进行曲线拟合"><span>6.3.3<span class="heti-spacing"> </span></span>使用<span class="heti-skip"><span class="heti-spacing"> </span>g2o<span class="heti-spacing"> </span></span>进行曲线拟合<a class="headerlink" href="#633-使用-g2o进行曲线拟合" title="Permanent link"></a></h4>
+<h4 id="633-g2o"><span>6.3.3<span class="heti-spacing"> </span></span>使用<span class="heti-skip"><span class="heti-spacing"> </span>g2o<span class="heti-spacing"> </span></span>进行曲线拟合<a class="headerlink" href="#633-g2o" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <p>TODO</p>
-<h2 id="7-视觉里程计-1"><span>7<span class="heti-spacing"> </span></span>视觉里程计<span><span class="heti-spacing"> </span>1</span><a class="headerlink" href="#7-视觉里程计-1" title="Permanent link"></a></h2>
-<h3 id="71-特征点法"><span>7.1<span class="heti-spacing"> </span></span>特征点法<a class="headerlink" href="#71-特征点法" title="Permanent link"></a></h3>
+<h2 id="7-1"><span>7<span class="heti-spacing"> </span></span>视觉里程计<span><span class="heti-spacing"> </span>1</span><a class="headerlink" href="#7-1" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h2>
+<h3 id="71"><span>7.1<span class="heti-spacing"> </span></span>特征点法<a class="headerlink" href="#71" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
 <ul>
 <li>特征点法<ul>
 <li>两视图几何（Two-view geometry）</li>
@@ -3993,7 +2737,7 @@ Trust Region Method</p>
 </li>
 <li>直接法</li>
 </ul>
-<h4 id="711-特征点"><span>7.1.1<span class="heti-spacing"> </span></span>特征点<a class="headerlink" href="#711-特征点" title="Permanent link"></a></h4>
+<h4 id="711"><span>7.1.1<span class="heti-spacing"> </span></span>特征点<a class="headerlink" href="#711" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <ul>
 <li>如何根据图像估计相机运动</li>
 <li>路标<span class="heti-skip"><span class="heti-spacing"> </span>:<span class="heti-spacing"> </span></span>图像特征</li>
@@ -4019,7 +2763,7 @@ Trust Region Method</p>
 </li>
 <li>ORB (Oriented FAST and Rotated BRIEF)</li>
 </ul>
-<h4 id="712-orb-特征"><span>7.1.2 ORB<span class="heti-spacing"> </span></span>特征<a class="headerlink" href="#712-orb-特征" title="Permanent link"></a></h4>
+<h4 id="712-orb"><span>7.1.2 ORB<span class="heti-spacing"> </span></span>特征<a class="headerlink" href="#712-orb" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <ol>
 <li><span>FAST<span class="heti-spacing"> </span></span>角点提取<span class="heti-skip"><span class="heti-spacing"> </span>: ORB<span class="heti-spacing"> </span></span>中计算了特征点的主方向，为后续的<span class="heti-skip"><span class="heti-spacing"> </span>BRIEF<span class="heti-spacing"> </span></span>描述子增加了旋转不变特性</li>
 <li><span>BRIEF<span class="heti-spacing"> </span></span>描述子<span class="heti-skip"><span class="heti-spacing"> </span>:<span class="heti-spacing"> </span></span>对前一步提取出特征点的周围图像区域进行描述。使用先前计算的方向信息。
@@ -4035,7 +2779,7 @@ Non-maximal suppression<br/>
 - BRIEF 描述子<br/>
 二进制表达+随机选点比较</li>
 </ol>
-<h4 id="713-特征匹配"><span>7.1.3<span class="heti-spacing"> </span></span>特征匹配<a class="headerlink" href="#713-特征匹配" title="Permanent link"></a></h4>
+<h4 id="713"><span>7.1.3<span class="heti-spacing"> </span></span>特征匹配<a class="headerlink" href="#713" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <p>data association<br/>
 Brute-Force Matcher</p>
 <ul>
@@ -4049,18 +2793,18 @@ Brute-Force Matcher</p>
 </li>
 <li>快速近似最近邻（FLANN）</li>
 </ul>
-<h3 id="72-实践-特征提取和匹配"><span>7.2<span class="heti-spacing"> </span></span>实践<span class="heti-skip"><span class="heti-spacing"> </span>:<span class="heti-spacing"> </span></span>特征提取和匹配<a class="headerlink" href="#72-实践-特征提取和匹配" title="Permanent link"></a></h3>
-<h4 id="721-opencv-的-orb-特征"><span>7.2.1 OpenCV<span class="heti-spacing"> </span></span>的<span class="heti-skip"><span class="heti-spacing"> </span>ORB<span class="heti-spacing"> </span></span>特征<a class="headerlink" href="#721-opencv-的-orb-特征" title="Permanent link"></a></h4>
+<h3 id="72"><span>7.2<span class="heti-spacing"> </span></span>实践<span class="heti-skip"><span class="heti-spacing"> </span>:<span class="heti-spacing"> </span></span>特征提取和匹配<a class="headerlink" href="#72" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h4 id="721-opencv-orb"><span>7.2.1 OpenCV<span class="heti-spacing"> </span></span>的<span class="heti-skip"><span class="heti-spacing"> </span>ORB<span class="heti-spacing"> </span></span>特征<a class="headerlink" href="#721-opencv-orb" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <p>TODO</p>
-<h4 id="722-手写-orb-特征"><span>7.2.2<span class="heti-spacing"> </span></span>手写<span class="heti-skip"><span class="heti-spacing"> </span>ORB<span class="heti-spacing"> </span></span>特征<a class="headerlink" href="#722-手写-orb-特征" title="Permanent link"></a></h4>
-<h4 id="723-计算相机运动"><span>7.2.3<span class="heti-spacing"> </span></span>计算相机运动<a class="headerlink" href="#723-计算相机运动" title="Permanent link"></a></h4>
+<h4 id="722-orb"><span>7.2.2<span class="heti-spacing"> </span></span>手写<span class="heti-skip"><span class="heti-spacing"> </span>ORB<span class="heti-spacing"> </span></span>特征<a class="headerlink" href="#722-orb" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
+<h4 id="723"><span>7.2.3<span class="heti-spacing"> </span></span>计算相机运动<a class="headerlink" href="#723" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <ol>
 <li>当相机为单目时，我们通过对极几何来解决两组<span class="heti-skip"><span class="heti-spacing"> </span>2 D<span class="heti-spacing"> </span></span>点估计运动的问题</li>
 <li>当相机为双目、<span>RGB-D<span class="heti-spacing"> </span></span>时，通过<span class="heti-skip"><span class="heti-spacing"> </span>ICP<span class="heti-spacing"> </span></span>来解决两组<span class="heti-skip"><span class="heti-spacing"> </span>3 D<span class="heti-spacing"> </span></span>点估计运动的问题</li>
 <li>一个是<span class="heti-skip"><span class="heti-spacing"> </span>2 D<span class="heti-spacing"> </span></span>一个是<span class="heti-skip"><span class="heti-spacing"> </span>3 D<span class="heti-spacing"> </span></span>时，通过<span class="heti-skip"><span class="heti-spacing"> </span>PnP<span class="heti-spacing"> </span></span>来求解</li>
 </ol>
-<h3 id="73-d-2-d-对极几何"><span>7.3 D-2 D:<span class="heti-spacing"> </span></span>对极几何<a class="headerlink" href="#73-d-2-d-对极几何" title="Permanent link"></a></h3>
-<h4 id="731-对极约束"><span>7.3.1<span class="heti-spacing"> </span></span>对极约束<a class="headerlink" href="#731-对极约束" title="Permanent link"></a></h4>
+<h3 id="73-d-2-d"><span>7.3 D-2 D:<span class="heti-spacing"> </span></span>对极几何<a class="headerlink" href="#73-d-2-d" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h4 id="731"><span>7.3.1<span class="heti-spacing"> </span></span>对极约束<a class="headerlink" href="#731" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <ul>
 <li>Epipolar plane</li>
 <li>Epipoles</li>
@@ -4107,7 +2851,7 @@ E=t^{\wedge}R,\quad F=K^{-\mathrm{T}}EK^{-1},\quad x_{2}^{\mathrm{T}}Ex_{1}=p_{2
 <li>根据<span class="heti-skip"><span class="heti-spacing"> </span><span class="arithmatex">\(\displaystyle \boldsymbol{E}\)</span><span class="heti-spacing"> </span></span>或者<span class="heti-skip"><span class="heti-spacing"> </span><span class="arithmatex">\(\displaystyle \boldsymbol{F}\)</span><span class="heti-spacing"> </span></span>求出<span><span class="heti-spacing"> </span><span class="arithmatex">\(\displaystyle \boldsymbol{R},\boldsymbol{t}\)</span></span>。<br/>
 <span class="arithmatex">\(\displaystyle \boldsymbol{E}\)</span> 和 <span class="arithmatex">\(\displaystyle \boldsymbol{F}\)</span> 只相差了相机内参，所以实践中往往使用形式更简单的 <span class="arithmatex">\(\displaystyle \boldsymbol{E}\)</span>。</li>
 </ol>
-<h4 id="732-本质矩阵"><span>7.3.2<span class="heti-spacing"> </span></span>本质矩阵<a class="headerlink" href="#732-本质矩阵" title="Permanent link"></a></h4>
+<h4 id="732"><span>7.3.2<span class="heti-spacing"> </span></span>本质矩阵<a class="headerlink" href="#732" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <p>本质矩阵<span><span class="heti-spacing"> </span>: <span class="arithmatex">\(\displaystyle E=t^{\wedge}R\)</span></span></p>
 <ul>
 <li><span><span class="arithmatex">\(\displaystyle \boldsymbol{E}\)</span><span class="heti-spacing"> </span></span>不同尺度下是等价的。</li>
@@ -4139,10 +2883,10 @@ E=U\Sigma V^{\mathrm{T}},
 <div class="arithmatex">\[
 \boldsymbol{E}=\boldsymbol{U}\mathrm{diag}(\frac{\sigma_1+\sigma_2}2,\frac{\sigma_1+\sigma_2}2,0)\boldsymbol{V}^\mathrm{T}.
 \]</div>
-<h4 id="733-单应矩阵"><span>7.3.3<span class="heti-spacing"> </span></span>单应矩阵<a class="headerlink" href="#733-单应矩阵" title="Permanent link"></a></h4>
+<h4 id="733"><span>7.3.3<span class="heti-spacing"> </span></span>单应矩阵<a class="headerlink" href="#733" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <p>Homography</p>
-<h2 id="8-视觉里程计-2"><span>8<span class="heti-spacing"> </span></span>视觉里程计<span><span class="heti-spacing"> </span>2</span><a class="headerlink" href="#8-视觉里程计-2" title="Permanent link"></a></h2>
-<h3 id="81-直接法的引出"><span>8.1<span class="heti-spacing"> </span></span>直接法的引出<a class="headerlink" href="#81-直接法的引出" title="Permanent link"></a></h3>
+<h2 id="8-2"><span>8<span class="heti-spacing"> </span></span>视觉里程计<span><span class="heti-spacing"> </span>2</span><a class="headerlink" href="#8-2" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h2>
+<h3 id="81"><span>8.1<span class="heti-spacing"> </span></span>直接法的引出<a class="headerlink" href="#81" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
 <ul>
 <li>特征点法的缺点<ul>
 <li>关键点的提取与描述子的计算非常耗时</li>
@@ -4165,7 +2909,7 @@ E=U\Sigma V^{\mathrm{T}},
 </ul>
 </li>
 </ul>
-<h3 id="82-d-光流"><span>8.2 D<span class="heti-spacing"> </span></span>光流<a class="headerlink" href="#82-d-光流" title="Permanent link"></a></h3>
+<h3 id="82-d"><span>8.2 D<span class="heti-spacing"> </span></span>光流<a class="headerlink" href="#82-d" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
 <ul>
 <li>计算部分像素运动<span class="heti-skip"><span class="heti-spacing"> </span>:<span class="heti-spacing"> </span></span>稀疏光流<ul>
 <li>Lucas-Kanasde</li>
@@ -4200,8 +2944,8 @@ A\begin{bmatrix}u\\\\v\end{bmatrix}=-b.
 <div class="arithmatex">\[
 \begin{bmatrix}u\\\\v\end{bmatrix}^*=-\begin{pmatrix}\boldsymbol{A}^\mathrm{T}\boldsymbol{A}\end{pmatrix}^{-1}\boldsymbol{A}^\mathrm{T}\boldsymbol{b}.
 \]</div>
-<h3 id="83-实践-lk-光流"><span>8.3<span class="heti-spacing"> </span></span>实践<span class="heti-skip"><span class="heti-spacing"> </span>: LK<span class="heti-spacing"> </span></span>光流<a class="headerlink" href="#83-实践-lk-光流" title="Permanent link"></a></h3>
-<h4 id="831-使用-lk-光流"><span>8.3.1<span class="heti-spacing"> </span></span>使用<span class="heti-skip"><span class="heti-spacing"> </span>LK<span class="heti-spacing"> </span></span>光流<a class="headerlink" href="#831-使用-lk-光流" title="Permanent link"></a></h4>
+<h3 id="83-lk"><span>8.3<span class="heti-spacing"> </span></span>实践<span class="heti-skip"><span class="heti-spacing"> </span>: LK<span class="heti-spacing"> </span></span>光流<a class="headerlink" href="#83-lk" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h4 id="831-lk"><span>8.3.1<span class="heti-spacing"> </span></span>使用<span class="heti-skip"><span class="heti-spacing"> </span>LK<span class="heti-spacing"> </span></span>光流<a class="headerlink" href="#831-lk" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <div class="highlight"><table class="highlighttable"><tr><th class="filename" colspan="2"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
 <span class="normal"><a href="#__codelineno-9-2">2</a></span>
 <span class="normal"><a href="#__codelineno-9-3">3</a></span>
@@ -4212,7 +2956,7 @@ A\begin{bmatrix}u\\\\v\end{bmatrix}=-b.
 <a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="n">error</span><span class="p">;</span>
 <a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="n">cv</span><span class="o">::</span><span class="n">calcOpticalFlowPyrLK</span><span class="p">(</span><span class="n">img1</span><span class="p">,</span><span class="w"> </span><span class="n">img2</span><span class="p">,</span><span class="w"> </span><span class="n">pt1</span><span class="p">,</span><span class="w"> </span><span class="n">pt2</span><span class="p">,</span><span class="w"> </span><span class="n">status</span><span class="p">,</span><span class="w"> </span><span class="n">error</span><span class="p">);</span>
 </code></pre></div></td></tr></table></div>
-<h4 id="832-用高斯牛顿法实现光流"><span>8.3.2<span class="heti-spacing"> </span></span>用高斯牛顿法实现光流<a class="headerlink" href="#832-用高斯牛顿法实现光流" title="Permanent link"></a></h4>
+<h4 id="832"><span>8.3.2<span class="heti-spacing"> </span></span>用高斯牛顿法实现光流<a class="headerlink" href="#832" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <p><strong>单层光流</strong><br/>
 TODO</p>
 <div class="arithmatex">\[
@@ -4220,9 +2964,9 @@ TODO</p>
 \]</div>
 <p><strong>多层光流</strong>
 - 由粗至精（Coarse-to-fine）</p>
-<h4 id="833-光流实践小结"><span>8.3.3<span class="heti-spacing"> </span></span>光流实践小结<a class="headerlink" href="#833-光流实践小结" title="Permanent link"></a></h4>
-<h3 id="84-直接法"><span>8.4<span class="heti-spacing"> </span></span>直接法<a class="headerlink" href="#84-直接法" title="Permanent link"></a></h3>
-<h4 id="841-直接法的推导"><span>8.4.1<span class="heti-spacing"> </span></span>直接法的推导<a class="headerlink" href="#841-直接法的推导" title="Permanent link"></a></h4>
+<h4 id="833"><span>8.3.3<span class="heti-spacing"> </span></span>光流实践小结<a class="headerlink" href="#833" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
+<h3 id="84"><span>8.4<span class="heti-spacing"> </span></span>直接法<a class="headerlink" href="#84" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h4 id="841"><span>8.4.1<span class="heti-spacing"> </span></span>直接法的推导<a class="headerlink" href="#841" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="80%" href="https://cdn.jsdelivr.net/gh/WncFht/picture/202409091332369.png"><img alt="QQ_1725859950007.png" src="https://cdn.jsdelivr.net/gh/WncFht/picture/202409091332369.png"/></a></p>
 <div class="arithmatex">\[
 \boldsymbol{p}_1=\begin{bmatrix}u\\\\v\\\\1\end{bmatrix}_1=\frac{1}{Z_1}\boldsymbol{K}\boldsymbol{P},
@@ -4260,18 +3004,18 @@ e(T)=I_1(p_1)-I_2(u),
 <div class="arithmatex">\[
 J=-\frac{\partial I_2}{\partial u}\frac{\partial u}{\partial\delta\xi}.
 \]</div>
-<h4 id="842-直接法的讨论"><span>8.4.2<span class="heti-spacing"> </span></span>直接法的讨论<a class="headerlink" href="#842-直接法的讨论" title="Permanent link"></a></h4>
-<h3 id="85-实践-直接法"><span>8.5<span class="heti-spacing"> </span></span>实践<span class="heti-skip"><span class="heti-spacing"> </span>:<span class="heti-spacing"> </span></span>直接法<a class="headerlink" href="#85-实践-直接法" title="Permanent link"></a></h3>
-<h4 id="851-单层直接法"><span>8.5.1<span class="heti-spacing"> </span></span>单层直接法<a class="headerlink" href="#851-单层直接法" title="Permanent link"></a></h4>
-<h4 id="852-多层直接法"><span>8.5.2<span class="heti-spacing"> </span></span>多层直接法<a class="headerlink" href="#852-多层直接法" title="Permanent link"></a></h4>
-<h4 id="853-结果讨论"><span>8.5.3<span class="heti-spacing"> </span></span>结果讨论<a class="headerlink" href="#853-结果讨论" title="Permanent link"></a></h4>
+<h4 id="842"><span>8.4.2<span class="heti-spacing"> </span></span>直接法的讨论<a class="headerlink" href="#842" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
+<h3 id="85"><span>8.5<span class="heti-spacing"> </span></span>实践<span class="heti-skip"><span class="heti-spacing"> </span>:<span class="heti-spacing"> </span></span>直接法<a class="headerlink" href="#85" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h4 id="851"><span>8.5.1<span class="heti-spacing"> </span></span>单层直接法<a class="headerlink" href="#851" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
+<h4 id="852"><span>8.5.2<span class="heti-spacing"> </span></span>多层直接法<a class="headerlink" href="#852" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
+<h4 id="853"><span>8.5.3<span class="heti-spacing"> </span></span>结果讨论<a class="headerlink" href="#853" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <ul>
 <li>Normalized Cross</li>
 </ul>
-<h4 id="854-直接法优缺点总结"><span>8.5.4<span class="heti-spacing"> </span></span>直接法优缺点总结<a class="headerlink" href="#854-直接法优缺点总结" title="Permanent link"></a></h4>
-<h2 id="9-后端-1"><span>9<span class="heti-spacing"> </span></span>后端<span><span class="heti-spacing"> </span>1</span><a class="headerlink" href="#9-后端-1" title="Permanent link"></a></h2>
-<h3 id="91-概述"><span>9.1<span class="heti-spacing"> </span></span>概述<a class="headerlink" href="#91-概述" title="Permanent link"></a></h3>
-<h4 id="911-状态估计的概率解释"><span>9.1.1<span class="heti-spacing"> </span></span>状态估计的概率解释<a class="headerlink" href="#911-状态估计的概率解释" title="Permanent link"></a></h4>
+<h4 id="854"><span>8.5.4<span class="heti-spacing"> </span></span>直接法优缺点总结<a class="headerlink" href="#854" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
+<h2 id="9-1"><span>9<span class="heti-spacing"> </span></span>后端<span><span class="heti-spacing"> </span>1</span><a class="headerlink" href="#9-1" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h2>
+<h3 id="91"><span>9.1<span class="heti-spacing"> </span></span>概述<a class="headerlink" href="#91" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h4 id="911"><span>9.1.1<span class="heti-spacing"> </span></span>状态估计的概率解释<a class="headerlink" href="#911" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <ul>
 <li>只使用过去的信息<span class="heti-skip"><span class="heti-spacing"> </span>:<span class="heti-spacing"> </span></span>渐进的（Incremental）</li>
 <li>使用未来的信息更新<span class="heti-skip"><span class="heti-spacing"> </span>:<span class="heti-spacing"> </span></span>批量的（Batch）</li>
@@ -4312,7 +3056,7 @@ P\left(\boldsymbol{x}_{k}|\boldsymbol{x}_{0},\boldsymbol{u}_{1:k},\boldsymbol{z}
 </ul>
 </li>
 </ul>
-<h4 id="912-线性系统和-kf"><span>9.1.2<span class="heti-spacing"> </span></span>线性系统和<span><span class="heti-spacing"> </span>KF</span><a class="headerlink" href="#912-线性系统和-kf" title="Permanent link"></a></h4>
+<h4 id="912-kf"><span>9.1.2<span class="heti-spacing"> </span></span>线性系统和<span><span class="heti-spacing"> </span>KF</span><a class="headerlink" href="#912-kf" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <div class="arithmatex">\[
 P\left(\boldsymbol{x}_k|\boldsymbol{x}_{k-1},\boldsymbol{x}_0,\boldsymbol{u}_{1:k},\boldsymbol{z}_{1:k-1}\right)=P\left(\boldsymbol{x}_k|\boldsymbol{x}_{k-1},\boldsymbol{u}_k\right).
 \]</div>
@@ -4392,7 +3136,7 @@ I=\hat{P}_{k}C_{k}^{\mathrm{T}}Q^{-1}C_{k}+\hat{P}_{k}\check{P}_{k}^{-1}=KC_{k}+
 \end{aligned}
 \]</div>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="80%" href="https://cdn.jsdelivr.net/gh/WncFht/picture/202409091644803.png"><img alt="QQ_1725871447753.png" src="https://cdn.jsdelivr.net/gh/WncFht/picture/202409091644803.png"/></a></p>
-<h4 id="913-非线性系统和-ekf"><span>9.1.3<span class="heti-spacing"> </span></span>非线性系统和<span><span class="heti-spacing"> </span>EKF</span><a class="headerlink" href="#913-非线性系统和-ekf" title="Permanent link"></a></h4>
+<h4 id="913-ekf"><span>9.1.3<span class="heti-spacing"> </span></span>非线性系统和<span><span class="heti-spacing"> </span>EKF</span><a class="headerlink" href="#913-ekf" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <ul>
 <li>扩展卡尔曼滤波器<ul>
 <li>即把非高斯分布近似成高斯分布</li>
@@ -4429,7 +3173,7 @@ K_{k}=\check{P}_{k}H^{\mathrm{T}}(H\check{P}_{k}H^{\mathrm{T}}+Q_{k})^{-1}.
 <div class="arithmatex">\[
 \hat{\boldsymbol{x}}_k=\check{\boldsymbol{x}}_k+\boldsymbol{K}_k\left(\boldsymbol{z}_k-h\left(\check{\boldsymbol{x}}_k\right)\right),\hat{\boldsymbol{P}}_k=\left(\boldsymbol{I}-\boldsymbol{K}_k\boldsymbol{H}\right)\check{\boldsymbol{P}}_k.
 \]</div>
-<h4 id="914-ekf-的讨论"><span>9.1.4 EKF<span class="heti-spacing"> </span></span>的讨论<a class="headerlink" href="#914-ekf-的讨论" title="Permanent link"></a></h4>
+<h4 id="914-ekf"><span>9.1.4 EKF<span class="heti-spacing"> </span></span>的讨论<a class="headerlink" href="#914-ekf" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <ul>
 <li>局限<ul>
 <li>假设了马尔可夫性，但是非线性优化是全体时间上的<span><span class="heti-spacing"> </span>SLAM (Full-SLAM)</span></li>
@@ -4439,14 +3183,14 @@ K_{k}=\check{P}_{k}H^{\mathrm{T}}(H\check{P}_{k}H^{\mathrm{T}}+Q_{k})^{-1}.
 </ul>
 </li>
 </ul>
-<h3 id="92-ba-与图优化"><span>9.2 BA<span class="heti-spacing"> </span></span>与图优化<a class="headerlink" href="#92-ba-与图优化" title="Permanent link"></a></h3>
+<h3 id="92-ba"><span>9.2 BA<span class="heti-spacing"> </span></span>与图优化<a class="headerlink" href="#92-ba" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
 <ul>
 <li>Bundle Adjustment<ul>
 <li>从视觉图像中提炼出最有的<span class="heti-skip"><span class="heti-spacing"> </span>3 D<span class="heti-spacing"> </span></span>模型和相机参数，让光线最终收束到相机的光心</li>
 </ul>
 </li>
 </ul>
-<h4 id="921-投影模型和-ba-代价函数"><span>9.2.1<span class="heti-spacing"> </span></span>投影模型和<span class="heti-skip"><span class="heti-spacing"> </span>BA<span class="heti-spacing"> </span></span>代价函数<a class="headerlink" href="#921-投影模型和-ba-代价函数" title="Permanent link"></a></h4>
+<h4 id="921-ba"><span>9.2.1<span class="heti-spacing"> </span></span>投影模型和<span class="heti-skip"><span class="heti-spacing"> </span>BA<span class="heti-spacing"> </span></span>代价函数<a class="headerlink" href="#921-ba" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <div class="arithmatex">\[
 P^{\prime}=Rp+t=[X^{\prime},Y^{\prime},Z^{\prime}]^\mathrm{T}.
 \]</div>
@@ -4472,7 +3216,7 @@ z\overset{\mathrm{def}}{\operatorname*{=}}[u_s,v_s]^\mathrm{T}
 <div class="arithmatex">\[
 \frac12\sum_{i=1}^m\sum_{j=1}^n\|e_{ij}\|^2=\frac12\sum_{i=1}^m\sum_{j=1}^n\|z_{ij}-h(\boldsymbol{T}_i,\boldsymbol{p}_j)\|^2.
 \]</div>
-<h4 id="922-ba-的求解"><span>9.2.2 BA<span class="heti-spacing"> </span></span>的求解<a class="headerlink" href="#922-ba-的求解" title="Permanent link"></a></h4>
+<h4 id="922-ba"><span>9.2.2 BA<span class="heti-spacing"> </span></span>的求解<a class="headerlink" href="#922-ba" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <div class="arithmatex">\[
 x=[T_1,\ldots,T_m,p_1,\ldots,p_n]^\mathrm{T}.
 \]</div>
@@ -4494,7 +3238,7 @@ x_{\mathfrak{c}}=[\boldsymbol{\xi}_1,\boldsymbol{\xi}_2,\ldots,\boldsymbol{\xi}_
 <div class="arithmatex">\[
 H=J^\mathrm{T}J=\begin{bmatrix}F^\mathrm{T}F&amp;F^\mathrm{T}E\\E^\mathrm{T}F&amp;E^\mathrm{T}E\end{bmatrix}.
 \]</div>
-<h4 id="923-稀疏性和边缘化"><span>9.2.3<span class="heti-spacing"> </span></span>稀疏性和边缘化<a class="headerlink" href="#923-稀疏性和边缘化" title="Permanent link"></a></h4>
+<h4 id="923"><span>9.2.3<span class="heti-spacing"> </span></span>稀疏性和边缘化<a class="headerlink" href="#923" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <div class="arithmatex">\[
 J_{ij}(x)=\left(\mathbf{0}_{2\times6},\ldots\mathbf{0}_{2\times6},\frac{\partial\boldsymbol{e}_{ij}}{\partial\boldsymbol{T}_{i}},\mathbf{0}_{2\times6},\ldots\mathbf{0}_{2\times3},\ldots\mathbf{0}_{2\times3},\frac{\partial\boldsymbol{e}_{ij}}{\partial\boldsymbol{p}_{j}},\mathbf{0}_{2\times3},\ldots\mathbf{0}_{2\times3}\right).
 \]</div>
@@ -4528,7 +3272,7 @@ H=\begin{bmatrix}H_{11}&amp;H_{12}\\\\H_{21}&amp;H_{22}\end{bmatrix}.
 </li>
 <li>非对角线上的非零矩阵块表示对应的两个相机变量之间存在共同观测的路标点，即共视（Co-visibility）</li>
 </ul>
-<h4 id="924-鲁棒核函数"><span>9.2.4<span class="heti-spacing"> </span></span>鲁棒核函数<a class="headerlink" href="#924-鲁棒核函数" title="Permanent link"></a></h4>
+<h4 id="924"><span>9.2.4<span class="heti-spacing"> </span></span>鲁棒核函数<a class="headerlink" href="#924" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <ul>
 <li>Robust Kernel</li>
 </ul>
@@ -4536,88 +3280,44 @@ H=\begin{bmatrix}H_{11}&amp;H_{12}\\\\H_{21}&amp;H_{22}\end{bmatrix}.
 H(e)=\begin{cases}\frac{1}{2}e^2&amp;\text{当}|e|\leqslant\delta,\\\\\delta\left(|e|-\frac{1}{2}\delta\right)&amp;\text{其他}\end{cases}
 \]</div>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="80%" href="https://cdn.jsdelivr.net/gh/WncFht/picture/202409100021134.png"><img alt="QQ_1725898890681.png" src="https://cdn.jsdelivr.net/gh/WncFht/picture/202409100021134.png"/></a></p>
-<h3 id="93-实践-ceres-ba"><span>9.3<span class="heti-spacing"> </span></span>实践<span><span class="heti-spacing"> </span>: Ceres BA</span><a class="headerlink" href="#93-实践-ceres-ba" title="Permanent link"></a></h3>
-<h4 id="931-bal-数据集"><span>9.3.1 BAL<span class="heti-spacing"> </span></span>数据集<a class="headerlink" href="#931-bal-数据集" title="Permanent link"></a></h4>
-<h4 id="932-ceres-ba-的书写"><span>9.3.2 Ceres BA<span class="heti-spacing"> </span></span>的书写<a class="headerlink" href="#932-ceres-ba-的书写" title="Permanent link"></a></h4>
-<h3 id="94-实践-g-2-o-求解-ba"><span>9.4<span class="heti-spacing"> </span></span>实践<span class="heti-skip"><span class="heti-spacing"> </span>: g 2 o<span class="heti-spacing"> </span></span>求解<span><span class="heti-spacing"> </span>BA</span><a class="headerlink" href="#94-实践-g-2-o-求解-ba" title="Permanent link"></a></h3>
-<h3 id="95-小结"><span>9.5<span class="heti-spacing"> </span></span>小结<a class="headerlink" href="#95-小结" title="Permanent link"></a></h3>
-<h2 id="10-后端-2"><span>10<span class="heti-spacing"> </span></span>后端<span><span class="heti-spacing"> </span>2</span><a class="headerlink" href="#10-后端-2" title="Permanent link"></a></h2>
-<h2 id="11-回环检测"><span>11<span class="heti-spacing"> </span></span>回环检测<a class="headerlink" href="#11-回环检测" title="Permanent link"></a></h2>
-<h2 id="12-建图"><span>12<span class="heti-spacing"> </span></span>建图<a class="headerlink" href="#12-建图" title="Permanent link"></a></h2>
-<h2 id="13-实践-设计-slam-系统"><span>13<span class="heti-spacing"> </span></span>实践<span class="heti-skip"><span class="heti-spacing"> </span>:<span class="heti-spacing"> </span></span>设计<span class="heti-skip"><span class="heti-spacing"> </span>SLAM<span class="heti-spacing"> </span></span>系统<a class="headerlink" href="#13-实践-设计-slam-系统" title="Permanent link"></a></h2>
-<h2 id="14-slam-现在与未来"><span>14 SLAM:<span class="heti-spacing"> </span></span>现在与未来<a class="headerlink" href="#14-slam-现在与未来" title="Permanent link"></a></h2>
-<div id="__comments"></div>
-<h3>颜色主题调整</h3>
-<div class="tx-switch">
-<button class="button1" data-md-color-primary="red" style="background-color:red">red</button>
-<button class="button1" data-md-color-primary="pink" style="background-color:pink;color:black">pink</button>
-<button class="button1" data-md-color-primary="purple" style="background-color:purple">purple</button>
-<button class="button1" data-md-color-primary="indigo" style="background-color:indigo">indigo</button>
-<button class="button1" data-md-color-primary="blue" style="background-color:blue">blue</button>
-<button class="button1" data-md-color-primary="cyan" style="background-color:cyan;color:black">cyan</button>
-<button class="button1" data-md-color-primary="teal" style="background-color:teal">teal</button>
-<button class="button1" data-md-color-primary="green" style="background-color:green">green</button>
-<button class="button1" data-md-color-primary="lime" style="background-color:lime;color:black">lime</button>
-<button class="button1" data-md-color-primary="orange" style="background-color:orange;color:black">orange</button>
-<button class="button1" data-md-color-primary="brown" style="background-color:brown;border-radius=3px">brown</button>
-<button class="button1" data-md-color-primary="grey" style="background-color:grey">grey</button>
-<button class="button1" data-md-color-primary="black" style="background-color:black">black</button>
-<button class="button1" data-md-color-primary="white" style="background-color:white;color:black">white</button>
-</div>
-<!-- Giscus -->
-<script async="" crossorigin="anonymous" data-category="General" data-category-id="DIC_kwDOMjtQQs4CiwBw" data-emit-metadata="0" data-input-position="bottom" data-lang="zh-CN" data-mapping="pathname" data-reactions-enabled="1" data-repo="WncFht/WncFht.github.io" data-repo-id="R_kgDOMjtQQg" data-strict="0" data-theme="preferred_color_scheme" src="https://giscus.app/client.js">
-</script>
-<script>
-    var buttons = document.querySelectorAll("button[data-md-color-primary]")
-    buttons.forEach(function(button) {
-            button.addEventListener("click", function() {
-            var attr = this.getAttribute("data-md-color-primary")
-            document.body.setAttribute("data-md-color-primary", attr)
-            localStorage.setItem("data-md-color-primary",attr);
-            })
-    })
-    </script>
-<!-- Synchronize Giscus theme with palette -->
-<script>
-    var giscus = document.querySelector("script[src*=giscus]")
-</script>
-<script>
-    var giscus = document.querySelector("script[src*=giscus]")
-    
-    /* Set palette on initial load */
-    // var palette = __md_get("__palette")
-    // if (palette && typeof palette.color === "object") {
-    //     var theme = palette.color.scheme === "slate" ? "dark" : "light"
-    //     giscus.setAttribute("data-theme", theme) 
-    // }
-    
-    /* Register event handlers after documented loaded */
-    // document.addEventListener("DOMContentLoaded", function() {
-    //     var ref = document.querySelector("[data-md-component=palette]")
-    //     ref.addEventListener("change", function() {
-    //     var palette = __md_get("__palette")
-    //     if (palette && typeof palette.color === "object") {
-    //         var theme = palette.color.scheme === "slate" ? "dark" : "light"
-    
-    //         /* Instruct Giscus to change theme */
-    //         var frame = document.querySelector(".giscus-frame")
-    //         frame.contentWindow.postMessage(
-    //         { giscus: { setConfig: { theme } } },
-    //         "https://giscus.app"
-    //         )
-    //     }
-    //     })
-    // })
-    </script>
-<div class="card" id="statistics" style="width: 27em; border-color: transparent; opacity: 0; font-size: 75%">
-<div style="padding-left: 1em;">
-        页面总数：<span id="total-pages"></span><br/>
-        总字数：<span id="total-words"></span><br/>
-        代码块行数：<span id="code-lines"></span><br/>
+<h3 id="93-ceres-ba"><span>9.3<span class="heti-spacing"> </span></span>实践<span><span class="heti-spacing"> </span>: Ceres BA</span><a class="headerlink" href="#93-ceres-ba" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h4 id="931-bal"><span>9.3.1 BAL<span class="heti-spacing"> </span></span>数据集<a class="headerlink" href="#931-bal" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
+<h4 id="932-ceres-ba"><span>9.3.2 Ceres BA<span class="heti-spacing"> </span></span>的书写<a class="headerlink" href="#932-ceres-ba" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
+<h3 id="94-g-2-o-ba"><span>9.4<span class="heti-spacing"> </span></span>实践<span class="heti-skip"><span class="heti-spacing"> </span>: g 2 o<span class="heti-spacing"> </span></span>求解<span><span class="heti-spacing"> </span>BA</span><a class="headerlink" href="#94-g-2-o-ba" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h3 id="95"><span>9.5<span class="heti-spacing"> </span></span>小结<a class="headerlink" href="#95" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h2 id="10-2"><span>10<span class="heti-spacing"> </span></span>后端<span><span class="heti-spacing"> </span>2</span><a class="headerlink" href="#10-2" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h2>
+<h2 id="11_1"><span>11<span class="heti-spacing"> </span></span>回环检测<a class="headerlink" href="#11_1" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h2>
+<h2 id="12_1"><span>12<span class="heti-spacing"> </span></span>建图<a class="headerlink" href="#12_1" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h2>
+<h2 id="13-slam"><span>13<span class="heti-spacing"> </span></span>实践<span class="heti-skip"><span class="heti-spacing"> </span>:<span class="heti-spacing"> </span></span>设计<span class="heti-skip"><span class="heti-spacing"> </span>SLAM<span class="heti-spacing"> </span></span>系统<a class="headerlink" href="#13-slam" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h2>
+<h2 id="14-slam"><span>14 SLAM:<span class="heti-spacing"> </span></span>现在与未来<a class="headerlink" href="#14-slam" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h2>
+<aside class="md-source-file">
+<span class="md-source-file__fact">
+<span class="md-icon" title="最后更新">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年10月3日 18:35:08</span>
+</span>
+<span class="md-source-file__fact">
+<span class="md-icon" title="创建日期">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月25日 00:26:32</span>
+</span>
+</aside>
+<!-- <div id="statistics" class="card" style="width: 27em; border-color: transparent; opacity: 0; font-size: 75%">
+    <div style="padding-left: 1em;">
+        页面总数：<span id="total-pages"></span><br>
+        总字数：<span id="total-words"></span><br>
+        代码块行数：<span id="code-lines"></span><br>
         网站运行时间：<span id="web-time"></span>
+    </div>
 </div>
-</div>
-<button onclick="toggle_statistics()">统计信息</button>
+
+<div class="mac-content-container"></div>
+    <div class="mac-content-block">
+      <span class="mac-content-label">本文总阅读量:</span>
+      <span id="busuanzi_value_page_pv"></span>次
+</div> -->
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
@@ -4644,16 +3344,10 @@ H(e)=\begin{cases}\frac{1}{2}e^2&amp;\text{当}|e|\leqslant\delta,\\\\\delta\lef
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<div class="md-progress" data-md-component="progress" role="progressbar"></div>
-<script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "content.action.view", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "navigation.instant", "navigation.instant.progress", "content.code.copy", "navigation.sections", "toc.follow", "search.highlight", "search.share", "search.suggest", "navigation.tabs.sticky"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+<script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "content.action.view", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "content.code.copy"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
 <script src="../../assets/javascripts/bundle.56dfad97.min.js"></script>
-<script src="../../js/custom.js"></script>
-<script src="../../js/heti.js"></script>
 <script src="../../js/katex.js"></script>
-<script src="../../js/scheme.js"></script>
-<script src="../../js/toc.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+<script src="https://cdn.tonycrane.cc/utils/katex.min.js"></script>
 <script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
 document$.subscribe(() => { lightbox.reload() });
