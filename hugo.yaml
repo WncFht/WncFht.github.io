@@ -1,4 +1,78 @@
-baseURL: https://example.org/
-languageCode: en-us
-title: My New Hugo Site
-theme: ["PaperMod"]
+baseURL: "https://WncFht.github.io/" # 主站的 URL
+title: WncFht's Blog # 站点标题
+copyright: "[©2024 WncFht's Blog](https://WncFht.github.io/)" # 网站的版权声明，通常显示在页脚
+theme: PaperMod # 主题
+languageCode: zh-cn # 语言
+
+enableInlineShortcodes: true # shortcode，类似于模板变量，可以在写 markdown 的时候便捷地插入，官方文档中有一个视频讲的很通俗
+hasCJKLanguage: true # 是否有 CJK 的字符
+enableRobotsTXT: true # 允许生成 robots.txt
+buildDrafts: false # 构建时是否包括草稿
+buildFuture: false # 构建未来发布的内容
+buildExpired: false # 构建过期的内容
+enableEmoji: true # 允许 emoji
+pygmentsUseClasses: true
+defaultContentLanguage: zh # 顶部首先展示的语言界面
+defaultContentLanguageInSubdir: false # 是否要在地址栏加上默认的语言代码
+
+languages:
+  zh:
+    languageName: "中文" # 展示的语言名
+    weight: 1 # 权重
+    taxonomies: # 分类系统
+      category: categories
+      tag: tags
+    # https://gohugo.io/content-management/menus/#define-in-site-configuration
+    menus:
+      main:
+        - name: 首页
+          pageRef: /
+          weight: 4 # 控制在页面上展示的前后顺序
+        - name: 归档
+          pageRef: archives/
+          weight: 5
+        - name: 分类
+          pageRef: categories/
+          weight: 10
+        - name: 标签
+          pageRef: tags/
+          weight: 10
+        - name: 搜索
+          pageRef: search/
+          weight: 20
+        - name: 关于
+          pageRef: about/
+          weight: 21
+# https://github.com/adityatelange/hugo-PaperMod/wiki/Features#search-page
+outputs:
+  home:
+    - HTML # 生成的静态页面
+    - RSS # 这个其实无所谓
+    - JSON # necessary for search, 这里的配置修改好之后，一定要重新生成一下
+params:
+  assets:
+      disableHLJS: true
+  # 搜索
+  fuseOpts:
+      isCaseSensitive: false # 是否大小写敏感
+      shouldSort: true # 是否排序
+      location: 0
+      distance: 1000
+      threshold: 0.4
+      minMatchCharLength: 0
+      # limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
+      keys: ["title", "permalink", "summary", "content"]
+      includeMatches: true
+markup:
+  goldmark:
+    renderer:
+      unsafe: true # 可以 unsafe，有些 html 标签和样式可能需要
+  highlight:
+    anchorLineNos: false # 不要给行号设置锚标
+    codeFences: true # 代码围栏
+    noClasses: false # TODO: 不知道干啥的，暂时没必要了解，不影响展示
+    lineNos: true # 代码行
+    lineNumbersInTable: false # 不要设置成 true，否则如果文章开头是代码的话，摘要会由一大堆数字(即代码行号)开头文章
+    # 这里设置 style 没用，得自己加 css
+    # style: "github-dark"
+    # style: monokai
