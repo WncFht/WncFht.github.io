@@ -1,3 +1,1 @@
 User-agent: *
-Disallow:
-Sitemap: https://WncFht.github.io/sitemap.xml

@@ -44,12 +44,27 @@ languages:
           pageRef: about/
           weight: 21
 # https://github.com/adityatelange/hugo-PaperMod/wiki/Features#search-page
+
 outputs:
   home:
     - HTML # 生成的静态页面
     - RSS # 这个其实无所谓
     - JSON # necessary for search, 这里的配置修改好之后，一定要重新生成一下
 params:
+  giscus:
+    repo: "WncFht/WncFht.github.io"
+    repoId: "R_kgDONNHiog"
+    category: "General"
+    categoryId: "DIC_kwDONNHios4CkJLc"
+    mapping: "pathname"
+    strict: "0"
+    reactionsEnabled: "1"
+    emitMetadata: "0"
+    inputPosition: "bottom"
+    lightTheme: "light"
+    darkTheme: "dark"
+    lang: "zh-CN"
+    crossorigin: "anonymous"
   assets:
       disableHLJS: true
   # 搜索
