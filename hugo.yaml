@@ -49,28 +49,18 @@ outputs:
     - JSON # necessary for search, 这里的配置修改好之后，一定要重新生成一下
 
 params:
-# 代码块功能
+  title: "xxx's blog" # 首页标题
+  description: "xxx" # 页面描述
+  keywords: [Blog, xxx] # 首页的关键词
+  author: xxx # 文章中默认显示的作者名字
+  DateFormat: "2006-01-02" # 将时间格式修改为国内常用格式
+  showtoc: true # 在每篇文章开头显示目录
+  # 代码块功能
   ShowMacDots: true # Mac色块
   ShowCodeLang: true # 语言显示
   ShowExpandButton: true # 代码块折叠
   ShowCodeCopyButtons: true # 代码块复制按钮
   codeMaxHeight: "100px" # 代码块最大折叠高度
-  # giscus:
-  #   repo: "WncFht/WncFht.github.io"
-  #   repoId: "R_kgDONNHiog"
-  #   category: "General"
-  #   categoryId: "DIC_kwDONNHios4CkJLc"
-  #   mapping: "pathname"
-  #   strict: "0"
-  #   reactionsEnabled: "1"
-  #   emitMetadata: "0"
-  #   inputPosition: "bottom"
-  #   lightTheme: "light"
-  #   darkTheme: "dark"
-  #   lang: "zh-CN"
-  #   crossorigin: "anonymous"
-  # assets:
-  #     disableHLJS: true
   # 搜索
   fuseOpts:
       # DateFormat: "2006-01-02"  # 日期格式化
@@ -98,3 +88,25 @@ markup:
     # style: "github-dark"
     # style: monokai
 
+profileMode: 
+  enabled: true # needs to be explicitly set
+  title: "xxx's blog"
+  subtitle: "This is subtitle"
+  imageUrl: "<img location>"
+  imageWidth: 120
+  imageHeight: 120
+  imageTitle: my image
+  buttons:
+    - name: Posts
+      url: posts
+    - name: Tags
+      url: tags
+homeInfoParams:
+  Title: "xxx"
+  Content: xxx
+
+socialIcons:
+  - name: github
+    url: "https://github.com/WncFht" # 个人Github地址
+  - name: email
+    url: "mailto://fanghaotian@sjtu.edu.cn" # 个人邮箱
