@@ -27,22 +27,19 @@ languages:
       main:
         - name: 首页
           pageRef: /
-          weight: 4 # 控制在页面上展示的前后顺序
+          weight: 10 # 控制在页面上展示的前后顺序
         - name: 归档
           pageRef: archives/
-          weight: 5
+          weight: 20
         - name: 分类
           pageRef: categories/
-          weight: 10
-        - name: 标签
-          pageRef: tags/
-          weight: 10
+          weight: 30
         - name: 搜索
           pageRef: search/
-          weight: 20
+          weight: 40
         - name: 关于
           pageRef: about/
-          weight: 21
+          weight: 50
 # https://github.com/adityatelange/hugo-PaperMod/wiki/Features#search-page
 
 outputs:
@@ -50,7 +47,14 @@ outputs:
     - HTML # 生成的静态页面
     - RSS # 这个其实无所谓
     - JSON # necessary for search, 这里的配置修改好之后，一定要重新生成一下
+
 params:
+# 代码块功能
+  ShowMacDots: true # Mac色块
+  ShowCodeLang: true # 语言显示
+  ShowExpandButton: true # 代码块折叠
+  ShowCodeCopyButtons: true # 代码块复制按钮
+  codeMaxHeight: "100px" # 代码块最大折叠高度
   # giscus:
   #   repo: "WncFht/WncFht.github.io"
   #   repoId: "R_kgDONNHiog"
@@ -69,6 +73,8 @@ params:
   #     disableHLJS: true
   # 搜索
   fuseOpts:
+      # DateFormat: "2006-01-02"  # 日期格式化
+      # ShowFullTextinRSS: true   # RSS 输出全文
       isCaseSensitive: false # 是否大小写敏感
       shouldSort: true # 是否排序
       location: 0
@@ -91,3 +97,4 @@ markup:
     # 这里设置 style 没用，得自己加 css
     # style: "github-dark"
     # style: monokai
+

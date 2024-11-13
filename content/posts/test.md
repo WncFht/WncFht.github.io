@@ -6,3 +6,14 @@ tags : ["博客搭建", "Bilibili"]
 ---
 
 nihao
+
+```python
+print('ABC')
+print('ABC')
+print('ABC')
+print('ABC')
+print('ABC')
+print('ABC')
+print('ABC')
+print('ABC')
+```
