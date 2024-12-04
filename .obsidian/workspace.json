@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/test copy.md",
+                "file": "content/posts/2024m12d4h11m24s54.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "test copy"
+              "title": "2024m12d4h11m24s54"
             }
           }
         ]
@@ -176,6 +176,7 @@
   },
   "active": "92f7a119d6b8396b",
   "lastOpenFiles": [
+    "content/posts/test.md",
     "content/posts/2024m12d4h11m24s54.md",
     "content/posts/test copy.md",
     "content/posts/test2.md",
@@ -185,7 +186,6 @@
     "未命名.md",
     "content/about.md",
     "content/archives.md",
-    "content/search.md",
-    "content/posts/test.md"
+    "content/search.md"
   ]
 }
