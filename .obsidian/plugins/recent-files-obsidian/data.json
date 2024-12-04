@@ -1,12 +1,20 @@
 {
   "recentFiles": [
     {
-      "basename": "daily",
-      "path": "daily.md"
+      "basename": "2024-49-12-04-3",
+      "path": "content/posts/2024-49-12-04-3.md"
+    },
+    {
+      "basename": "test copy",
+      "path": "content/posts/test copy.md"
     },
     {
       "basename": "test",
       "path": "content/posts/test.md"
+    },
+    {
+      "basename": "daily",
+      "path": "daily.md"
     },
     {
       "basename": "daily2",
@@ -183,22 +191,6 @@
     {
       "basename": "Chapter 5 Optimizing Program Performance",
       "path": "graph/Chapter 5 Optimizing Program Performance.md"
-    },
-    {
-      "basename": "csapp相关资源",
-      "path": "公开课/CSAPP/csapp相关资源.md"
-    },
-    {
-      "basename": "深入理解计算机系统（CSAPP）含 lab 详解 完结 - CSDN 博客",
-      "path": "公开课/CSAPP/深入理解计算机系统（CSAPP）含 lab 详解 完结 - CSDN 博客.md"
-    },
-    {
-      "basename": "深入理解计算机系统",
-      "path": "Computer/Basic/深入理解计算机系统.md"
-    },
-    {
-      "basename": "计算机组成与设计硬件软件接口",
-      "path": "Computer/Basic/计算机组成与设计硬件软件接口.md"
     }
   ],
   "omittedPaths": []
