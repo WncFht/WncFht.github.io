@@ -1,23 +1,23 @@
 {
   "choices": [
     {
-      "id": "52192fc0-a538-4ccb-b4e4-2008ddb1b689",
-      "name": "New_daily_dairy",
+      "id": "8ab3f9d6-bcf1-4528-a736-33d85cfb8d49",
+      "name": "新建日记",
       "type": "Macro",
       "command": true,
-      "macroId": "465be8c1-6635-4531-9bd7-944f8dc6324d"
+      "macroId": "2d5c8f91-756a-407b-9515-bc5b1171b252"
     }
   ],
   "macros": [
     {
-      "name": "New_daily_dairy",
-      "id": "465be8c1-6635-4531-9bd7-944f8dc6324d",
+      "name": "新建日记",
+      "id": "2d5c8f91-756a-407b-9515-bc5b1171b252",
       "commands": [
         {
-          "name": "New_daily_dairy",
+          "name": "new daily dairy",
           "type": "UserScript",
-          "id": "a428d4b5-d99a-44ce-a251-56d0592b4bf7",
-          "path": "zob_js/New_daily_dairy.js",
+          "id": "473d683a-7600-46ce-ab2c-15385313bdfd",
+          "path": "zob_config/js/new daily dairy.js",
           "settings": {}
         }
       ],
@@ -26,7 +26,7 @@
   ],
   "inputPrompt": "single-line",
   "devMode": false,
-  "templateFolderPath": "",
+  "templateFolderPath": "zob_config/js",
   "announceUpdates": true,
   "version": "1.11.5",
   "disableOnlineFeatures": true,

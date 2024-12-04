@@ -1,0 +1,197 @@
+{
+  "main": {
+    "id": "8c8c8d7f92dc193c",
+    "type": "split",
+    "children": [
+      {
+        "id": "e5d5de191e6c7e81",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "30255b0ec903222c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "网址.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "4c45a46471049431",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "计算机组成与设计硬件软件接口.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "aa0de075340a0198",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "317f8788865b687d",
+        "type": "leaf",
+        "state": {
+          "type": "file-explorer",
+          "state": {
+            "sortOrder": "alphabetical"
+          }
+        }
+      },
+      {
+        "id": "0aa9588b7f114926",
+        "type": "leaf",
+        "state": {
+          "type": "search",
+          "state": {
+            "query": "",
+            "matchingCase": false,
+            "explainSearch": false,
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical"
+          }
+        }
+      },
+      {
+        "id": "0ecf8f78cfdde243",
+        "type": "leaf",
+        "state": {
+          "type": "tag",
+          "state": {
+            "sortOrder": "frequency",
+            "useHierarchy": true
+          }
+        }
+      },
+      {
+        "id": "72b67aa4445769cc",
+        "type": "leaf",
+        "state": {
+          "type": "bookmarks",
+          "state": {}
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "right": {
+    "id": "a3b05062c8571dcd",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "4c825aac0590c708",
+        "type": "leaf",
+        "state": {
+          "type": "backlink",
+          "state": {
+            "file": "计算机组成与设计硬件软件接口.md",
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical",
+            "showSearch": false,
+            "searchQuery": "",
+            "backlinkCollapsed": false,
+            "unlinkedCollapsed": true
+          }
+        }
+      },
+      {
+        "id": "c3b45b97f038e317",
+        "type": "leaf",
+        "state": {
+          "type": "outgoing-link",
+          "state": {
+            "file": "计算机组成与设计硬件软件接口.md",
+            "linksCollapsed": false,
+            "unlinkedCollapsed": true
+          }
+        }
+      },
+      {
+        "id": "0814579b643c1681",
+        "type": "leaf",
+        "state": {
+          "type": "outline",
+          "state": {
+            "file": "计算机组成与设计硬件软件接口.md"
+          }
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "remotely-save:Remotely Save": false
+    }
+  },
+  "active": "4c45a46471049431",
+  "lastOpenFiles": [
+    "网址.md",
+    "计算机组成与设计硬件软件接口.md",
+    "未命名",
+    "test1.md",
+    "todo.md",
+    "cs61a/cs61a.md",
+    "cs61a/COMPOSING PROGRAMS.md",
+    "统计学习方法.md",
+    "cs70/cs70_note.md",
+    "配置.md",
+    "转专业/软工3.md",
+    "CS路线1.md",
+    "量化/量化1.md",
+    "转SE简历.jpg",
+    "转专业/概况.md",
+    "密院/密院相关.md",
+    "转专业/软工8.md",
+    "转专业/软工6.md",
+    "转专业/软工7.md",
+    "转专业/软工2.md",
+    "转专业/软工1.md",
+    "转专业/计科2.md",
+    "转专业/计科1.md",
+    "密院/密院规划.md",
+    "转专业/ACM.md",
+    "密院/学习规划.md",
+    "量化/转行量化2.md",
+    "量化/北大量化4.md",
+    "Untitled-2.toc",
+    "Untitled-2.xdv",
+    "Untitled-2.tex",
+    "Untitled-2.fls",
+    "Untitled-2.log",
+    "Untitled-2.aux",
+    "高中经验分享/技术经验分享.pdf",
+    "Untitled-2.synctex.gz",
+    "Untitled-2.fdb_latexmk",
+    "attachment/QQ_1723428546109.png",
+    "attachment/QQ_1723427744742.png",
+    "attachment/QQ_1723428144501.png",
+    "attachment/QQ_1723426099514.png",
+    "attachment/QQ_1723428086546.png",
+    "attachment/QQ_1723427974368.png",
+    "attachment/QQ_1723427570635.png",
+    "attachment/QQ_1723427987352.png",
+    "attachment/QQ_1723427999572.png"
+  ]
+}

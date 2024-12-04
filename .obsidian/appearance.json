@@ -1,1 +1,10 @@
-{}
+{
+  "cssTheme": "obsidian",
+  "accentColor": "#abcdef",
+  "showViewHeader": true,
+  "nativeMenus": false,
+  "theme": "obsidian",
+  "enabledCssSnippets": [
+    "font"
+  ]
+}
