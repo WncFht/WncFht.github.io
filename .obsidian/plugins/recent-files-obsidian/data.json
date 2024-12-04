@@ -5,16 +5,20 @@
       "path": "content/posts/2024-49-12-04-3.md"
     },
     {
-      "basename": "test copy",
-      "path": "content/posts/test copy.md"
+      "basename": "daily",
+      "path": "daily.md"
     },
     {
       "basename": "test",
       "path": "content/posts/test.md"
     },
     {
-      "basename": "daily",
-      "path": "daily.md"
+      "basename": "test copy",
+      "path": "content/posts/test copy.md"
+    },
+    {
+      "basename": "test2",
+      "path": "content/posts/test2.md"
     },
     {
       "basename": "daily2",
