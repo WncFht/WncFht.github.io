@@ -49,7 +49,7 @@ WHERE file.cday = date("{{date:YYYY}}-{{date:MM}}-{{date:DD}}")
 ## 4. 未完成的任务
 
 ```dataview
-TASK FROM "dairy"
+TASK FROM "posts"
 WHERE !completed
   AND file.cday >= (this.file.cday - dur(7 days))
   AND file.cday <= this.file.cday
