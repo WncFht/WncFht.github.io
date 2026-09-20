@@ -1,0 +1,189 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+.main {
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  max-width: 960px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  margin-bottom: 2rem;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.name {
+  margin-bottom: 0.25rem;
+}
+
+.enName {
+  font-size: 0.6em;
+  font-weight: 400;
+  color: var(--ifm-color-emphasis-600);
+  margin-left: 0.5rem;
+}
+
+.identity {
+  color: var(--ifm-color-emphasis-700);
+  margin-bottom: 0.75rem;
+}
+
+.socials {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.socialLink {
+  padding: 0.25rem 0.9rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.socialLink:hover {
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+.section {
+  margin-bottom: 2.5rem;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  padding: 1.25rem;
+}
+
+.cardEmoji {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.cardTitle {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.cardDesc {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.timelineItem {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.timelinePeriod {
+  flex-shrink: 0;
+  width: 180px;
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-600);
+  padding-top: 0.2rem;
+}
+
+.timelineBody {
+  flex: 1;
+  border-left: 3px solid var(--ifm-color-emphasis-200);
+  padding-left: 1.25rem;
+}
+
+.timelineBody ul {
+  margin-bottom: 0;
+}
+
+.timelineTitle {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.projectCard {
+  display: block;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  padding: 1.25rem;
+  color: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.projectCard:hover {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+  color: inherit;
+}
+
+.projectHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.projectName {
+  font-weight: 700;
+  font-size: 1.05rem;
+  font-family: var(--ifm-font-family-monospace);
+}
+
+.projectRole {
+  font-size: 0.8rem;
+  color: var(--ifm-color-primary);
+  border: 1px solid var(--ifm-color-primary);
+  border-radius: 999px;
+  padding: 0.1rem 0.6rem;
+  white-space: nowrap;
+}
+
+.eduItem p {
+  margin-bottom: 0.25rem;
+}
+
+@media screen and (max-width: 640px) {
+  .profile {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .socials {
+    justify-content: center;
+  }
+
+  .timelineItem {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .timelinePeriod {
+    width: auto;
+  }
+}

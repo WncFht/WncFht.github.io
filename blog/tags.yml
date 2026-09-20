@@ -1,0 +1,14 @@
+agent:
+  label: Agent
+  permalink: /agent
+  description: LLM Agent 相关思考与实践
+
+llm:
+  label: LLM
+  permalink: /llm
+  description: 大语言模型训练与应用
+
+memory:
+  label: Memory
+  permalink: /memory
+  description: Agent 记忆机制与上下文管理
