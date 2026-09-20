@@ -32,6 +32,20 @@ const interests = [
 
 const experiences = [
   {
+    period: '至今',
+    role: '科研助理 (RA)',
+    org: 'SJTU APEX Lab',
+    points: [
+      <>
+        在{' '}
+        <Link to="https://apex.sjtu.edu.cn/">
+          SJTU APEX 数据和知识管理实验室
+        </Link>{' '}
+        担任科研助理（Research Assistant）。
+      </>,
+    ],
+  },
+  {
     period: '2025.09 — 2026.09',
     role: '科研实习（生成式推荐）',
     org: '美团',
@@ -46,7 +60,7 @@ const experiences = [
     ],
   },
   {
-    period: 'Research Assistant',
+    period: '曾任',
     role: '科研助理 (RA)',
     org: 'X-Lance Lab, SJTU',
     points: [
@@ -140,7 +154,11 @@ function AboutMe() {
         Institute）电子与计算机工程专业的本科生。我的兴趣集中在大语言模型的全链路训练（预训练、后训练、强化学习）与具身智能。
       </p>
       <p>
-        此前我在美团做生成式推荐方向的科研实习，在 SJTU X-Lance
+        目前在{' '}
+        <Link to="https://apex.sjtu.edu.cn/">
+          SJTU APEX 数据和知识管理实验室
+        </Link>{' '}
+        担任科研助理。此前我在美团做生成式推荐方向的科研实习，在 SJTU X-Lance
         实验室担任科研助理，并在上海将然科技有限公司担任过 Agent
         开发工程师。研究成果包括一篇 CIKM 2026 论文（HCGRec）和一篇 ICLR 2026
         Poster（Tool-call Reward Model）。
