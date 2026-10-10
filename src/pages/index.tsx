@@ -51,8 +51,9 @@ const experiences = [
     org: '美团',
     points: [
       <>
-        产出论文 <b>HCGRec: Hint-Conditioned Generative Recommendation with
-        Semantic IDs</b>（<Link to="https://arxiv.org/pdf/2608.11980">CIKM 2026</Link>，
+        产出论文 <b>Learning from Unreachable Rewards: Hint-Conditioned
+        Reinforcement Learning for Generative Recommendation</b>（Co-first Author，
+        <Link to="https://arxiv.org/pdf/2608.11980">CIKM 2026</Link>，
         <Link to="https://github.com/WncFht/HCGRec">code</Link>）。
       </>,
       '针对 Semantic ID 生成式推荐中 GRPO 的同质零奖励问题，提出 hint-conditioned 训练框架与 hint-aware credit decomposition。',
@@ -89,8 +90,14 @@ const projects = [
   {
     name: 'HCGRec',
     href: 'https://github.com/WncFht/HCGRec',
-    role: 'First Author',
+    role: 'Co-first Author',
     desc: 'CIKM 2026 论文官方代码：hint-aware GRPO + constrained decoding 的 Semantic ID 生成式推荐。',
+  },
+  {
+    name: 'CARing',
+    href: 'https://github.com/zmlxzyh/CARing-Codes-Logs',
+    role: 'Co-first Author',
+    desc: 'ICLR 2027 在投论文代码与实验日志：medical Semantic IDs、coverage-reward GRPO 与 multi-positive supervision，用于下一次就诊多标签诊断预测。',
   },
   {
     name: 'devin2api',
@@ -160,8 +167,9 @@ function AboutMe() {
         </Link>{' '}
         担任科研助理。此前我在美团做生成式推荐方向的科研实习，在 SJTU X-Lance
         实验室担任科研助理，并在上海将然科技有限公司担任过 Agent
-        开发工程师。研究成果包括一篇 CIKM 2026 论文（HCGRec）和一篇 ICLR 2026
-        Poster（Tool-call Reward Model）。
+        开发工程师。研究成果包括 HCGRec（CIKM 2026，Co-first Author）、
+        CARing（ICLR 2027 在投，Co-first Author）和 Tool-call Reward Model
+        （ICLR 2026 Poster）。
       </p>
     </section>
   );
@@ -207,6 +215,61 @@ function Experience() {
           </div>
         ))}
       </div>
+    </section>
+  );
+}
+
+function Publications() {
+  return (
+    <section className={styles.section}>
+      <Heading as="h2">Publications</Heading>
+      <article>
+        <Heading as="h3" className={styles.timelineTitle}>
+          <Link to="https://arxiv.org/abs/2608.11980">
+            Learning from Unreachable Rewards: Hint-Conditioned Reinforcement
+            Learning for Generative Recommendation
+          </Link>
+        </Heading>
+        <p>
+          Kangning Zhang*, <b>Haotian Fang*</b>, Xukun Luo, Hao Yin, Yang Gao,
+          Peng Yan, Weiwen Liu, Weinan Zhang, Yong Yu.
+          <br />
+          CIKM 2026 · Co-first Author ·{' '}
+          <Link to="https://github.com/WncFht/HCGRec">Code</Link>
+        </p>
+      </article>
+      <article>
+        <Heading as="h3" className={styles.timelineTitle}>
+          <Link to="https://arxiv.org/abs/2610.10641">
+            Coverage-Aware Reasoning with Medical Tokens for Diagnosis Prediction
+          </Link>
+        </Heading>
+        <p>
+          Kaisong Zhang*, <b>Haotian Fang*</b>, Junmeng Zhou, Hang Lv, Yulan Pan,
+          Yanchao Tan.
+          <br />
+          ICLR 2027 在投 · Co-first Author ·{' '}
+          <Link to="https://github.com/zmlxzyh/CARing-Codes-Logs">Code &amp; Logs</Link>
+        </p>
+        <p>
+          将疾病名称与 ICD 本体路径压缩为三层 Semantic ID，通过临床语义对齐、
+          推理激活、coverage-reward GRPO 与多正例监督，改善多个正确诊断的覆盖。
+          在 MIMIC-III / IV 上，推理模式 R@30 为 46.04% / 46.52%。
+        </p>
+      </article>
+      <article>
+        <Heading as="h3" className={styles.timelineTitle}>
+          <Link to="https://openreview.net/forum?id=LnBEASInVr">
+            Empowering LLM Tool Invocation with Tool-call Reward Model
+          </Link>
+        </Heading>
+        <p>
+          Da Ma, Ziyue Yang, Hongshen Xu, <b>Haotian Fang</b>, Kai Yu, Lu Chen.
+          <br />
+          ICLR 2026 Poster
+        </p>
+      </article>
+      <p>* Equal contribution.</p>
     </section>
   );
 }
@@ -257,6 +320,7 @@ export default function Home(): ReactNode {
         <ProfileCard />
         <AboutMe />
         <ResearchInterests />
+        <Publications />
         <Experience />
         <Projects />
         <Education />
