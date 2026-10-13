@@ -1,8 +1,8 @@
-import type {ReactNode} from 'react';
-import clsx from 'clsx';
 import Link from '@docusaurus/Link';
-import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
+import Layout from '@theme/Layout';
+import clsx from 'clsx';
+import type { ReactNode } from 'react';
 
 import styles from './index.module.css';
 
@@ -16,17 +16,17 @@ const interests = [
   {
     emoji: '🧠',
     title: 'LLM 全链路训练',
-    desc: '预训练、后训练与强化学习的完整管线：奖励模型、PPO/GRPO、信用分配与训练效率。',
+    desc: '预训练与后训练的完整管线',
   },
   {
     emoji: '🤖',
     title: '具身智能',
-    desc: '让模型在与环境的交互中学习和行动：embodied agents、VLA 与世界模型。',
+    desc: 'Code as Policy、VLA 与世界模型。',
   },
   {
     emoji: '⚙️',
     title: 'Agent 系统',
-    desc: '记忆与上下文管理、工具调用、RAG 检索管线，以及支撑 agent 的基础设施。',
+    desc: '记忆与上下文管理、工具调用',
   },
 ];
 
@@ -97,7 +97,7 @@ const projects = [
     name: 'CARing',
     href: 'https://github.com/zmlxzyh/CARing-Codes-Logs',
     role: 'Co-first Author',
-    desc: 'ICLR 2027 在投论文代码与实验日志：medical Semantic IDs、coverage-reward GRPO 与 multi-positive supervision，用于下一次就诊多标签诊断预测。',
+    desc: 'ICLR 2027 在投论文代码：medical Semantic IDs、coverage-reward GRPO 与 multi-positive supervision，用于下一次就诊多标签诊断预测。',
   },
   {
     name: 'devin2api',
@@ -110,18 +110,6 @@ const projects = [
     href: 'https://github.com/WncFht/texlate',
     role: 'Owner',
     desc: 'arXiv LaTeX 论文翻译工具：保留公式与引用，重编译中文 PDF，支持中英双语对照阅读。',
-  },
-  {
-    name: 'attention-calculator',
-    href: 'https://github.com/WncFht/attention-calculator',
-    role: 'Owner',
-    desc: '「注意力计算器」复现与扩展：输入常数自动构造定积分恒等式证明，exact 模式输出 ℚ 上机器可检证书。',
-  },
-  {
-    name: 'zcode-teardown',
-    href: 'https://github.com/WncFht/zcode-teardown',
-    role: 'Owner',
-    desc: 'ZCode IDE 55 个版本逐版逆向拆解：签名快照、逐版 diff 与工作区上传机制分析报告。',
   },
   {
     name: 'Tencent-GRec',
@@ -163,8 +151,7 @@ function AboutMe() {
     <section className={styles.section}>
       <Heading as="h2">About Me</Heading>
       <p>
-        我是上海交通大学密西根学院（UM-SJTU Joint
-        Institute）电子与计算机工程专业的本科生。我的兴趣集中在大语言模型的全链路训练（预训练、后训练、强化学习）与具身智能。
+        我是上海交通大学密西根学院（UM-SJTU Joint Institute）电子与计算机工程专业的本科生。我的兴趣集中在大语言模型的全链路训练（预训练、后训练）与具身智能。
       </p>
       <p>
         目前在{' '}
@@ -240,7 +227,7 @@ function Publications() {
           Kangning Zhang*, <b>Haotian Fang*</b>, Xukun Luo, Hao Yin, Yang Gao,
           Peng Yan, Weiwen Liu, Weinan Zhang, Yong Yu.
           <br />
-          CIKM 2026 · Co-first Author ·{' '}
+          CIKM 2026 Poster · Co-first Author ·{' '}
           <Link to="https://github.com/WncFht/HCGRec">Code</Link>
         </p>
       </article>
@@ -255,12 +242,7 @@ function Publications() {
           Yanchao Tan.
           <br />
           ICLR 2027 在投 · Co-first Author ·{' '}
-          <Link to="https://github.com/zmlxzyh/CARing-Codes-Logs">Code &amp; Logs</Link>
-        </p>
-        <p>
-          将疾病名称与 ICD 本体路径压缩为三层 Semantic ID，通过临床语义对齐、
-          推理激活、coverage-reward GRPO 与多正例监督，改善多个正确诊断的覆盖。
-          在 MIMIC-III / IV 上，推理模式 R@30 为 46.04% / 46.52%。
+          <Link to="https://github.com/zmlxzyh/CARing-Codes-Logs">Code</Link>
         </p>
       </article>
       <article>
@@ -311,7 +293,6 @@ function Education() {
           电子与计算机工程（Electrical and Computer Engineering）本科 ·
           2024.09 — 2028.06（预计）
         </p>
-        <p>全国中学生物理竞赛浙江省一等奖（2024）</p>
       </div>
     </section>
   );
