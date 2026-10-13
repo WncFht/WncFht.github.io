@@ -106,6 +106,12 @@ const projects = [
     desc: 'Devin upstream → OpenAI Responses / Anthropic Messages 兼容 API 代理（Go）。',
   },
   {
+    name: 'texlate',
+    href: 'https://github.com/WncFht/texlate',
+    role: 'Owner',
+    desc: 'arXiv LaTeX 论文翻译工具：保留公式与引用，重编译中文 PDF，支持中英双语对照阅读。',
+  },
+  {
     name: 'attention-calculator',
     href: 'https://github.com/WncFht/attention-calculator',
     role: 'Owner',
