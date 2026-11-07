@@ -1,0 +1,65 @@
+/*
+ * The only raw color definitions for the site and its syntax highlighting.
+ * Dark: One Dark Pro base/accent colors; lighter prose tones for long articles.
+ * Light: a companion palette with darker accents for a light background.
+ * Source and license: THIRD_PARTY_NOTICES.md.
+ */
+:root, [data-theme='light'] {
+  --site-background: #fafafa;
+  --site-surface: #f0f1f4;
+  --site-elevated: #ffffff;
+  --site-text: #383a42;
+  --site-heading: #24272e;
+  --site-muted: #626975;
+  --site-border: #d7dae0;
+  --site-border-strong: #a4aab5;
+  --site-accent: #27679c;
+  --site-accent-dark: #235b8b;
+  --site-accent-darker: #205581;
+  --site-accent-darkest: #194465;
+  --site-accent-light: #2d74ae;
+  --site-accent-lighter: #317bb8;
+  --site-accent-lightest: #398acb;
+  --site-red: #a93646;
+  --site-green: #39732d;
+  --site-yellow: #8a6000;
+  --site-blue: #27679c;
+  --site-purple: #8542a0;
+  --site-cyan: #006b75;
+  --site-orange: #9a561d;
+  --site-code-background: #f0f1f4;
+  --site-code-comment: #626975;
+  --site-selection: #61afef40;
+  --site-highlight: #61afef24;
+  --site-shadow: 0 3px 16px #24272e12;
+}
+
+[data-theme='dark'] {
+  --site-background: #282c34;
+  --site-surface: #21252b;
+  --site-elevated: #303641;
+  --site-text: #c8ccd4;
+  --site-heading: #e6e9ef;
+  --site-muted: #abb2bf;
+  --site-border: #414957;
+  --site-border-strong: #677180;
+  --site-accent: #61afef;
+  --site-accent-dark: #45a1eb;
+  --site-accent-darker: #379aea;
+  --site-accent-darkest: #1682d5;
+  --site-accent-light: #7dbdf2;
+  --site-accent-lighter: #8bc4f3;
+  --site-accent-lightest: #b5d9f8;
+  --site-red: #e06c75;
+  --site-green: #98c379;
+  --site-yellow: #e5c07b;
+  --site-blue: #61afef;
+  --site-purple: #c678dd;
+  --site-cyan: #56b6c2;
+  --site-orange: #d19a66;
+  --site-code-background: #21252b;
+  --site-code-comment: #9da5b4;
+  --site-selection: #67769660;
+  --site-highlight: #61afef20;
+  --site-shadow: 0 3px 16px #00000030;
+}

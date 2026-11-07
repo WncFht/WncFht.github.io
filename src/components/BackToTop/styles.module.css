@@ -1,0 +1,13 @@
+.button { position: fixed; bottom: max(1.5rem, env(safe-area-inset-bottom)); right: max(1.5rem, env(safe-area-inset-right)); z-index: 200; display: grid; place-items: center; width: 52px; height: 52px; padding: 0; border: 0; border-radius: 50%; cursor: pointer; color: var(--ifm-font-color-base); background: var(--ifm-background-color); box-shadow: var(--site-shadow); }
+.button:focus-visible { outline: 2px solid var(--ifm-color-primary); outline-offset: 4px; }
+.ring { position: absolute; inset: 0; width: 100%; height: 100%; transform: rotate(-90deg); fill: none; stroke-width: 2; }
+.track { stroke: var(--ifm-color-emphasis-200); }
+.progress { stroke: var(--ifm-color-primary); stroke-linecap: round; }
+.percent { font-size: 0.8rem; font-variant-numeric: tabular-nums; transition: opacity 150ms ease; }
+.unit { font-size: 0.6rem; }
+.arrow { position: absolute; width: 22px; height: 22px; fill: none; stroke: var(--ifm-color-primary); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; opacity: 0; transition: opacity 150ms ease; }
+.button:hover .percent, .button:focus-visible .percent { opacity: 0; }
+.button:hover .arrow, .button:focus-visible .arrow { opacity: 1; }
+@media (max-width: 640px) { .button { width: 46px; height: 46px; right: 1rem; bottom: max(1rem, env(safe-area-inset-bottom)); } }
+@media (prefers-reduced-motion: reduce) { .percent, .arrow { transition: none; } }
+@media print { .button { display: none; } }

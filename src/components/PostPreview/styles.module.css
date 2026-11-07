@@ -1,0 +1,20 @@
+.card {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  padding: 1.35rem 1.5rem;
+  margin-bottom: 1rem;
+  background: var(--ifm-background-surface-color);
+  transition: border-color 160ms ease, background-color 160ms ease;
+}
+.card:hover, .card:focus-within { border-color: var(--ifm-color-primary); }
+.meta { display: flex; flex-wrap: wrap; gap: 0.35rem 1rem; font-size: 0.8rem; color: var(--ifm-color-emphasis-700); margin-bottom: 0.65rem; }
+.title { font-size: 1.2rem; line-height: 1.5; margin: 0 0 0.55rem; overflow-wrap: anywhere; }
+.title a { color: var(--ifm-heading-color); }
+.title a:hover { color: var(--ifm-color-primary); text-decoration: none; }
+.arrow { display: inline-block; margin-left: 0.5rem; color: var(--ifm-color-primary); font-size: 0.9em; }
+.description { color: var(--ifm-color-emphasis-700); font-size: 0.95rem; margin: 0; line-height: 1.8; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.45rem; list-style: none; padding: 0; margin: 0.9rem 0 0; }
+.tags a { display: inline-block; border: 1px solid var(--ifm-color-emphasis-200); border-radius: 999px; padding: 0.12rem 0.6rem; font-size: 0.75rem; color: var(--ifm-color-emphasis-700); }
+.tags a:hover { color: var(--ifm-color-primary); border-color: var(--ifm-color-primary); text-decoration: none; }
+@media (max-width: 640px) { .card { padding: 1.1rem; } }
+@media (prefers-reduced-motion: reduce) { .card { transition: none; } }

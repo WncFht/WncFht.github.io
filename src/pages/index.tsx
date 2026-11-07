@@ -5,6 +5,10 @@ import clsx from 'clsx';
 import type { ReactNode } from 'react';
 
 import styles from './index.module.css';
+import PublicationCard from '../components/PublicationCard';
+import {publications} from '../data/publications';
+import CollectionGrid from '../components/CollectionPreview/CollectionGrid';
+import RecentPosts from '../components/PostPreview/RecentPosts';
 
 const socialLinks = [
   {label: 'Email', href: 'mailto:fanghaotian@sjtu.edu.cn'},
@@ -215,49 +219,23 @@ function Experience() {
 function Publications() {
   return (
     <section className={styles.section}>
-      <Heading as="h2">Publications</Heading>
-      <article>
-        <Heading as="h3" className={styles.timelineTitle}>
-          <Link to="https://arxiv.org/abs/2608.11980">
-            Learning from Unreachable Rewards: Hint-Conditioned Reinforcement
-            Learning for Generative Recommendation
-          </Link>
-        </Heading>
-        <p>
-          Kangning Zhang*, <b>Haotian Fang*</b>, Xukun Luo, Hao Yin, Yang Gao,
-          Peng Yan, Weiwen Liu, Weinan Zhang, Yong Yu.
-          <br />
-          CIKM 2026 Poster · Co-first Author ·{' '}
-          <Link to="https://github.com/WncFht/HCGRec">Code</Link>
-        </p>
-      </article>
-      <article>
-        <Heading as="h3" className={styles.timelineTitle}>
-          <Link to="https://arxiv.org/abs/2610.10641">
-            Coverage-Aware Reasoning with Medical Tokens for Diagnosis Prediction
-          </Link>
-        </Heading>
-        <p>
-          Kaisong Zhang*, <b>Haotian Fang*</b>, Junmeng Zhou, Hang Lv, Yulan Pan,
-          Yanchao Tan.
-          <br />
-          ICLR 2027 在投 · Co-first Author ·{' '}
-          <Link to="https://github.com/zmlxzyh/CARing-Codes-Logs">Code</Link>
-        </p>
-      </article>
-      <article>
-        <Heading as="h3" className={styles.timelineTitle}>
-          <Link to="https://openreview.net/forum?id=LnBEASInVr">
-            Empowering LLM Tool Invocation with Tool-call Reward Model
-          </Link>
-        </Heading>
-        <p>
-          Da Ma, Ziyue Yang, Hongshen Xu, <b>Haotian Fang</b>, Kai Yu, Lu Chen.
-          <br />
-          ICLR 2026 Poster
-        </p>
-      </article>
+      <Heading as="h2" id="publications">Publications</Heading>
+      {publications.map((publication) => <PublicationCard key={publication.id} publication={publication} />)}
       <p>* Equal contribution.</p>
+    </section>
+  );
+}
+
+function NotesAndWriting() {
+  return (
+    <section className={styles.section}>
+      <div className={styles.sectionHeading}>
+        <Heading as="h2">笔记与文章</Heading>
+        <Link to="/collections">全部专题 →</Link>
+      </div>
+      <CollectionGrid />
+      <RecentPosts limit={3} />
+      <Link to="/blog">全部技术文章 →</Link>
     </section>
   );
 }
@@ -307,6 +285,7 @@ export default function Home(): ReactNode {
         <ProfileCard />
         <AboutMe />
         <ResearchInterests />
+        <NotesAndWriting />
         <Publications />
         <Experience />
         <Projects />

@@ -1,0 +1,8 @@
+.main { max-width: 960px; padding-top: 2.5rem; padding-bottom: 4rem; }
+.back { display: inline-block; margin-bottom: 1.5rem; font-size: 0.9rem; }
+.header { margin-bottom: 2rem; }
+.eyebrow { color: var(--ifm-color-primary); font-size: 0.8rem; letter-spacing: 0.04em; }
+.description { max-width: 42rem; line-height: 1.8; color: var(--ifm-color-emphasis-700); }
+.empty { border: 1px dashed var(--ifm-color-emphasis-300); border-radius: 12px; padding: 2rem; }
+.empty h2 { font-size: 1.2rem; }
+.empty p { color: var(--ifm-color-emphasis-700); }

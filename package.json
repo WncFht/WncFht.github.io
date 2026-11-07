@@ -12,7 +12,8 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "test": "node --test tests/*.test.mjs"
   },
   "dependencies": {
     "@docusaurus/core": "3.10.2",
@@ -21,8 +22,10 @@
     "@docusaurus/preset-classic": "3.10.2",
     "@docusaurus/theme-mermaid": "^3.10.2",
     "@easyops-cn/docusaurus-search-local": "^0.55.3",
+    "@fontsource-variable/jetbrains-mono": "5.3.0",
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.0.0",
+    "lxgw-wenkai-screen-webfont": "1.7.0",
     "plugin-image-zoom": "^1.2.0",
     "prism-react-renderer": "^2.3.0",
     "react": "^19.0.0",

@@ -1,7 +1,7 @@
 ---
 title: 个人对 Agent Memory 的看法和总结
 authors: fht
-tags: [agent, memory, llm]
+collections: [agent]
 date: 2025-03-29
 ---
 

@@ -1,8 +1,10 @@
-import {themes as prismThemes} from 'prism-react-renderer';
+import codeTheme from './src/theme/codeTheme';
+import {contentFeatures} from './src/config/content';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import contentCatalogPlugin from './plugins/content-catalog';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -44,9 +46,12 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
+          tags: contentFeatures.tags ? undefined : false,
+          onInlineTags: 'ignore',
         },
         blog: {
           showReadingTime: true,
+          tags: contentFeatures.tags ? undefined : false,
           postsPerPage: 10,
           feedOptions: {
             type: ['rss', 'atom'],
@@ -54,7 +59,7 @@ const config: Config = {
           },
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
-          onInlineTags: 'warn',
+          onInlineTags: 'ignore',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
         },
@@ -79,6 +84,7 @@ const config: Config = {
   ],
 
   plugins: [
+    contentCatalogPlugin,
     [
       'plugin-image-zoom',
       {
@@ -100,12 +106,14 @@ const config: Config = {
   themeConfig: {
     image: 'img/docusaurus-social-card.jpg',
     colorMode: {
-      respectPrefersColorScheme: true,
+      defaultMode: 'dark',
+      respectPrefersColorScheme: false,
     },
     navbar: {
       title: 'Haotian Fang',
       items: [
         {to: '/docs/intro', label: '笔记', position: 'left'},
+        {to: '/collections', label: '专题合集', position: 'left'},
         {to: '/blog', label: '技术博客', position: 'left'},
         {
           href: 'https://github.com/WncFht',
@@ -156,8 +164,8 @@ const config: Config = {
       copyright: `Copyright © ${new Date().getFullYear()} Haotian Fang (WncFht). Built with Docusaurus.`,
     },
     prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
+      theme: codeTheme,
+      darkTheme: codeTheme,
     },
   } satisfies Preset.ThemeConfig,
 };
