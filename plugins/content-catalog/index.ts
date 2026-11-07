@@ -6,10 +6,14 @@ import type {LoadedContent as DocsContent} from '@docusaurus/plugin-content-docs
 import {collections} from '../../src/data/collections';
 import {estimateReadingTime, isoDate, sortPosts, toCatalogPost} from '../../src/utils/contentCatalog';
 import type {CatalogPost} from '../../src/types/content';
+import {readerInitScript} from '../../src/utils/reading';
 
 export default function contentCatalogPlugin(context: LoadContext): Plugin {
   return {
     name: 'content-catalog',
+    injectHtmlTags() {
+      return {headTags: [{tagName: 'script', innerHTML: readerInitScript}]};
+    },
     async allContentLoaded({allContent, actions}) {
       const posts: CatalogPost[] = [];
       const blogInstances = allContent['docusaurus-plugin-content-blog'] ?? {};

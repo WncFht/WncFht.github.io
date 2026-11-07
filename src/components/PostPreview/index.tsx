@@ -20,6 +20,7 @@ export default function PostPreview({post, headingLevel = 'h2'}: Props): ReactNo
     <article className={styles.card}>
       <div className={styles.meta}>
         <span>{post.kind === 'note' ? '研究笔记' : '技术博客'}</span>
+        {post.issue && <span>第 {post.issue} 期</span>}
         {date && <time dateTime={post.date}>{date}</time>}
         {typeof post.readingTime === 'number' && Number.isFinite(post.readingTime) && (
           <span>约 {Math.max(1, Math.ceil(post.readingTime))} 分钟阅读</span>
@@ -27,7 +28,7 @@ export default function PostPreview({post, headingLevel = 'h2'}: Props): ReactNo
       </div>
       <Heading as={headingLevel} className={styles.title}>
         <Link to={post.permalink}>
-          {post.title}<span aria-hidden="true" className={styles.arrow}>↗</span>
+          {post.title}<span aria-hidden="true" className={styles.arrow}>→</span>
         </Link>
       </Heading>
       {post.description && <p className={styles.description}>{post.description}</p>}

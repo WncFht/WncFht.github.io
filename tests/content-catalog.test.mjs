@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import {loadTypeScript} from './load-typescript.mjs';
 
-const {toCatalogPost, postsInCollection, sortPosts, isoDate, estimateReadingTime} = await loadTypeScript('../src/utils/contentCatalog.ts');
+const {toCatalogPost, postsInCollection, sortPosts, seriesPosts, isoDate, estimateReadingTime} = await loadTypeScript('../src/utils/contentCatalog.ts');
 const collection = {id: 'agent', title: 'Agent', description: ''};
 const post = (overrides = {}) => ({
   id: '/test', kind: 'blog', title: 'Test', description: '', permalink: '/test', tags: [], collections: [], ...overrides,
@@ -40,6 +40,24 @@ test('missing or invalid dates stay absent rather than becoming the current date
   assert.equal(isoDate(undefined), undefined);
   assert.equal(isoDate('not-a-date'), undefined);
   assert.equal(toCatalogPost({title: 'Note', description: '', permalink: '/note', tags: []}, 'note').date, undefined);
+});
+
+test('issue and series order accept only explicit positive integers', () => {
+  const meta = {title: 'Weekly', description: '', permalink: '/weekly', tags: []};
+  const valid = toCatalogPost({...meta, frontMatter: {issue: 3, series_order: 2}}, 'blog');
+  assert.equal(valid.issue, 3);
+  assert.equal(valid.seriesOrder, 2);
+  for (const bad of [0, -1, '2', 1.5, NaN]) {
+    const value = toCatalogPost({...meta, frontMatter: {issue: bad, series_order: bad}}, 'blog');
+    assert.equal(value.issue, undefined);
+    assert.equal(value.seriesOrder, undefined);
+  }
+});
+
+test('series navigation uses explicit order and does not infer membership from tags', () => {
+  const input = [post({id: 'second', collections: ['agent'], seriesOrder: 2}), post({id: 'unordered', collections: ['agent']}), post({id: 'first', collections: ['agent'], seriesOrder: 1}), post({id: 'other', collections: ['paper-weekly'], seriesOrder: 1})];
+  assert.deepEqual(seriesPosts(input, collection).map(({id}) => id), ['first', 'second', 'unordered']);
+  assert.equal(input[0].id, 'second');
 });
 
 test('reading estimates count Chinese prose and English words, excluding metadata and code blocks', () => {

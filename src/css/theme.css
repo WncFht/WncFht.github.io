@@ -63,10 +63,13 @@
   --docusaurus-highlighted-code-line-bg: var(--site-highlight);
   --search-local-modal-background: var(--site-elevated);
   --search-local-modal-shadow: var(--site-shadow);
+  --search-local-hit-height: 70px;
+  --search-local-spacing: 14px;
+  --search-local-modal-width: 600px;
+  --search-local-hit-shadow: none;
   --search-local-muted-color: var(--site-muted);
   --search-local-hit-color: var(--site-text);
   --search-local-hit-active-color: var(--site-background);
   --search-local-hit-background: var(--site-surface);
   --search-local-highlight-color: var(--site-accent);
-  --search-local-hit-shadow: none;
 }

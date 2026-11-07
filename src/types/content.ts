@@ -13,6 +13,8 @@ export interface CatalogPost {
   readingTime?: number;
   tags: ContentTag[];
   collections: string[];
+  issue?: number;
+  seriesOrder?: number;
 }
 
 export interface CollectionDefinition {

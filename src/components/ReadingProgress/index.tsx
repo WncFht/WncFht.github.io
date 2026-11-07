@@ -39,9 +39,10 @@ export function ReadingProgressProvider({children}: {children: ReactNode}): Reac
       const scrollY = window.scrollY;
       const rect = content.getBoundingClientRect();
       const top = rect.top + scrollY;
-      const bottom = rect.bottom + scrollY;
+      const body = article?.querySelector<HTMLElement>('[data-reading-body]');
+      const bottom = (body?.getBoundingClientRect().bottom ?? rect.bottom) + scrollY;
       const navbar = document.querySelector('.navbar')?.getBoundingClientRect().height ?? 0;
-      const progress = articleProgress(scrollY, top, rect.height, window.innerHeight, navbar);
+      const progress = articleProgress(scrollY, top, bottom - top, window.innerHeight, navbar);
       const readingLine = scrollY + navbar + Math.max(0, window.innerHeight - navbar) * 0.3;
       const headings = article ? Array.from(article.querySelectorAll<HTMLElement>('h2[id], h3[id], h4[id], h5[id], h6[id]')).map((heading) => ({
         id: heading.id,

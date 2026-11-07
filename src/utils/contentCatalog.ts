@@ -18,6 +18,7 @@ export function isoDate(value: unknown): string | undefined {
 
 export function toCatalogPost(metadata: PostMetadata, kind: CatalogPost['kind']): CatalogPost {
   const specifiedCollections = metadata.frontMatter?.collections;
+  const number = (value: unknown) => typeof value === 'number' && Number.isInteger(value) && value > 0 ? value : undefined;
   return {
     id: metadata.permalink,
     kind,
@@ -26,11 +27,23 @@ export function toCatalogPost(metadata: PostMetadata, kind: CatalogPost['kind'])
     permalink: metadata.permalink,
     date: isoDate(metadata.date),
     readingTime: metadata.readingTime,
+    issue: number(metadata.frontMatter?.issue),
+    seriesOrder: number(metadata.frontMatter?.series_order),
     tags: metadata.tags.map(({label, permalink}) => ({label, permalink})),
     collections: Array.isArray(specifiedCollections)
       ? specifiedCollections.filter((id): id is string => typeof id === 'string')
       : [],
   };
+}
+
+// Explicit reading order takes precedence; otherwise retain normal newest-first browsing.
+export function seriesPosts(posts: readonly CatalogPost[], collection: CollectionDefinition): CatalogPost[] {
+  return sortPosts(postsInCollection(posts, collection)).sort((a, b) => {
+    if (a.seriesOrder !== undefined && b.seriesOrder !== undefined) return a.seriesOrder - b.seriesOrder;
+    if (a.seriesOrder !== undefined) return -1;
+    if (b.seriesOrder !== undefined) return 1;
+    return 0;
+  });
 }
 
 export function postsInCollection(posts: readonly CatalogPost[], collection: CollectionDefinition): CatalogPost[] {

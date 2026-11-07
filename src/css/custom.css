@@ -2,6 +2,9 @@
 @import 'lxgw-wenkai-screen-webfont/lxgwwenkaiscreen.css';
 @import './palette.css';
 @import './theme.css';
+@import 'katex/dist/katex.min.css';
+@import 'photoswipe/style.css';
+@import './reading.css';
 
 :root {
   /* Latin glyphs use JetBrains; Chinese falls through to LXGW. */

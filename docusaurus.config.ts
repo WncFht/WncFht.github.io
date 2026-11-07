@@ -5,6 +5,7 @@ import rehypeKatex from 'rehype-katex';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import contentCatalogPlugin from './plugins/content-catalog';
+import remarkFigures from './plugins/remark-figures';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -46,6 +47,9 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
+          remarkPlugins: [remarkMath],
+          beforeDefaultRemarkPlugins: [remarkFigures],
+          rehypePlugins: [rehypeKatex],
           tags: contentFeatures.tags ? undefined : false,
           onInlineTags: 'ignore',
         },
@@ -58,6 +62,7 @@ const config: Config = {
             xslt: true,
           },
           remarkPlugins: [remarkMath],
+          beforeDefaultRemarkPlugins: [remarkFigures],
           rehypePlugins: [rehypeKatex],
           onInlineTags: 'ignore',
           onInlineAuthors: 'warn',
@@ -79,28 +84,14 @@ const config: Config = {
         language: ['en', 'zh'],
         highlightSearchTermsOnTargetPage: true,
         explicitSearchResultPath: true,
+        searchBarShortcut: true,
+        searchBarShortcutKeymap: 'mod+k',
       },
     ],
   ],
 
   plugins: [
     contentCatalogPlugin,
-    [
-      'plugin-image-zoom',
-      {
-        selector: '.markdown img',
-      },
-    ],
-  ],
-
-  stylesheets: [
-    {
-      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
-      type: 'text/css',
-      integrity:
-        'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
-      crossorigin: 'anonymous',
-    },
   ],
 
   themeConfig: {

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">研究笔记流程示意</title><desc id="desc">阅读问题与方法，比较假设与实验，再验证结论的适用范围。</desc>
+  <rect width="1200" height="360" rx="20" fill="#282c34"/>
+  <g font-family="system-ui,sans-serif" text-anchor="middle">
+    <g fill="#303641" stroke="#61afef" stroke-width="2"><rect x="60" y="90" width="290" height="180" rx="16"/><rect x="455" y="90" width="290" height="180" rx="16"/><rect x="850" y="90" width="290" height="180" rx="16"/></g>
+    <g fill="#e6e9ef" font-size="36"><text x="205" y="165">阅读</text><text x="600" y="165">比较</text><text x="995" y="165">验证</text></g>
+    <g fill="#abb2bf" font-size="22"><text x="205" y="215">问题 · 方法</text><text x="600" y="215">假设 · 实验</text><text x="995" y="215">结论 · 局限</text></g>
+  </g>
+  <g stroke="#98c379" stroke-width="4" fill="none"><path d="M370 180h62l-12-12m12 12-12 12"/><path d="M765 180h62l-12-12m12 12-12 12"/></g>
+</svg>
