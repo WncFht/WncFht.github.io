@@ -1,0 +1,19 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import PublicationCard from "@/components/PublicationCard.astro";
+import { publications } from "@/data/publications";
+---
+
+<Layout title="Publications" description="论文与研究成果。">
+  <Header />
+  <main id="main-content" class="app-layout py-10">
+    <h1 class="text-foreground text-3xl font-bold">Publications</h1>
+    <p class="text-muted-foreground mt-3">论文、研究成果与代码入口。</p>
+    <div class="mt-8 grid gap-4">
+      {publications.map(publication => <PublicationCard {...publication} />)}
+    </div>
+  </main>
+  <Footer />
+</Layout>

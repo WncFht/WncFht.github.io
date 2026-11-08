@@ -1,0 +1,47 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import Card from "@/components/Card.astro";
+import { getSortedPosts } from "@/utils/getSortedPosts";
+
+export async function getStaticPaths() {
+  return ["agent", "paper-weekly"].map(collection => ({
+    params: { collection },
+  }));
+}
+
+const labels: Record<string, { title: string; description: string }> = {
+  agent: {
+    title: "Agent",
+    description: "智能体记忆、上下文管理、工具调用与系统实践。",
+  },
+  "paper-weekly": {
+    title: "论文周报",
+    description: "近期论文、方法比较与值得继续追踪的问题。",
+  },
+};
+const id = Astro.params.collection ?? "agent";
+const meta = labels[id] ?? labels.agent;
+const posts = getSortedPosts(
+  (await getCollection("posts")).filter(
+    post => post.data.collection === id && !post.data.draft
+  )
+);
+---
+
+<Layout title={meta.title} description={meta.description}>
+  <Header />
+  <main id="main-content" class="app-layout py-10">
+    <header class="border-border border-b pb-6">
+      <p class="text-accent text-sm font-medium">专题合集</p>
+      <h1 class="text-foreground mt-2 text-3xl font-bold">{meta.title}</h1>
+      <p class="text-muted-foreground mt-3">{meta.description}</p>
+    </header>
+    <ul class="divide-border divide-y">
+      {posts.map(post => <Card variant="h3" {...post} />)}
+    </ul>
+  </main>
+  <Footer />
+</Layout>

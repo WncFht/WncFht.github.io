@@ -1,0 +1,33 @@
+---
+import type { Publication } from "@/data/publications";
+
+interface Props extends Publication {}
+const { title, url, authors, venue, role, links = [] } = Astro.props;
+---
+
+<article class="border-border bg-background rounded border p-5">
+  <div class="text-accent flex flex-wrap gap-2 text-xs font-medium">
+    <span>{venue}</span>
+    {role && <span>{role}</span>}
+  </div>
+  <h3 class="text-foreground mt-3 text-lg font-semibold">
+    <a class="hover:text-accent" href={url}>{title}</a>
+  </h3>
+  <p class="text-muted-foreground mt-2 text-sm">{authors}</p>
+  <div class="mt-4 flex flex-wrap gap-4 text-sm">
+    <a
+      class="text-accent underline decoration-dashed underline-offset-4"
+      href={url}>Paper ↗</a
+    >
+    {
+      links.map(link => (
+        <a
+          class="text-accent underline decoration-dashed underline-offset-4"
+          href={link.href}
+        >
+          {link.label} ↗
+        </a>
+      ))
+    }
+  </div>
+</article>

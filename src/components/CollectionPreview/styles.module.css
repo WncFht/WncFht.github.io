@@ -1,9 +1,0 @@
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 1rem; margin: 1rem 0 1.5rem; }
-.card { display: flex; flex-direction: column; min-width: 0; border: 1px solid var(--ifm-color-emphasis-200); border-radius: 12px; padding: 1.25rem; color: inherit; background: var(--ifm-background-surface-color); transition: border-color 160ms ease, background-color 160ms ease; }
-.card:hover, .card:focus-visible { color: inherit; text-decoration: none; border-color: var(--ifm-color-primary); background: var(--ifm-color-emphasis-100); }
-.meta { display: flex; justify-content: space-between; gap: 0.5rem; font-size: 0.75rem; color: var(--ifm-color-emphasis-700); margin-bottom: 1rem; }
-.title { font-size: 1.1rem; line-height: 1.5; margin-bottom: 0.6rem; }
-.description { font-size: 0.9rem; line-height: 1.8; color: var(--ifm-color-emphasis-700); margin: 0 0 1.25rem; }
-.action { display: flex; justify-content: space-between; gap: 0.5rem; margin-top: auto; color: var(--ifm-color-primary); font-size: 0.85rem; }
-@media (max-width: 700px) { .grid { grid-template-columns: 1fr; } }
-@media (prefers-reduced-motion: reduce) { .card { transition: none; } }

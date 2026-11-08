@@ -1,0 +1,49 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+
+const posts = await getCollection("posts");
+const collections = [
+  {
+    id: "agent",
+    title: "Agent",
+    description: "智能体记忆、上下文管理、工具调用与系统实践。",
+  },
+  {
+    id: "paper-weekly",
+    title: "论文周报",
+    description: "近期论文、方法比较与值得继续追踪的问题。",
+  },
+];
+const count = (id: string) =>
+  posts.filter(post => post.data.collection === id && !post.data.draft).length;
+---
+
+<Layout title="专题合集" description="按研究方向浏览研究笔记与论文周报。">
+  <Header />
+  <main id="main-content" class="app-layout app-prose py-10">
+    <h1>专题合集</h1>
+    <p>用专题组织长期研究内容，不维护额外的 tag。</p>
+    <div class="not-prose grid gap-4 sm:grid-cols-2">
+      {
+        collections.map(collection => (
+          <a
+            class="border-border hover:border-accent rounded border p-5 transition-colors"
+            href={`/collections/${collection.id}`}
+          >
+            <h2 class="text-foreground text-xl font-semibold">
+              {collection.title}
+            </h2>
+            <p class="text-muted-foreground mt-2">{collection.description}</p>
+            <span class="text-accent mt-4 block text-sm">
+              {count(collection.id)} 篇文章 →
+            </span>
+          </a>
+        ))
+      }
+    </div>
+  </main>
+  <Footer />
+</Layout>

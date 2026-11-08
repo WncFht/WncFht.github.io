@@ -1,0 +1,102 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import Card from "@/components/Card.astro";
+import PublicationCard from "@/components/PublicationCard.astro";
+import { publications } from "@/data/publications";
+import { getSortedPosts } from "@/utils/getSortedPosts";
+
+const posts = getSortedPosts(
+  (await getCollection("posts")).filter(post => !post.data.draft)
+);
+const collections = [
+  {
+    id: "agent",
+    title: "Agent",
+    description: "记忆、上下文管理、工具调用与系统实践。",
+  },
+  {
+    id: "paper-weekly",
+    title: "论文周报",
+    description: "论文阅读、方法比较与研究进展。",
+  },
+];
+---
+
+<Layout>
+  <Header />
+  <main id="main-content" class="app-layout py-8 sm:py-12">
+    <section class="border-border border-b pb-8">
+      <p class="text-accent text-sm font-medium">研究笔记 / LLM / Agent</p>
+      <h1 class="text-foreground mt-3 text-4xl font-bold sm:text-5xl">
+        Haotian Fang
+      </h1>
+      <p class="text-muted-foreground mt-4 max-w-2xl text-lg leading-8">
+        记录 LLM 训练、Agent 系统与具身智能方向的论文阅读、方法思考和实践。
+      </p>
+      <div class="mt-5 flex flex-wrap gap-4 text-sm">
+        <a
+          class="text-accent underline decoration-dashed underline-offset-4"
+          href="/collections">浏览专题 →</a
+        >
+        <a
+          class="text-accent underline decoration-dashed underline-offset-4"
+          href="/publications">查看论文 →</a
+        >
+        <a
+          class="text-accent underline decoration-dashed underline-offset-4"
+          href="https://github.com/WncFht">GitHub ↗</a
+        >
+      </div>
+    </section>
+
+    <section class="border-border border-b py-8">
+      <div class="flex items-baseline justify-between gap-4">
+        <h2 class="text-foreground text-2xl font-semibold">专题</h2>
+        <a class="text-accent text-sm" href="/collections">全部专题 →</a>
+      </div>
+      <div class="mt-5 grid gap-4 sm:grid-cols-2">
+        {
+          collections.map(collection => (
+            <a
+              class="border-border hover:border-accent rounded border p-5 transition-colors"
+              href={`/collections/${collection.id}`}
+            >
+              <h3 class="text-foreground text-xl font-semibold">
+                {collection.title}
+              </h3>
+              <p class="text-muted-foreground mt-2">{collection.description}</p>
+            </a>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="border-border border-b py-8">
+      <div class="flex items-baseline justify-between gap-4">
+        <h2 class="text-foreground text-2xl font-semibold">最近文章</h2>
+        <a class="text-accent text-sm" href="/posts">全部文章 →</a>
+      </div>
+      <ul class="divide-border mt-3 divide-y">
+        {posts.slice(0, 6).map(post => <Card variant="h3" {...post} />)}
+      </ul>
+    </section>
+
+    <section class="py-8">
+      <div class="flex items-baseline justify-between gap-4">
+        <h2 class="text-foreground text-2xl font-semibold">Publications</h2>
+        <a class="text-accent text-sm" href="/publications">全部论文 →</a>
+      </div>
+      <div class="mt-5 grid gap-4">
+        {
+          publications
+            .slice(0, 2)
+            .map(publication => <PublicationCard {...publication} />)
+        }
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
