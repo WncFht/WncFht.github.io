@@ -1,0 +1,27 @@
+---
+import type { Experience } from "@/data/profile";
+
+const { items } = Astro.props as { items: Experience[] };
+---
+
+<ol class="border-border ms-2 border-s">
+  {
+    items.map(item => (
+      <li class="relative ps-7 pb-8 last:pb-0">
+        <span class="bg-accent ring-background absolute top-1 -left-1.5 size-3 rounded-full ring-4" />
+        <p class="text-accent text-sm font-medium">{item.period}</p>
+        <h3 class="text-foreground mt-1 text-lg font-semibold">
+          {item.role}{" "}
+          <span class="text-muted-foreground font-normal">
+            · {item.organization}
+          </span>
+        </h3>
+        <ul class="text-muted-foreground mt-3 list-disc space-y-2 ps-5 leading-7">
+          {item.points.map(point => (
+            <li>{point}</li>
+          ))}
+        </ul>
+      </li>
+    ))
+  }
+</ol>

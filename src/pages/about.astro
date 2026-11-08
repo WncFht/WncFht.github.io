@@ -1,36 +1,115 @@
 ---
-import { getEntry, render } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
-import Breadcrumb from "@/components/Breadcrumb.astro";
-import Main from "@/components/Main.astro";
 import Footer from "@/components/Footer.astro";
-import config from "@/config";
-
-const about = await getEntry("pages", "about");
-
-if (!about) {
-  throw new Error(
-    "Missing content entry: `about.md` or `about.mdx` in `src/content/pages/`"
-  );
-}
-
-const { Content } = await render(about);
+import ExperienceTimeline from "@/components/ExperienceTimeline.astro";
+import ProjectGrid from "@/components/ProjectGrid.astro";
+import { experiences, projects, researchInterests } from "@/data/profile";
 ---
 
 <Layout
-  title={`${about.data.title} | ${config.site.title}`}
-  description={about.data.description}
-  ogImage={about.data.ogImage}
-  canonicalURL={about.data.canonicalURL}
+  title="关于"
+  description="Haotian Fang 的个人介绍、研究方向、经历与开源项目。"
 >
   <Header />
+  <main id="main-content" class="app-layout py-10 sm:py-14">
+    <section class="border-border border-b pb-10">
+      <div class="flex flex-col gap-6 sm:flex-row sm:items-center">
+        <img
+          class="border-border size-24 rounded-full border object-cover sm:size-28"
+          src="https://github.com/WncFht.png"
+          alt="Haotian Fang"
+        />
+        <div>
+          <p class="text-accent text-sm font-medium">About me</p>
+          <h1 class="text-foreground mt-2 text-4xl font-bold sm:text-5xl">
+            方皓天 <span class="text-muted-foreground">Haotian Fang</span>
+          </h1>
+          <p class="text-muted-foreground mt-3 text-lg">
+            B.Eng. Student @ UM-SJTU Joint Institute, Shanghai Jiao Tong
+            University
+          </p>
+          <div class="mt-4 flex flex-wrap gap-4 text-sm">
+            <a
+              class="text-accent underline decoration-dashed underline-offset-4"
+              href="mailto:fanghaotian@sjtu.edu.cn">Email ↗</a
+            >
+            <a
+              class="text-accent underline decoration-dashed underline-offset-4"
+              href="https://github.com/WncFht"
+              target="_blank"
+              rel="noreferrer">GitHub ↗</a
+            >
+            <a
+              class="text-accent underline decoration-dashed underline-offset-4"
+              href="https://www.zhihu.com/people/fht-64"
+              target="_blank"
+              rel="noreferrer">知乎 ↗</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="app-prose mt-8 max-w-3xl">
+        <p>
+          我是上海交通大学密西根学院（UM-SJTU Joint
+          Institute）电子与计算机工程专业的本科生，兴趣集中在大语言模型的全链路训练（预训练、后训练）、Agent
+          系统与具身智能。
+        </p>
+        <p>
+          目前在 <a
+            href="https://apex.sjtu.edu.cn/"
+            target="_blank"
+            rel="noreferrer">SJTU APEX 数据和知识管理实验室</a
+          > 担任科研助理。此前在美团从事生成式推荐方向的科研实习，在 SJTU X-Lance
+          实验室担任科研助理，并在上海将然科技有限公司担任 Agent 开发工程师。
+        </p>
+      </div>
+    </section>
 
-  <Breadcrumb />
+    <section class="border-border border-b py-10">
+      <h2 class="text-foreground text-2xl font-semibold">研究方向</h2>
+      <div class="mt-5 grid gap-4 sm:grid-cols-3">
+        {
+          researchInterests.map(interest => (
+            <article class="border-border rounded border p-5">
+              <h3 class="text-foreground text-lg font-semibold">
+                {interest.title}
+              </h3>
+              <p class="text-muted-foreground mt-2 leading-7">
+                {interest.description}
+              </p>
+            </article>
+          ))
+        }
+      </div>
+    </section>
 
-  <Main pageTitle={about.data.title} class="app-prose">
-    <Content />
-  </Main>
+    <section class="border-border border-b py-10">
+      <div class="flex flex-wrap items-baseline justify-between gap-3">
+        <h2 class="text-foreground text-2xl font-semibold">经历</h2>
+        <a class="text-accent text-sm" href="/publications">查看论文成果 →</a>
+      </div>
+      <div class="mt-7"><ExperienceTimeline items={experiences} /></div>
+    </section>
 
+    <section class="border-border border-b py-10">
+      <h2 class="text-foreground text-2xl font-semibold">开源项目</h2>
+      <p class="text-muted-foreground mt-2">部分研究代码与个人工具。</p>
+      <div class="mt-6"><ProjectGrid projects={projects} /></div>
+    </section>
+
+    <section class="py-10">
+      <h2 class="text-foreground text-2xl font-semibold">教育经历</h2>
+      <div class="border-border mt-5 rounded border p-5">
+        <h3 class="text-foreground text-lg font-semibold">
+          上海交通大学 · 密西根学院（UM-SJTU Joint Institute）
+        </h3>
+        <p class="text-muted-foreground mt-2">
+          电子与计算机工程（Electrical and Computer Engineering）本科 · 2024.09
+          — 2028.06（预计）
+        </p>
+      </div>
+    </section>
+  </main>
   <Footer />
 </Layout>

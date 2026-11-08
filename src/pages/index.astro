@@ -4,8 +4,6 @@ import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import Card from "@/components/Card.astro";
-import PublicationCard from "@/components/PublicationCard.astro";
-import { publications } from "@/data/publications";
 import { getSortedPosts } from "@/utils/getSortedPosts";
 
 const posts = getSortedPosts(
@@ -47,6 +45,10 @@ const collections = [
         >
         <a
           class="text-accent underline decoration-dashed underline-offset-4"
+          href="/about">了解我 →</a
+        >
+        <a
+          class="text-accent underline decoration-dashed underline-offset-4"
           href="https://github.com/WncFht">GitHub ↗</a
         >
       </div>
@@ -84,17 +86,15 @@ const collections = [
       </ul>
     </section>
 
-    <section class="py-8">
-      <div class="flex items-baseline justify-between gap-4">
-        <h2 class="text-foreground text-2xl font-semibold">Publications</h2>
-        <a class="text-accent text-sm" href="/publications">全部论文 →</a>
-      </div>
-      <div class="mt-5 grid gap-4">
-        {
-          publications
-            .slice(0, 2)
-            .map(publication => <PublicationCard {...publication} />)
-        }
+    <section class="border-border mt-2 border-t py-8">
+      <div class="flex flex-wrap items-baseline justify-between gap-4">
+        <div>
+          <h2 class="text-foreground text-2xl font-semibold">关于这个站点</h2>
+          <p class="text-muted-foreground mt-2">
+            完整的个人介绍、研究经历和开源项目集中在 About 页面。
+          </p>
+        </div>
+        <a class="text-accent text-sm" href="/about">查看 About →</a>
       </div>
     </section>
   </main>
