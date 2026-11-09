@@ -11,12 +11,7 @@ import { rehypeHeadingIds, unified } from "@astrojs/markdown-remark";
 import rehypeCallouts from "rehype-callouts";
 import remarkMath from "remark-math";
 import rehypeMathjax from "rehype-mathjax";
-import {
-  transformerNotationDiff,
-  transformerNotationHighlight,
-  transformerNotationWordHighlight,
-} from "@shikijs/transformers";
-import { transformerFileName } from "./src/utils/transformers/fileName";
+import expressiveCode from "astro-expressive-code";
 import { rehypeTableWrapper } from "./src/utils/rehypeTableWrapper";
 import {
   inlineTocDeprecation,
@@ -27,6 +22,7 @@ import config from "./astro-paper.config";
 export default defineConfig({
   site: config.site.url,
   integrations: [
+    expressiveCode(),
     mdx(),
     sitemap({
       filter: page =>
@@ -55,17 +51,6 @@ export default defineConfig({
         rehypeTableWrapper,
       ],
     }),
-    shikiConfig: {
-      themes: { light: "min-light", dark: "night-owl" },
-      defaultColor: false,
-      wrap: false,
-      transformers: [
-        transformerFileName({ style: "v2", hideDot: false }),
-        transformerNotationHighlight(),
-        transformerNotationWordHighlight(),
-        transformerNotationDiff({ matchAlgorithm: "v3" }),
-      ],
-    },
   },
   vite: {
     plugins: [tailwindcss()],

@@ -139,14 +139,7 @@ const ogImage = ogImageUrl
 
     <div class="post-body mt-8">
       <PostToc headings={tocHeadings} />
-      <article
-        id="article"
-        class:list={[
-          "w-full",
-          "app-prose max-w-app",
-          "prose-pre:bg-(--shiki-light-bg) dark:prose-pre:bg-(--shiki-dark-bg)",
-        ]}
-      >
+      <article id="article" class:list={["w-full", "app-prose max-w-app"]}>
         <Content />
       </article>
     </div>
@@ -229,53 +222,6 @@ const ogImage = ogImageUrl
     }
   }
   addHeadingLinks();
-
-  function attachCopyButtons() {
-    const copyButtonLabel = "Copy";
-    const codeBlocks = Array.from(document.querySelectorAll("pre"));
-
-    for (const codeBlock of codeBlocks) {
-      if (codeBlock.dataset.language === "mermaid") continue;
-      const wrapper = document.createElement("div");
-      wrapper.dataset.codeWrapper = "";
-      wrapper.style.position = "relative";
-
-      const computedStyle = getComputedStyle(codeBlock);
-      const hasFileNameOffset =
-        computedStyle.getPropertyValue("--file-name-offset").trim() !== "";
-
-      const topClass = hasFileNameOffset
-        ? "top-(--file-name-offset)"
-        : "-top-3";
-
-      const copyButton = document.createElement("button");
-      copyButton.className = `copy-code absolute end-3 ${topClass} rounded bg-muted border border-muted px-2 py-1 text-xs leading-4 text-foreground font-medium`;
-      copyButton.innerHTML = copyButtonLabel;
-      codeBlock.setAttribute("tabindex", "0");
-      codeBlock.appendChild(copyButton);
-
-      codeBlock?.parentNode?.insertBefore(wrapper, codeBlock);
-      wrapper.appendChild(codeBlock);
-
-      copyButton.addEventListener("click", async () => {
-        await copyCode(codeBlock, copyButton);
-      });
-    }
-
-    async function copyCode(block, button) {
-      const code = block.querySelector("code");
-      const text = code?.innerText;
-
-      await navigator.clipboard.writeText(text ?? "");
-
-      button.innerText = "Copied";
-
-      setTimeout(() => {
-        button.innerText = copyButtonLabel;
-      }, 700);
-    }
-  }
-  attachCopyButtons();
 
   /** Accessible image lightbox for article images. */
   function initLightbox() {
@@ -684,17 +630,15 @@ const ogImage = ogImageUrl
     for (const block of blocks) {
       const diagram = document.createElement("div");
       diagram.className = "mermaid-diagram";
+      const lines = block.querySelectorAll<HTMLElement>(".ec-line .code");
       diagram.dataset.mermaidSource = (
-        block.querySelector("code")?.textContent ??
-        block.textContent ??
-        ""
+        lines.length
+          ? Array.from(lines, line => line.textContent ?? "").join("\n")
+          : (block.querySelector("code")?.textContent ??
+            block.textContent ??
+            "")
       ).trim();
-      const wrapper = block.parentElement;
-      if (wrapper?.hasAttribute("data-code-wrapper")) {
-        wrapper.replaceWith(diagram);
-      } else {
-        block.replaceWith(diagram);
-      }
+      (block.closest(".expressive-code") ?? block).replaceWith(diagram);
     }
 
     const diagrams = Array.from(

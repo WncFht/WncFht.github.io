@@ -45,6 +45,8 @@ kind: tutorial
 
 ### 带行号的代码
 
+代码框显示行号，右上角可复制代码，也可切换自动换行。
+
 ```python title="evaluate.py" showLineNumbers {5-6}
 def evaluate(model, dataset):
     results = []
@@ -57,13 +59,15 @@ def evaluate(model, dataset):
 
 ### 自然语言 Prompt
 
+自然语言默认自动换行、不显示行号，也可以用右上角按钮切换为横向滚动。
+
 ```text title="阅读提示"
 请概括论文的问题、主要假设、方法、实验设置与局限。将作者明确陈述的结论与你根据实验作出的推断分开，并说明哪些条件变化后需要重新验证。
 ```
 
 ### 长代码折叠
 
-超过 24 行的代码默认收起。这里用完整的配置示例检查展开、复制与全屏。
+这里用完整的配置示例检查标题、行号、复制与换行切换。
 
 ```yaml title="reading-example.yml"
 project:

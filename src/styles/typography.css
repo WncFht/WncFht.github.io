@@ -134,8 +134,18 @@
       color: var(--color-math);
     }
 
+    /* Tailwind's preflight makes every SVG a block, including inline math. */
+    mjx-container[jax="SVG"]:not([display="true"]) {
+      display: inline-block;
+    }
+
+    mjx-container[jax="SVG"] > svg {
+      display: inline-block;
+    }
+
     mjx-container[jax="SVG"][display="true"] {
       @apply my-7 overflow-x-auto overflow-y-hidden py-2;
+      min-width: 0 !important;
     }
 
     mjx-container[jax="SVG"] [data-mml-node="mtable"] > [data-labels] {
