@@ -27,6 +27,18 @@ const ogGlyphs = [
 
 export default defineConfig({
   site: config.site.url,
+  redirects: {
+    "/notes": { destination: "/posts/", status: 308 },
+    "/docs/intro": { destination: "/posts/", status: 308 },
+    "/docs/reading-playground": {
+      destination: "/posts/reading-playground/",
+      status: 308,
+    },
+    "/blog/2025/03/29/agent-memory-thoughts": {
+      destination: "/posts/agent-memory-thoughts/",
+      status: 308,
+    },
+  },
   integrations: [
     expressiveCode(),
     mdx(),

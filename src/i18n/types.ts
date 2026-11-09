@@ -2,7 +2,8 @@ export interface UIStrings {
   nav: {
     home: string;
     posts: string;
-    tags: string;
+    collections: string;
+    publications: string;
     about: string;
     archives: string;
     search: string;
@@ -13,10 +14,8 @@ export interface UIStrings {
     sharePostIntro: string;
     sharePostOn: string;
     sharePostViaEmail: string;
-    tagLabel: string;
     backToTop: string;
-    /** Optional until v8, so older locale files still type-check. */
-    tableOfContents?: string;
+    tableOfContents: string;
     goBack: string;
     editPage: string;
     previousPost: string;
@@ -27,23 +26,11 @@ export interface UIStrings {
     next: string;
     page: string;
   };
-  home: {
-    socialLinks: string;
-    featured: string;
-    recentPosts: string;
-    allPosts: string;
-  };
   footer: {
     copyright: string;
     allRightsReserved: string;
   };
   pages: {
-    tagTitle: string;
-    tagDesc: string;
-
-    tagsTitle: string;
-    tagsDesc: string;
-
     postsTitle: string;
     postsDesc: string;
 
@@ -55,8 +42,7 @@ export interface UIStrings {
   };
   a11y: {
     skipToContent: string;
-    /** Optional until v8, so older locale files still type-check. */
-    skipTableOfContents?: string;
+    skipTableOfContents: string;
     openMenu: string;
     closeMenu: string;
     toggleTheme: string;

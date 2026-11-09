@@ -1,30 +1,15 @@
 ---
-import { getCollection } from "astro:content";
+import CollectionCard from "@/components/CollectionCard.astro";
 import Layout from "@/layouts/Layout.astro";
-import Header from "@/components/Header.astro";
-import Footer from "@/components/Footer.astro";
 import Card from "@/components/Card.astro";
-import { getSortedPosts } from "@/utils/getSortedPosts";
+import { collections } from "@/data/collections";
+import config from "@/config";
+import { getPublishedPosts } from "@/utils/getPublishedPosts";
 
-const posts = getSortedPosts(
-  (await getCollection("posts")).filter(post => !post.data.draft)
-);
-const collections = [
-  {
-    id: "agent",
-    title: "Agent",
-    description: "记忆、上下文管理、工具调用与系统实践。",
-  },
-  {
-    id: "paper-weekly",
-    title: "论文周报",
-    description: "论文阅读、方法比较与研究进展。",
-  },
-];
+const posts = await getPublishedPosts();
 ---
 
 <Layout>
-  <Header />
   <main id="main-content" class="app-layout py-8 sm:py-12">
     <section class="border-border border-b pb-8">
       <p class="text-accent text-sm font-medium">研究笔记 / LLM / Agent</p>
@@ -62,15 +47,7 @@ const collections = [
       <div class="mt-5 grid gap-4 sm:grid-cols-2">
         {
           collections.map(collection => (
-            <a
-              class="border-border hover:border-accent rounded border p-5 transition-colors"
-              href={`/collections/${collection.id}`}
-            >
-              <h3 class="text-foreground text-xl font-semibold">
-                {collection.title}
-              </h3>
-              <p class="text-muted-foreground mt-2">{collection.description}</p>
-            </a>
+            <CollectionCard collection={collection} heading="h3" />
           ))
         }
       </div>
@@ -82,7 +59,11 @@ const collections = [
         <a class="text-accent text-sm" href="/posts">全部文章 →</a>
       </div>
       <ul class="divide-border mt-3 divide-y">
-        {posts.slice(0, 6).map(post => <Card variant="h3" {...post} />)}
+        {
+          posts
+            .slice(0, config.posts.perIndex)
+            .map(post => <Card variant="h3" {...post} />)
+        }
       </ul>
     </section>
 
@@ -98,5 +79,4 @@ const collections = [
       </div>
     </section>
   </main>
-  <Footer />
 </Layout>

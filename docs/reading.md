@@ -14,7 +14,7 @@ kind: research-note
 ---
 ```
 
-`title`、`description`、`pubDatetime` 必填，完整约束由[内容 schema](../src/content.config.ts)定义。专题由[共享定义](../src/data/collections.ts)维护；`collection` 为可选的单专题归属。新增专题先更新共享定义，列表、详情与 schema 会共同使用它。
+`title`、`description`、`pubDatetime` 必填，完整约束由[内容 schema](../src/content.config.ts)定义。专题由[共享定义](../src/data/collections.ts)维护；`collection` 为可选的单专题归属。`kind` 仅记录内容类型，不会生成独立的“笔记”列表或路由。新增专题先更新共享定义，列表、详情与 schema 会共同使用它。
 
 `draft: true` 的文章不发布。生产构建按站点或文章时区的日历日期过滤未来文章，开发时展示非草稿的定时文章；静态站需要在发布日期重新构建。更新时间使用 `modDatetime`。当前不使用旧站的 `collections`、`issue`、`series_order` 字段组织页面。
 

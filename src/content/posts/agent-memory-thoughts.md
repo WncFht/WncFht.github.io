@@ -4,7 +4,6 @@ author: Haotian Fang
 pubDatetime: 2025-03-29
 description: 关于 Agent Memory、检索、层次结构和长期记忆机制的个人整理。
 collection: agent
-kind: research-note
 ---
 
 很显然，现在对于 Agent Memory 的研究是极其匮乏的，调研了现在所有的文献以及开源仓库，我稍微做一下总结。

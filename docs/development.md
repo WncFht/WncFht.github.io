@@ -57,7 +57,7 @@ CI 在已有工作流中安装 npm 与锁定 Python 依赖，再调用同一个 
 
 ## 工具范围与升级
 
-采用 Prettier、ESLint、Markdownlint、Ruff 与文档检查，各自负责实际存在的文件类型。当前没有另外引入 AutoCorrect、Taplo、ShellCheck、actionlint 或第二套检查调度器；中文表达按 [maintain-prose](../.agents/skills/maintain-prose/SKILL.md)审阅，现有 Astro / MDX 格式规则保留。
+采用 Prettier、ESLint、Markdownlint、Ruff 与文档检查，各自负责实际存在的文件类型。闲置依赖审查可按现有 `knip.json` 配置运行 Knip；其中 `git-format-staged` 由 Git hook 使用，`ruff` 来自 Python 锁文件，两者显式声明为跨语言工具入口，不能按 npm 源码引用判为闲置。当前没有另外引入 AutoCorrect、Taplo、ShellCheck、actionlint 或第二套检查调度器；中文表达按 [maintain-prose](../.agents/skills/maintain-prose/SKILL.md)审阅，现有 Astro / MDX 格式规则保留。
 
 npm 新增维护工具使用精确版本，锁文件为 `package-lock.json`。Markdownlint 间接依赖 `re2js` 暂固定为修复漏洞的 `2.8.7`；升级上游后核对是否可移除 override。Python 依赖与哈希归 `requirements-dev.txt`、`requirements-dev.lock`。修改依赖后重新生成锁文件、审阅规则变化，并运行有效与违规输入、实际部分暂存、失败传播及产品构建测试。
 

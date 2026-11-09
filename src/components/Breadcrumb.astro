@@ -13,7 +13,7 @@ const pathWithoutBase = stripBase(Astro.url.pathname).replace(/\/+$/, "");
 const currentUrlPath = stripLocale(pathWithoutBase, locale);
 
 // Get url array from path
-// eg: /tags/tailwindcss => ['tags', 'tailwindcss']
+// e.g. /posts/2 => ['posts', '2']
 const breadcrumbList = currentUrlPath.split("/").slice(1).filter(Boolean);
 
 const decodeSegment = (value: string) => {
@@ -26,7 +26,6 @@ const decodeSegment = (value: string) => {
 
 const navLabels: Record<string, string> = {
   posts: t.nav.posts,
-  tags: t.nav.tags,
   about: t.nav.about,
   archives: t.nav.archives,
   search: t.nav.search,
@@ -39,20 +38,6 @@ if (breadcrumbList[0] === "posts") {
     0,
     2,
     `${t.nav.posts} (${t.pagination.page.toLowerCase()} ${breadcrumbList[1] || 1})`
-  );
-}
-
-// if breadcrumb is Home > Tags > [tag] > [page] <etc>
-// replace [tag] > [page] with localized [tag] (page number)
-if (breadcrumbList[0] === "tags" && !isNaN(Number(breadcrumbList[2]))) {
-  breadcrumbList.splice(
-    1,
-    3,
-    `${decodeSegment(breadcrumbList[1])} ${
-      Number(breadcrumbList[2]) === 1
-        ? ""
-        : `(${t.pagination.page.toLowerCase()} ${breadcrumbList[2]})`
-    }`
   );
 }
 ---
@@ -75,7 +60,6 @@ if (breadcrumbList[0] === "tags" && !isNaN(Number(breadcrumbList[2]))) {
               class:list={["capitalize opacity-75", { lowercase: index > 0 }]}
               aria-current="page"
             >
-              {/* make the last part lowercase in Home > Tags > some-tag */}
               {navLabels[breadcrumb] ?? decodeSegment(breadcrumb)}
             </span>
           </li>

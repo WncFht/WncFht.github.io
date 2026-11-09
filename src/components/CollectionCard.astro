@@ -1,0 +1,31 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { collections } from "@/data/collections";
+import config from "@/config";
+
+type Props = {
+  collection: (typeof collections)[number];
+  heading?: "h2" | "h3";
+  count?: number;
+};
+
+const { collection, heading: Heading = "h2", count } = Astro.props;
+---
+
+<a
+  class="border-border hover:border-accent rounded border p-5 transition-colors"
+  href={getRelativeLocaleUrl(
+    Astro.currentLocale ?? config.site.lang,
+    `collections/${collection.id}`
+  )}
+>
+  <Heading class="text-foreground text-xl font-semibold">
+    {collection.title}
+  </Heading>
+  <p class="text-muted-foreground mt-2">{collection.description}</p>
+  {
+    count !== undefined && (
+      <span class="text-accent mt-4 block text-sm">{count} 篇文章 →</span>
+    )
+  }
+</a>

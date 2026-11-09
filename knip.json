@@ -4,5 +4,7 @@
     "src/**/*.{astro,mdx,css,ts,js,mjs}",
     "tests/**/*.mjs",
     "*.{ts,js,mjs}"
-  ]
+  ],
+  "ignoreDependencies": ["git-format-staged"],
+  "ignoreBinaries": ["ruff"]
 }

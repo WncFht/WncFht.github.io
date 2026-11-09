@@ -1,4 +1,6 @@
 ---
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
 import { ClientRouter } from "astro:transitions";
 import { resolveDefaultOgImagePath } from "@/utils/resolveDefaultOgImagePath";
 import { getAssetPath } from "@/utils/withBase";
@@ -11,6 +13,7 @@ type Props = {
   ogImage?: string;
   canonicalURL?: string;
   ogType?: "website" | "article";
+  footerNoMarginTop?: boolean;
 };
 
 const { site } = config;
@@ -21,6 +24,7 @@ const {
   ogImage = resolveDefaultOgImagePath(config),
   canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
   ogType = "website",
+  footerNoMarginTop = false,
 } = Astro.props;
 
 const socialImageURL = new URL(ogImage, Astro.site ?? Astro.url);
@@ -114,7 +118,9 @@ const rssHref = getAssetPath("rss.xml");
   <body
     class="bg-background font-app text-foreground selection:bg-accent/75 selection:text-accent-foreground flex min-h-svh flex-col"
   >
+    <Header />
     <slot />
+    <Footer noMarginTop={footerNoMarginTop} />
     <script>
       import "@/scripts/theme";
     </script>

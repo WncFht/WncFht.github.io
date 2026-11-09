@@ -1,13 +1,9 @@
 ---
-import { type CollectionEntry, getCollection, render } from "astro:content";
+import { type CollectionEntry, render } from "astro:content";
 import PostLayout from "@/layouts/PostLayout.astro";
-import Header from "@/components/Header.astro";
-import Footer from "@/components/Footer.astro";
 import Datetime from "@/components/Datetime.astro";
-import Tag from "@/components/Tag.astro";
 import { getPostSlug, getPostUrl } from "@/utils/getPostPaths";
-import { getSortedPosts } from "@/utils/getSortedPosts";
-import { slugifyStr } from "@/utils/slugify";
+import { getPublishedPosts } from "@/utils/getPublishedPosts";
 import { toTransitionName } from "@/utils/toTransitionName";
 import EditPost from "./_components/EditPost.astro";
 import ShareLinks from "./_components/ShareLinks.astro";
@@ -18,8 +14,7 @@ import PostToc from "./_components/PostToc.astro";
 import config from "@/config";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("posts");
-  const sortedPosts = getSortedPosts(posts);
+  const sortedPosts = await getPublishedPosts();
 
   return sortedPosts.map((post, index) => ({
     params: { slug: getPostSlug(post.id, post.filePath) },
@@ -70,7 +65,6 @@ const {
   pubDatetime,
   modDatetime,
   timezone,
-  tags,
   hideEditPost,
   hideToc,
 } = post.data;
@@ -107,8 +101,6 @@ const ogImage = ogImageUrl
   pubDatetime={pubDatetime}
   modDatetime={modDatetime}
 >
-  <Header />
-
   <BackButton />
 
   <main
@@ -144,30 +136,22 @@ const ogImage = ogImageUrl
       </article>
     </div>
 
-    <hr class="my-8 border-dashed" />
-
     <BackToTopButton headings={tocHeadings} />
 
-    <div class="sm:my-8 sm:flex sm:items-start sm:justify-between sm:gap-8">
-      <div class="mt-4 mb-8 flex items-start justify-between gap-4 sm:my-0">
-        <ul class="flex flex-wrap gap-4">
-          {
-            tags.map(tag => (
-              <Tag tag={slugifyStr(tag)} tagName={tag} size="sm" />
-            ))
-          }
-        </ul>
-        <EditPost class="flex-none sm:hidden" {hideEditPost} {post} />
-      </div>
-
-      <ShareLinks />
-    </div>
+    {
+      ((config.features.editPost.enabled && !hideEditPost) ||
+        config.shareLinks.length > 0) && (
+        <div class="my-8 flex items-start justify-between gap-4">
+          <EditPost class="sm:hidden" {hideEditPost} {post} />
+          <ShareLinks />
+        </div>
+      )
+    }
 
     <hr class="my-8 border-dashed" />
 
     <AdjacentPostNav {prevPost} {nextPost} />
   </main>
-  <Footer />
 </PostLayout>
 
 <div

@@ -27,7 +27,9 @@ const backUrl = config.features.showBackButton
 </main>
 
 <script>
-  document.addEventListener("astro:page-load", () => {
+  import { onPageLoad } from "@/scripts/onPageLoad";
+
+  onPageLoad(() => {
     const mainContent: HTMLElement | null =
       document.querySelector("#main-content");
     const backUrl = mainContent?.dataset?.backurl;

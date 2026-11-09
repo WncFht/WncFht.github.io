@@ -1,7 +1,5 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import Header from "@/components/Header.astro";
-import Footer from "@/components/Footer.astro";
 import LinkButton from "@/components/LinkButton.astro";
 import { getRelativeLocaleUrl } from "astro:i18n";
 import { useTranslations } from "@/i18n";
@@ -16,8 +14,6 @@ const t = useTranslations(locale);
   title={`${t.notFound.title} | ${config.site.title}`}
   canonicalURL={new URL(getAssetPath("404.html"), Astro.site).href}
 >
-  <Header />
-
   <main
     id="main-content"
     class="app-layout my-1 flex flex-1 items-center justify-center"
@@ -34,6 +30,4 @@ const t = useTranslations(locale);
       </LinkButton>
     </div>
   </main>
-
-  <Footer />
 </Layout>

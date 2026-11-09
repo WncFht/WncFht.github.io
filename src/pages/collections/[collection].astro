@@ -1,10 +1,7 @@
 ---
-import { getCollection } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
-import Header from "@/components/Header.astro";
-import Footer from "@/components/Footer.astro";
 import Card from "@/components/Card.astro";
-import { getSortedPosts } from "@/utils/getSortedPosts";
+import { getPublishedPosts } from "@/utils/getPublishedPosts";
 import { collections } from "@/data/collections";
 
 export async function getStaticPaths() {
@@ -16,15 +13,12 @@ export async function getStaticPaths() {
 
 type Props = { collection: (typeof collections)[number] };
 const { collection: meta } = Astro.props;
-const posts = getSortedPosts(
-  (await getCollection("posts")).filter(
-    post => post.data.collection === meta.id
-  )
+const posts = (await getPublishedPosts()).filter(
+  post => post.data.collection === meta.id
 );
 ---
 
 <Layout title={meta.title} description={meta.description}>
-  <Header />
   <main id="main-content" class="app-layout py-10">
     <header class="border-border border-b pb-6">
       <p class="text-accent text-sm font-medium">专题合集</p>
@@ -35,5 +29,4 @@ const posts = getSortedPosts(
       {posts.map(post => <Card variant="h3" {...post} />)}
     </ul>
   </main>
-  <Footer />
 </Layout>

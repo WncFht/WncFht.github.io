@@ -21,20 +21,28 @@ flowchart TD
 
 ## 功能入口
 
-| 职责               | 唯一入口或边界                                         | 扩展方式                                             |
-| ------------------ | ------------------------------------------------------ | ---------------------------------------------------- |
-| 站点信息、功能开关 | `astro-paper.config.ts`；`src/config.ts` 解析默认值    | 修改用户配置，避免在页面另建副本                     |
-| 内容字段校验       | `src/content.config.ts`                                | 增加 schema 字段，再消费经过校验的数据               |
-| 专题信息           | `src/data/collections.ts`                              | 增加一项；schema、目录和详情共用该定义               |
-| 发布过滤与排序     | `src/utils/postFilter.ts`、`getSortedPosts.ts`         | 列表、计数和路由复用相同规则                         |
-| Markdown / MDX     | `src/markdown.config.mjs`                              | 修改共享插件配置；生产构建与回归测试共用             |
-| 代码块             | `ec.config.mjs`                                        | Expressive Code 管理高亮、复制、行号和换行按钮       |
-| 主题和配色         | `src/styles/theme.css`、`global.css`、`typography.css` | 修改语义变量与正文样式，代码框跟随主题               |
-| 页面内交互         | `src/scripts/onPageLoad.ts`                            | 初始化接收 `AbortSignal`；页面替换时清理监听和观察器 |
-| 图片与阅读进度     | `src/scripts/article.ts`                               | PhotoSwipe 管理图片交互；站点维护图片数据和进度      |
-| Mermaid 图         | `src/utils/rehypeMermaid.js`、`src/scripts/mermaid.ts` | 构建时保存源文，浏览器按需加载并串行渲染             |
-| 分享图             | `src/utils/createOgImage.ts`                           | 站点和文章路由仅传入内容，共用模板和字体读取         |
-| 界面文案           | `src/i18n/lang/zh-Hans.ts`                             | 中文界面使用中文词典，英语词典作为回退               |
+| 职责               | 唯一入口或边界                                              | 扩展方式                                             |
+| ------------------ | ----------------------------------------------------------- | ---------------------------------------------------- |
+| 站点信息、功能开关 | `astro-paper.config.ts`；`src/config.ts` 解析默认值         | 修改用户配置，避免在页面另建副本                     |
+| 内容字段校验       | `src/content.config.ts`                                     | 增加 schema 字段，再消费经过校验的数据               |
+| 专题信息           | `src/data/collections.ts`                                   | 增加一项；schema、目录和详情共用该定义               |
+| 发布过滤与排序     | `src/utils/getPublishedPosts.ts`、`selectPublishedPosts.ts` | 列表、计数和路由复用相同规则                         |
+| Markdown / MDX     | `src/markdown.config.mjs`                                   | 修改共享插件配置；生产构建与回归测试共用             |
+| 代码块             | `ec.config.mjs`                                             | Expressive Code 管理高亮、复制、行号和换行按钮       |
+| 主题和配色         | `src/styles/theme.css`、`global.css`、`typography.css`      | 修改语义变量与正文样式，代码框跟随主题               |
+| 页面内交互         | `src/scripts/onPageLoad.ts`                                 | 初始化接收 `AbortSignal`；页面替换时清理监听和观察器 |
+| 图片与阅读进度     | `src/scripts/article.ts`                                    | PhotoSwipe 管理图片交互；站点维护图片数据和进度      |
+| Mermaid 图         | `src/utils/rehypeMermaid.js`、`src/scripts/mermaid.ts`      | 构建时保存源文，浏览器按需加载并串行渲染             |
+| 分享图             | `src/utils/createOgImage.ts`                                | 站点和文章路由仅传入内容，共用模板和字体读取         |
+| 界面文案           | `src/i18n/lang/zh-Hans.ts`                                  | 中文界面使用中文词典，英语词典作为回退               |
+
+内容只有 `posts` 一个集合：文章列表按最近更新时间浏览，专题通过 `collection` 归组，不另设笔记内容系统。`getPublishedPosts()` 统一读取内容并调用可独立测试的发布策略；首页、列表、专题计数、详情、归档、RSS 与分享图都复用它。生产环境按文章或站点时区的日历日期发布，开发环境可预览未来文章，草稿始终隐藏。归档按发表年月分组；其他列表按更新时间倒序。
+
+日期解析、时区校验和 Day.js 插件初始化归 `src/utils/datetime.ts`，发布策略、日期展示与归档共用。归档直接使用 Node.js 原生 `Map.groupBy`；只有出现额外业务规则时才考虑自己的分组工具。专题数据只在 `src/data/collections.ts` 维护，首页条数读取用户配置。专题字段 `collection` 是唯一的文章归组维度；未使用的 `kind`、标签、精选和论文计数字段不作为站点契约。
+
+`Layout.astro` 统一装配文档外壳、Header 和 Footer，页面只提供主体内容；`PostLayout.astro` 在此基础上增加文章元数据。分页列表通过 `footerNoMarginTop` 保留多页时的页脚间距。首页与专题目录共用 `CollectionCard.astro`，标题级别由所在页面决定，文章计数可选。
+
+导航文案归语言词典，Header 用同一列表渲染常规入口。词典满足同一完整类型，未知语言回退到英语，默认使用站点语言。历史地址统一归 `astro.config.ts` 的 redirects；`/notes` 与旧介绍地址转到文章列表，其余旧文章地址保留目标路径。GitHub Pages 输出的是静态跳转页，不能当作 HTTP 308 服务端重定向。
 
 `theme.ts` 的首次主题应用与切页处理保留独立入口，因为主题需要尽早设置，避免页面出现错误主题。页面内的菜单、目录、返回按钮、图片和进度条使用 `onPageLoad`。异步加载完成后检查页面是否仍然有效，避免向已移除的页面写入内容。
 
@@ -56,7 +64,7 @@ flowchart TD
 
 Mermaid 的部分按需加载分块超过 Vite 的 500 kB 提示阈值。普通页面不会因此加载完整渲染器；若图表规模增长，再按实际使用的图形类型评估裁剪。
 
-Pagefind 对三个旧路径重定向页面提示缺少外层 HTML；文章索引正常生成。重定向页面无需纳入全文搜索。
+Pagefind 对静态跳转页面提示缺少外层 HTML；文章索引正常生成。重定向页面无需纳入全文搜索。
 
 分享图字体沿用 Google 字体提供器，首次构建需要访问字体服务，后续可利用 Astro 缓存。
 
