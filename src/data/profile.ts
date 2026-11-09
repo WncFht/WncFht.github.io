@@ -1,4 +1,3 @@
-type ResearchInterest = { title: string; description: string };
 export type Experience = {
   period: string;
   role: string;
@@ -12,18 +11,12 @@ export type Project = {
   description: string;
 };
 
-export const researchInterests: ResearchInterest[] = [
-  { title: "LLM 全链路训练", description: "预训练与后训练的完整管线。" },
-  { title: "具身智能", description: "Code as Policy、VLA 与世界模型。" },
-  { title: "Agent 系统", description: "记忆与上下文管理、工具调用。" },
-];
-
 export const experiences: Experience[] = [
   {
     period: "至今",
     role: "科研助理（RA）",
     organization: "SJTU APEX 数据和知识管理实验室",
-    points: ["围绕数据管理、知识管理与智能系统开展研究。"],
+    points: ["研究大语言模型后训练（LLM post-training）。"],
   },
   {
     period: "2025.09 — 2026.09",

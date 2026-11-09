@@ -4,13 +4,10 @@ import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import ExperienceTimeline from "@/components/ExperienceTimeline.astro";
 import ProjectGrid from "@/components/ProjectGrid.astro";
-import { experiences, projects, researchInterests } from "@/data/profile";
+import { experiences, projects } from "@/data/profile";
 ---
 
-<Layout
-  title="关于"
-  description="Haotian Fang 的个人介绍、研究方向、经历与开源项目。"
->
+<Layout title="关于" description="Haotian Fang 的个人介绍、经历与开源项目。">
   <Header />
   <main id="main-content" class="app-layout py-10 sm:py-14">
     <section class="border-border border-b pb-10">
@@ -63,24 +60,6 @@ import { experiences, projects, researchInterests } from "@/data/profile";
           > 担任科研助理。此前在美团从事生成式推荐方向的科研实习，在 SJTU X-Lance
           实验室担任科研助理，并在上海将然科技有限公司担任 Agent 开发工程师。
         </p>
-      </div>
-    </section>
-
-    <section class="border-border border-b py-10">
-      <h2 class="text-foreground text-2xl font-semibold">研究方向</h2>
-      <div class="mt-5 grid gap-4 sm:grid-cols-3">
-        {
-          researchInterests.map(interest => (
-            <article class="border-border rounded border p-5">
-              <h3 class="text-foreground text-lg font-semibold">
-                {interest.title}
-              </h3>
-              <p class="text-muted-foreground mt-2 leading-7">
-                {interest.description}
-              </p>
-            </article>
-          ))
-        }
       </div>
     </section>
 
