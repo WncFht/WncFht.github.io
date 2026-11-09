@@ -34,12 +34,9 @@ const items = buildTocTree(headings);
 }
 
 <script>
-  let cleanup: (() => void) | undefined;
+  import { onPageLoad } from "@/scripts/onPageLoad";
 
-  function initToc() {
-    cleanup?.();
-    cleanup = undefined;
-
+  onPageLoad(signal => {
     const links = Array.from(
       document.querySelectorAll<HTMLAnchorElement>(
         "[data-toc-nav] a[href^='#']"
@@ -101,21 +98,15 @@ const items = buildTocTree(headings);
     const backToTop = document.querySelector(".toc-side [data-back-to-top]");
     const scrollToTop = () => scrollTo(0, 0);
 
-    backToTop?.addEventListener("click", scrollToTop);
-    addEventListener("scroll", schedule, { passive: true });
-    addEventListener("resize", schedule);
+    backToTop?.addEventListener("click", scrollToTop, { signal });
+    addEventListener("scroll", schedule, { passive: true, signal });
+    addEventListener("resize", schedule, { signal });
     update();
 
-    cleanup = () => {
-      backToTop?.removeEventListener("click", scrollToTop);
-      removeEventListener("scroll", schedule);
-      removeEventListener("resize", schedule);
+    signal.addEventListener("abort", () => {
       cancelAnimationFrame(frame);
-    };
-  }
-
-  document.addEventListener("astro:page-load", initToc);
-  document.addEventListener("astro:before-swap", () => cleanup?.());
+    });
+  });
 </script>
 
 <style is:global>
@@ -221,11 +212,6 @@ const items = buildTocTree(headings);
     padding-block: 0.5rem;
     border-radius: 0;
     border-block-start: 1px dashed var(--color-border);
-  }
-
-  /* The layout TOC replaces an author-written one (deprecated, see rehypeInlineToc). */
-  .post-body:has(.toc-side) .toc-inline {
-    display: none;
   }
 
   /* ---- beside the centred column (>= 80rem) ---- */

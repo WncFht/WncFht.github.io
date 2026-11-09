@@ -1,4 +1,4 @@
-export type ResearchInterest = { title: string; description: string };
+type ResearchInterest = { title: string; description: string };
 export type Experience = {
   period: string;
   role: string;

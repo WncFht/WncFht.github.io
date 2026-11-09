@@ -46,11 +46,15 @@ const t = useTranslations(locale);
 </Layout>
 
 <script>
+  import { onPageLoad } from "@/scripts/onPageLoad";
+
   function initSearch() {
     const pageFindSearch: HTMLElement | null =
       document.querySelector("#pagefind-search");
 
     if (!pageFindSearch) return;
+    if (pageFindSearch.dataset.initialized) return;
+    pageFindSearch.dataset.initialized = "true";
 
     const bundlePath = pageFindSearch?.dataset?.bundlePath;
     if (!bundlePath) return;
@@ -60,15 +64,23 @@ const t = useTranslations(locale);
     const onIdle = window.requestIdleCallback || (cb => setTimeout(cb, 1));
 
     onIdle(async () => {
+      if (!pageFindSearch.isConnected) {
+        delete pageFindSearch.dataset.initialized;
+        return;
+      }
       // @ts-expect-error — Missing types for @pagefind/default-ui package.
       const { PagefindUI } = await import("@pagefind/default-ui");
+      if (!pageFindSearch.isConnected) {
+        delete pageFindSearch.dataset.initialized;
+        return;
+      }
 
       // Display warning in dev mode
       if (import.meta.env.DEV) {
         pageFindSearch.innerHTML = `
             <div class="bg-muted/75 rounded p-4 space-y-4 mb-4">
               <p><strong>DEV mode Warning! </strong>You need to build the project at least once to see the search results during development.</p>
-              <code class="block bg-black text-white px-2 py-1 rounded">pnpm run build</code>
+              <code class="block bg-black text-white px-2 py-1 rounded">npm run build</code>
             </div>
           `;
       }
@@ -104,22 +116,17 @@ const t = useTranslations(locale);
       clearButton?.addEventListener("click", resetSearchParam);
 
       function resetSearchParam(e: Event) {
-        if ((e.target as HTMLInputElement)?.value.trim() === "") {
+        if (
+          e.currentTarget === clearButton ||
+          (e.target as HTMLInputElement)?.value?.trim() === ""
+        ) {
           history.replaceState(history.state, "", window.location.pathname);
         }
       }
     });
   }
 
-  document.addEventListener("astro:after-swap", () => {
-    const pagefindSearch = document.querySelector("#pagefind-search");
-
-    // if pagefind search form already exists, don't initialize search component
-    if (pagefindSearch && pagefindSearch.querySelector("form")) return;
-
-    initSearch();
-  });
-  initSearch();
+  onPageLoad(initSearch);
 </script>
 
 <style is:global>

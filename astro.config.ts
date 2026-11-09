@@ -1,3 +1,4 @@
+import { globSync, readFileSync } from "node:fs";
 import {
   defineConfig,
   envField,
@@ -7,17 +8,22 @@ import {
 import tailwindcss from "@tailwindcss/vite";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
-import { rehypeHeadingIds, unified } from "@astrojs/markdown-remark";
-import rehypeCallouts from "rehype-callouts";
-import remarkMath from "remark-math";
-import rehypeMathjax from "rehype-mathjax";
+import { unified } from "@astrojs/markdown-remark";
 import expressiveCode from "astro-expressive-code";
-import { rehypeTableWrapper } from "./src/utils/rehypeTableWrapper";
-import {
-  inlineTocDeprecation,
-  rehypeInlineToc,
-} from "./src/utils/rehypeInlineToc";
+import { markdownOptions } from "./src/markdown.config.mjs";
 import config from "./astro-paper.config";
+
+// Subset the build-only CJK font to site text and article content.
+const ogGlyphs = [
+  ...new Set(
+    [
+      JSON.stringify(config.site),
+      ...globSync("src/content/posts/**/*.{md,mdx}").map(path =>
+        readFileSync(path, "utf8")
+      ),
+    ].join("")
+  ),
+];
 
 export default defineConfig({
   site: config.site.url,
@@ -28,7 +34,6 @@ export default defineConfig({
       filter: page =>
         config.features?.showArchives !== false || !/\/archives\/?$/.test(page),
     }),
-    inlineTocDeprecation(),
   ],
   i18n: {
     locales: ["zh-Hans"],
@@ -38,32 +43,21 @@ export default defineConfig({
     },
   },
   markdown: {
-    // Deprecated: the theme no longer uses remark-toc or remark-collapse. They
-    // stay in package.json so a customised config importing them still builds,
-    // and are removed in v8.
-    processor: unified({
-      remarkPlugins: [remarkMath],
-      rehypePlugins: [
-        rehypeHeadingIds,
-        rehypeInlineToc,
-        [rehypeMathjax, { tex: { tags: "all" }, svg: { fontCache: "local" } }],
-        rehypeCallouts,
-        rehypeTableWrapper,
-      ],
-    }),
+    processor: unified(markdownOptions),
   },
   vite: {
     plugins: [tailwindcss()],
   },
   fonts: [
     {
-      name: "Google Sans Code",
-      cssVariable: "--font-google-sans-code",
+      name: "Noto Sans SC",
+      cssVariable: "--font-og",
       provider: fontProviders.google(),
       fallbacks: ["monospace"],
       weights: [400, 700],
       styles: ["normal"],
-      formats: ["woff2"],
+      formats: ["woff"],
+      options: { experimental: { glyphs: ogGlyphs } },
     },
   ],
   env: {

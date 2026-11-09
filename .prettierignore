@@ -3,15 +3,19 @@
 
 # Except these files & folders
 !/src
+!/docs
 !/public
 !/.github
 !tsconfig.json
 !astro.config.ts
+!ec.config.mjs
+!copy-pagefind.mjs
+!scripts
+!tests
+!knip.json
 !package.json
 !.prettierrc
 !eslint.config.js
 !README.md
 !.vscode
-
-# Ignore MDX files
-*.mdx
+docs/papers/

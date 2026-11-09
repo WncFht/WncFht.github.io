@@ -13,7 +13,8 @@
     "astro": "astro",
     "format:check": "prettier --check .",
     "format": "prettier --write .",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test": "node --test tests/*.test.mjs"
   },
   "dependencies": {
     "@astrojs/markdown-remark": "^7.3.5",
@@ -31,11 +32,11 @@
     "lodash.kebabcase": "^4.1.1",
     "lxgw-wenkai-screen-webfont": "^1.7.0",
     "mermaid": "^12.3.0",
+    "photoswipe": "^5.4.4",
+    "rehype-autolink-headings": "^7.1.0",
     "rehype-callouts": "^2.2.0",
     "rehype-mathjax": "^7.1.0",
-    "remark-collapse": "^0.1.2",
     "remark-math": "^6.0.0",
-    "remark-toc": "^9.0.0",
     "satori": "^0.63.2",
     "sharp": "^0.35.5",
     "slugify": "^1.6.9",
@@ -44,7 +45,6 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.12",
     "@pagefind/default-ui": "^1.6.0",
-    "@shikijs/transformers": "^4.6.0",
     "@tailwindcss/typography": "^0.5.20",
     "@types/lodash.kebabcase": "^4.1.9",
     "@typescript-eslint/parser": "^8.72.1",

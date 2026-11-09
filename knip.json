@@ -1,0 +1,8 @@
+{
+  "entry": ["src/i18n/lang/*.ts", "tests/*.test.mjs"],
+  "project": [
+    "src/**/*.{astro,mdx,css,ts,js,mjs}",
+    "tests/**/*.mjs",
+    "*.{ts,js,mjs}"
+  ]
+}

@@ -54,12 +54,9 @@ const items = withToc ? buildTocTree(headings) : [];
 }
 
 <script>
-  let cleanup: (() => void) | undefined;
+  import { onPageLoad } from "@/scripts/onPageLoad";
 
-  function initPostFab() {
-    cleanup?.();
-    cleanup = undefined;
-
+  onPageLoad(signal => {
     const root = document.documentElement;
     const fab = document.getElementById("post-fab");
     const button = fab?.querySelector<HTMLButtonElement>("button");
@@ -127,25 +124,17 @@ const items = withToc ? buildTocTree(headings) : [];
       if (!frame) frame = requestAnimationFrame(update);
     };
 
-    button.addEventListener("click", onButtonClick);
-    document.addEventListener("click", onDocClick);
-    popover?.addEventListener("toggle", onToggle);
-    addEventListener("scroll", schedule, { passive: true });
-    addEventListener("resize", schedule);
+    button.addEventListener("click", onButtonClick, { signal });
+    document.addEventListener("click", onDocClick, { signal });
+    popover?.addEventListener("toggle", onToggle, { signal });
+    addEventListener("scroll", schedule, { passive: true, signal });
+    addEventListener("resize", schedule, { signal });
     update();
 
-    cleanup = () => {
-      button.removeEventListener("click", onButtonClick);
-      document.removeEventListener("click", onDocClick);
-      popover?.removeEventListener("toggle", onToggle);
-      removeEventListener("scroll", schedule);
-      removeEventListener("resize", schedule);
+    signal.addEventListener("abort", () => {
       cancelAnimationFrame(frame);
-    };
-  }
-
-  document.addEventListener("astro:page-load", initPostFab);
-  document.addEventListener("astro:before-swap", () => cleanup?.());
+    });
+  });
 </script>
 
 <style is:global>

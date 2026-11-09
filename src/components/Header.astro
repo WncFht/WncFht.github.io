@@ -166,7 +166,7 @@ const isActive = (path: string) => {
                 id="theme-btn"
                 class="focus-outline hover:[&>svg]:stroke-accent relative size-12 p-4 sm:size-8"
                 title={t.a11y.toggleTheme}
-                aria-label="auto"
+                aria-label={t.a11y.toggleTheme}
                 aria-live="polite"
               >
                 <IconMoon class="absolute top-[50%] left-[50%] translate-[-50%] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
@@ -181,7 +181,9 @@ const isActive = (path: string) => {
 </header>
 
 <script>
-  function toggleNav() {
+  import { onPageLoad } from "@/scripts/onPageLoad";
+
+  function toggleNav(signal: AbortSignal) {
     const menuBtn = document.querySelector<HTMLButtonElement>("#menu-btn");
     const menuItems = document.querySelector("#menu-items");
     const menuIcon = document.querySelector("#menu-icon");
@@ -192,51 +194,58 @@ const isActive = (path: string) => {
     const openLabel = menuBtn.dataset.labelOpen ?? "Open menu";
     const closeLabel = menuBtn.dataset.labelClose ?? "Close menu";
 
-    menuBtn.addEventListener("click", () => {
-      const openMenu = menuBtn.getAttribute("aria-expanded") === "true";
+    menuBtn.addEventListener(
+      "click",
+      () => {
+        const openMenu = menuBtn.getAttribute("aria-expanded") === "true";
 
-      menuBtn.setAttribute("aria-expanded", openMenu ? "false" : "true");
-      menuBtn.setAttribute("aria-label", openMenu ? openLabel : closeLabel);
+        menuBtn.setAttribute("aria-expanded", openMenu ? "false" : "true");
+        menuBtn.setAttribute("aria-label", openMenu ? openLabel : closeLabel);
 
-      menuItems.classList.toggle("hidden");
-      menuItems.classList.toggle("grid");
-      menuIcon.classList.toggle("hidden");
-      closeIcon.classList.toggle("hidden");
-    });
+        menuItems.classList.toggle("hidden");
+        menuItems.classList.toggle("grid");
+        menuIcon.classList.toggle("hidden");
+        closeIcon.classList.toggle("hidden");
+      },
+      { signal }
+    );
   }
 
-  function handleSkipToContent() {
+  function handleSkipToContent(signal: AbortSignal) {
     const skipLink = document.getElementById("skip-to-content");
     if (!skipLink) return;
-    skipLink.addEventListener("click", e => {
-      if (
-        e.defaultPrevented ||
-        e.metaKey ||
-        e.ctrlKey ||
-        e.shiftKey ||
-        e.button !== 0
-      )
-        return;
-      e.preventDefault();
-      const target = document.getElementById("main-content");
-      if (target) {
-        target.setAttribute("tabindex", "-1");
-        target.addEventListener(
-          "blur",
-          () => target.removeAttribute("tabindex"),
-          {
-            once: true,
-          }
-        );
-        target.focus();
-        target.scrollIntoView({ behavior: "smooth" });
-      }
-    });
+    skipLink.addEventListener(
+      "click",
+      e => {
+        if (
+          e.defaultPrevented ||
+          e.metaKey ||
+          e.ctrlKey ||
+          e.shiftKey ||
+          e.button !== 0
+        )
+          return;
+        e.preventDefault();
+        const target = document.getElementById("main-content");
+        if (target) {
+          target.setAttribute("tabindex", "-1");
+          target.addEventListener(
+            "blur",
+            () => target.removeAttribute("tabindex"),
+            {
+              once: true,
+            }
+          );
+          target.focus();
+          target.scrollIntoView({ behavior: "smooth" });
+        }
+      },
+      { signal }
+    );
   }
 
-  toggleNav();
-  document.addEventListener("astro:after-swap", toggleNav);
-
-  handleSkipToContent();
-  document.addEventListener("astro:after-swap", handleSkipToContent);
+  onPageLoad(signal => {
+    toggleNav(signal);
+    handleSkipToContent(signal);
+  });
 </script>

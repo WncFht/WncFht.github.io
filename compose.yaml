@@ -1,17 +1,13 @@
 services:
   app:
-    image: ghcr.io/pnpm/pnpm:11.3.0
+    image: node:24
     ports:
       - 4321:4321
     working_dir: /app
     command: >
-      bash -c "
-      pnpm runtime set node 24 -g
-      && pnpm install --frozen-lockfile
-      && pnpm prune
-      && pnpm run dev --host 0.0.0.0"
+      sh -c "npm ci && npm run dev -- --host 0.0.0.0"
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:4321"]
+      test: ["CMD", "node", "-e", "fetch('http://localhost:4321').then(r => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))"]
       interval: 10s
       timeout: 5s
       retries: 10

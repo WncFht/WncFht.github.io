@@ -22,25 +22,23 @@ jobs:
       - name: "☁️ Checkout repository"
         uses: actions/checkout@v7
 
-      - name: "📦 Install pnpm"
-        uses: pnpm/action-setup@v6
-        with:
-          version: "11.3.0"
-
       - name: Use Node.js
         uses: actions/setup-node@v7
         with:
           node-version: "24"
-          cache: "pnpm"
+          cache: "npm"
 
       - name: "📦 Install dependencies"
-        run: pnpm install --frozen-lockfile
+        run: npm ci
 
       - name: "🔎 Lint code"
-        run: pnpm run lint
+        run: npm run lint
 
       - name: "📝 Checking code format"
-        run: pnpm run format:check
+        run: npm run format:check
 
       - name: "🚀 Build the project"
-        run: pnpm run build
+        run: npm run build
+
+      - name: Test content rendering
+        run: npm test

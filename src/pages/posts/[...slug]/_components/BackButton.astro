@@ -25,7 +25,9 @@ const t = useTranslations(locale);
 }
 
 <script>
-  function updateGoBackUrl() {
+  import { onPageLoad } from "@/scripts/onPageLoad";
+
+  onPageLoad(() => {
     const backButton: HTMLAnchorElement | null =
       document.querySelector("#back-button");
 
@@ -34,8 +36,5 @@ const t = useTranslations(locale);
     if (backUrl && backButton) {
       backButton.href = backUrl;
     }
-  }
-
-  document.addEventListener("astro:page-load", updateGoBackUrl);
-  updateGoBackUrl();
+  });
 </script>

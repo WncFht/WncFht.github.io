@@ -14,5 +14,3 @@ export const slugifyStr = (str: string): string => {
   }
   return slugify(str, { lower: true });
 };
-
-export const slugifyAll = (arr: string[]) => arr.map(str => slugifyStr(str));
