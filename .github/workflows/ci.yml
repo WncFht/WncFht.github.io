@@ -16,11 +16,13 @@ jobs:
   build:
     name: Code standards & build
     runs-on: ubuntu-latest
-    timeout-minutes: 3
+    timeout-minutes: 5
 
     steps:
       - name: "☁️ Checkout repository"
         uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
 
       - name: Use Node.js
         uses: actions/setup-node@v7
@@ -31,14 +33,15 @@ jobs:
       - name: "📦 Install dependencies"
         run: npm ci
 
-      - name: "🔎 Lint code"
-        run: npm run lint
+      - name: Set up maintenance Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-dev.lock
 
-      - name: "📝 Checking code format"
-        run: npm run format:check
+      - name: Install maintenance dependencies
+        run: python -m pip install --require-hashes -r requirements-dev.lock
 
-      - name: "🚀 Build the project"
-        run: npm run build
-
-      - name: Test content rendering
-        run: npm test
+      - name: Check the project
+        run: npm run check

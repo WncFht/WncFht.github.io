@@ -1,0 +1,47 @@
+default_install_hook_types: [pre-commit, pre-push]
+default_stages: [pre-commit]
+exclude: ^(\.agents/notes/archived/|docs/papers/|\.crossnote/)
+repos:
+  - repo: local
+    hooks:
+      - id: staged-format
+        name: Format the Git index before stashing
+        entry: node_modules/.bin/git-format-staged --formatter "node_modules/.bin/prettier --stdin-filepath {}"
+        language: system
+        files: '\.(astro|ts|js|mjs|css|md|mdx|json|jsonc|ya?ml)$|^\.prettierrc$'
+        stages: [manual]
+      - id: python-format
+        name: Format staged Python
+        entry: node_modules/.bin/git-format-staged --formatter "ruff format --stdin-filename {} -"
+        language: system
+        types: [python]
+        stages: [manual]
+      - id: python-lint
+        name: Lint maintenance Python
+        entry: ruff check
+        language: system
+        types: [python]
+      - id: markdown
+        name: Lint Markdown
+        entry: node_modules/.bin/markdownlint-cli2
+        language: system
+        types: [markdown]
+      - id: source-lint
+        name: Lint site sources
+        entry: npm run lint
+        language: system
+        pass_filenames: false
+        files: '\.(astro|ts|js|mjs)$'
+      - id: staged-contracts
+        name: Check staged documents and Notes
+        entry: python3 scripts/staged_checks.py
+        language: system
+        pass_filenames: false
+        always_run: true
+      - id: check-before-push
+        name: Check the project before push
+        entry: npm run check
+        language: system
+        pass_filenames: false
+        always_run: true
+        stages: [pre-push]

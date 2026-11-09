@@ -4,10 +4,15 @@
 # Except these files & folders
 !/src
 !/docs
+!/.agents
+!/AGENTS.md
+!/.pre-commit-config.yaml
+!/.markdownlint-cli2.jsonc
 !/public
 !/.github
 !tsconfig.json
 !astro.config.ts
+!astro-paper.config.ts
 !ec.config.mjs
 !copy-pagefind.mjs
 !scripts
@@ -17,5 +22,8 @@
 !.prettierrc
 !eslint.config.js
 !README.md
+!THIRD_PARTY_NOTICES.md
 !.vscode
 docs/papers/
+
+.agents/notes/archived/

@@ -34,3 +34,10 @@ public/pagefind
 
 # docker compose
 compose.override.yaml
+
+# Project maintenance environment and local editor preview
+.venv/
+__pycache__/
+.ruff_cache/
+.claude/skills
+.crossnote/

@@ -14,7 +14,13 @@
     "format:check": "prettier --check .",
     "format": "prettier --write .",
     "lint": "eslint .",
-    "test": "node --test tests/*.test.mjs"
+    "test": "node --test tests/*.test.mjs",
+    "lint:md": "markdownlint-cli2 '**/*.md'",
+    "lint:maintenance": "ruff check scripts && ruff format --check scripts",
+    "check:docs": "python3 scripts/check_docs.py && python3 scripts/notes_guard.py --root . && python3 scripts/check_archive.py",
+    "test:maintenance": "python3 -m unittest discover -s scripts/tests -v",
+    "check": "npm run lint && npm run format:check && npm run lint:md && npm run lint:maintenance && npm run check:docs && npm test && npm run test:maintenance && npm run build",
+    "setup:maintenance": "python3 scripts/setup.py"
   },
   "dependencies": {
     "@astrojs/markdown-remark": "^7.3.5",
@@ -50,10 +56,17 @@
     "@typescript-eslint/parser": "^8.72.1",
     "eslint": "^10.14.0",
     "eslint-plugin-astro": "^3.2.1",
+    "git-format-staged": "4.0.2",
+    "markdownlint-cli2": "0.24.0",
     "pagefind": "^1.6.0",
     "prettier": "3.9.10",
     "prettier-plugin-astro": "0.14.1",
     "prettier-plugin-tailwindcss": "^0.8.1",
     "typescript": "^6.0.3"
+  },
+  "overrides": {
+    "markdownlint": {
+      "re2js": "2.8.7"
+    }
   }
 }
