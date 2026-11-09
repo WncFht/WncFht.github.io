@@ -10,7 +10,7 @@ import sitemap from "@astrojs/sitemap";
 import { rehypeHeadingIds, unified } from "@astrojs/markdown-remark";
 import rehypeCallouts from "rehype-callouts";
 import remarkMath from "remark-math";
-import rehypeKatex from "rehype-katex";
+import rehypeMathjax from "rehype-mathjax";
 import {
   transformerNotationDiff,
   transformerNotationHighlight,
@@ -50,7 +50,7 @@ export default defineConfig({
       rehypePlugins: [
         rehypeHeadingIds,
         rehypeInlineToc,
-        rehypeKatex,
+        [rehypeMathjax, { tex: { tags: "all" }, svg: { fontCache: "local" } }],
         rehypeCallouts,
         rehypeTableWrapper,
       ],

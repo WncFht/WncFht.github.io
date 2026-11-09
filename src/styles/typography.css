@@ -130,13 +130,16 @@
       }
     }
 
-    .katex-display {
+    mjx-container[jax="SVG"] {
+      color: var(--color-math);
+    }
+
+    mjx-container[jax="SVG"][display="true"] {
       @apply my-7 overflow-x-auto overflow-y-hidden py-2;
     }
 
-    .katex {
-      color: var(--color-foreground);
-      opacity: 1;
+    mjx-container[jax="SVG"] [data-mml-node="mtable"] > [data-labels] {
+      color: var(--color-muted-foreground);
     }
 
     .astro-code {

@@ -122,11 +122,30 @@ flowchart LR
 
 ## 数学公式
 
-行内公式 $p(y\mid x)$ 与正文协调显示。行间公式使用本站托管的 KaTeX 样式：
+行内公式 $p(y\mid x)$ 和行间公式默认使用独立的紫色，随明暗主题调整。公式由 MathJax 在构建时绘制，行间公式按篇自动编号：
 
 $$
 \mathcal{L} = -\frac{1}{N}\sum_{i=1}^{N}\log p(y_i\mid x_i)
 $$
+
+局部可以单独着色，例如突出任务损失：
+
+$$
+\mathcal{L}_{\mathrm{total}}
+= \textcolor{#c2410c}{\mathcal{L}_{\mathrm{task}}}
++ \lambda\mathcal{L}_{\mathrm{reg}}
+$$
+
+多行推导可以使用 `aligned`，共用一个编号：
+
+$$
+\begin{aligned}
+p(y\mid x) &= \frac{p(x,y)}{p(x)} \\
+\log p(y\mid x) &= \log p(x,y) - \log p(x)
+\end{aligned}
+$$
+
+需要时可以用 `\tag{A}` 指定编号，或用 `\notag` 取消某条公式的编号。
 
 ## 导航与分享
 
