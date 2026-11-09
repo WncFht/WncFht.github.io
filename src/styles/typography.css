@@ -23,7 +23,7 @@
     }
 
     h3 {
-      @apply italic;
+      @apply font-semibold;
     }
 
     p,
@@ -114,8 +114,53 @@
       @apply border-s-accent/80 wrap-break-word opacity-80;
     }
 
+    .callout {
+      @apply border-border bg-muted/35 my-6 rounded border p-4;
+    }
+
+    .callout-title {
+      @apply text-foreground mb-2 font-semibold;
+    }
+
+    .callout-content {
+      @apply text-foreground/90;
+
+      p:last-child {
+        @apply mb-0;
+      }
+    }
+
+    .katex-display {
+      @apply my-7 overflow-x-auto overflow-y-hidden py-2;
+    }
+
+    .katex {
+      color: var(--color-foreground);
+      opacity: 1;
+    }
+
+    .astro-code {
+      @apply my-6 overflow-x-auto rounded border p-4;
+    }
+
+    .astro-code code {
+      @apply whitespace-pre;
+    }
+
     details:not(.callout) {
-      @apply text-foreground inline-block cursor-pointer select-none [&_p]:hidden [&_ul]:my-0!;
+      @apply border-border bg-muted/25 text-foreground my-5 block rounded border px-4 py-3;
+    }
+
+    details:not(.callout) > summary {
+      @apply cursor-pointer font-medium;
+    }
+
+    details:not(.callout)[open] > summary {
+      @apply mb-3;
+    }
+
+    details:not(.callout) > :not(summary) {
+      @apply select-text;
     }
 
     summary {

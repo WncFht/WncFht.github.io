@@ -235,7 +235,9 @@ const ogImage = ogImageUrl
     const codeBlocks = Array.from(document.querySelectorAll("pre"));
 
     for (const codeBlock of codeBlocks) {
+      if (codeBlock.dataset.language === "mermaid") continue;
       const wrapper = document.createElement("div");
+      wrapper.dataset.codeWrapper = "";
       wrapper.style.position = "relative";
 
       const computedStyle = getComputedStyle(codeBlock);
@@ -654,3 +656,95 @@ const ogImage = ogImageUrl
     window.scrollTo({ left: 0, top: 0, behavior: "instant" })
   );
 </script>
+
+<script>
+  let renderVersion = 0;
+
+  async function renderMermaid() {
+    const article = document.getElementById("article");
+    if (!article) return;
+
+    const blocks = Array.from(
+      article.querySelectorAll<HTMLPreElement>('pre[data-language="mermaid"]')
+    );
+    const existing = Array.from(
+      article.querySelectorAll<HTMLElement>("[data-mermaid-source]")
+    );
+    if (!blocks.length && !existing.length) return;
+
+    const version = ++renderVersion;
+    const { default: mermaid } = await import("mermaid");
+    mermaid.initialize({
+      startOnLoad: false,
+      securityLevel: "strict",
+      theme:
+        document.documentElement.dataset.theme === "dark" ? "dark" : "default",
+    });
+
+    for (const block of blocks) {
+      const diagram = document.createElement("div");
+      diagram.className = "mermaid-diagram";
+      diagram.dataset.mermaidSource = (
+        block.querySelector("code")?.textContent ??
+        block.textContent ??
+        ""
+      ).trim();
+      const wrapper = block.parentElement;
+      if (wrapper?.hasAttribute("data-code-wrapper")) {
+        wrapper.replaceWith(diagram);
+      } else {
+        block.replaceWith(diagram);
+      }
+    }
+
+    const diagrams = Array.from(
+      article.querySelectorAll<HTMLElement>("[data-mermaid-source]")
+    );
+    for (const [index, diagram] of diagrams.entries()) {
+      try {
+        const { svg } = await mermaid.render(
+          `mermaid-${version}-${index}`,
+          diagram.dataset.mermaidSource ?? ""
+        );
+        if (version !== renderVersion) return;
+        diagram.innerHTML = svg;
+      } catch {
+        if (version !== renderVersion) return;
+        diagram.textContent = diagram.dataset.mermaidSource ?? "";
+        diagram.dataset.renderError = "";
+      }
+    }
+  }
+
+  document.addEventListener("astro:page-load", renderMermaid);
+  document.addEventListener("astro:before-swap", () => {
+    renderVersion++;
+  });
+  window.addEventListener("site:theme-change", renderMermaid);
+  renderMermaid();
+</script>
+
+<style is:global>
+  .mermaid-diagram {
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
+    margin-block: 1.75rem;
+  }
+
+  .mermaid-diagram svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .mermaid-diagram[data-render-error] {
+    justify-content: flex-start;
+    padding: 1rem;
+    overflow-wrap: anywhere;
+    border: 1px solid var(--color-border);
+    border-radius: 0.375rem;
+    color: var(--color-muted-foreground);
+    font-family: var(--font-mono);
+    white-space: pre-wrap;
+  }
+</style>

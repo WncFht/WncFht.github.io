@@ -2,6 +2,7 @@
 @import "@fontsource-variable/inter";
 @import "@fontsource-variable/jetbrains-mono";
 @import "lxgw-wenkai-screen-webfont/lxgwwenkaiscreen.css";
+@import "katex/dist/katex.min.css";
 @import "./theme.css";
 @import "./typography.css";
 @import "rehype-callouts/theme/obsidian";

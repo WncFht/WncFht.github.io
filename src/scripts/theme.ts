@@ -18,6 +18,7 @@ let themeValue: string =
 function persist(): void {
   localStorage.setItem(THEME_KEY, themeValue);
   reflect();
+  window.dispatchEvent(new Event("site:theme-change"));
 }
 
 function reflect(): void {
